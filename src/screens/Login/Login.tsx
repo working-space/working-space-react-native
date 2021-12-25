@@ -1,5 +1,5 @@
 import React from 'react';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import Typo from 'src/components/Typo/Typo';
 import { RootStackParamList } from 'src/navigators/types';
@@ -8,7 +8,7 @@ import { Align, FontType } from 'src/utils/font';
 import { LoginStyled } from './Login.styles';
 
 interface Props {
-  navigation: StackNavigationProp<RootStackParamList, 'Login'>;
+  navigation: NativeStackNavigationProp<RootStackParamList, 'Login'>;
 }
 
 const Login = ({ navigation }: Props) => {
