@@ -36,7 +36,15 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SpoqaHanSansNeo-Thin.ttf</string>
+		<string>SpoqaHanSansNeo-Regular.ttf</string>
+		<string>SpoqaHanSansNeo-Medium.ttf</string>
+		<string>SpoqaHanSansNeo-Light.ttf</string>
+		<string>SpoqaHanSansNeo-Bold.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
