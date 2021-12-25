@@ -78,7 +78,6 @@ namespace Font {
         return FontSize.SIZE_CAPTION;
       }
     }
-    return FontSize.SIZE_BODY_02;
   };
 
   const getWeight = (font: FontType) => {
@@ -101,7 +100,6 @@ namespace Font {
         return Weight.REGULAR;
       }
     }
-    return Weight.REGULAR;
   };
 
   export const getFamily = (weight: number) => {
