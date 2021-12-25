@@ -38,7 +38,6 @@ type Align = typeof Align[keyof typeof Align];
 type FontType = typeof FontType[keyof typeof FontType];
 type FontStyle = { size: number; weight: number };
 
-// eslint-disable-next-line @typescript-eslint/no-namespace
 namespace Font {
   export const getStyle = (font: FontType): FontStyle => {
     return {
