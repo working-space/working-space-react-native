@@ -1,31 +1,25 @@
 import React from 'react';
+import { TextProps } from 'react-native';
 
 import { GrayColor, PrimaryColor, SecondColor, SubColor } from 'src/utils/color';
 import { Align, Font, FontType } from 'src/utils/font';
-import { ExtendComponentProps } from 'src/utils/types';
 
 import { TypoStyled } from './Typo.styles';
 
-type Props = ExtendComponentProps<
-  typeof TypoStyled,
-  {
-    children: React.ReactNode;
-    font?: FontType;
-    color?: GrayColor | PrimaryColor | SecondColor | SubColor;
-    align?: Align;
-    onPress?: () => void;
-  }
->;
+interface Props extends TextProps {
+  type?: FontType;
+  color?: GrayColor | PrimaryColor | SecondColor | SubColor;
+  align?: Align;
+}
 
 const Typo = ({
   children,
-  font = FontType.REGULAR_BODY_02,
+  type = FontType.REGULAR_BODY_02,
   color = GrayColor.GRAY_400,
   align = Align.LEFT,
-  style,
-  onPress,
+  ...props
 }: Props) => {
-  const fontStyle = Font.getStyle(font);
+  const fontStyle = Font.getStyle(type);
 
   return (
     <TypoStyled
@@ -34,8 +28,7 @@ const Typo = ({
       weight={fontStyle.weight}
       color={color}
       align={align}
-      style={style}
-      onPress={onPress}
+      {...props}
     >
       {children}
     </TypoStyled>

@@ -39,15 +39,15 @@ type FontType = typeof FontType[keyof typeof FontType];
 type FontStyle = { size: number; weight: number };
 
 namespace Font {
-  export const getStyle = (font: FontType): FontStyle => {
+  export const getStyle = (type: FontType): FontStyle => {
     return {
-      weight: getWeight(font),
-      size: getSize(font),
+      weight: getWeight(type),
+      size: getSize(type),
     };
   };
 
-  const getSize = (font: FontType) => {
-    switch (font) {
+  const getSize = (type: FontType) => {
+    switch (type) {
       case FontType.BOLD_HEAD:
       case FontType.REGULAR_HEAD: {
         return FontSize.SIZE_HEAD;
@@ -80,8 +80,8 @@ namespace Font {
     }
   };
 
-  const getWeight = (font: FontType) => {
-    switch (font) {
+  const getWeight = (type: FontType) => {
+    switch (type) {
       case FontType.BOLD_HEAD:
       case FontType.BOLD_TITLE_01:
       case FontType.BOLD_TITLE_02:

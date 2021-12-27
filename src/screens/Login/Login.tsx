@@ -18,7 +18,7 @@ const Login = ({ navigation }: Props) => {
 
   return (
     <LoginStyled>
-      <Typo font={FontType.BOLD_HEAD} align={Align.CENTER} onPress={onLogin}>
+      <Typo type={FontType.BOLD_HEAD} align={Align.CENTER} onPress={onLogin}>
         로그인
       </Typo>
     </LoginStyled>
