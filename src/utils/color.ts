@@ -2,7 +2,7 @@ const GrayColor = {
   GRAY_0: '#FFFFFF',
   GRAY_50: '#FAFAFA',
   GRAY_100: '#F0F0F0',
-  GRAY_150: '#e5e5e5',
+  GRAY_150: '#E5E5E5',
   GRAY_200: '#CCCCCC',
   GRAY_300: '#A7A7A7',
   GRAY_400: '#222222',
