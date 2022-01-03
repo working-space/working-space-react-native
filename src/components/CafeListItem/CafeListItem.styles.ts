@@ -11,6 +11,12 @@ const row = css`
   align-items: center;
 `;
 
+export const tagListStyle = css`
+  justify-content: center;
+  margin-left: -2px;
+  margin-bottom: 24px;
+`;
+
 export const ItemStyled = styled.TouchableOpacity<ItemStyledProps>`
   position: relative;
   width: 100%;

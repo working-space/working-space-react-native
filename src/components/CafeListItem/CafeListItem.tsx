@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import { FlatList, TouchableOpacityProps } from 'react-native';
-import { css } from '@emotion/native';
 
 import CommentIcon from 'src/assets/icons/icon_comment.svg';
 import EditIcon from 'src/assets/icons/icon_edit.svg';
@@ -24,6 +23,7 @@ import {
   TagEmpty,
   TagEmptyText,
   TagIcon,
+  tagListStyle,
   TagName,
   TagSeparator,
   TagSeparatorContainer,
@@ -64,11 +64,7 @@ const CafeListItem = memo(({ data, hasBorder = false, ...props }: Props) => {
       {tags && tags.length > 0 ? (
         <FlatList
           horizontal
-          contentContainerStyle={css`
-            justify-content: center;
-            margin-left: -2px;
-            margin-bottom: 24px;
-          `}
+          contentContainerStyle={tagListStyle}
           scrollEnabled={false}
           ItemSeparatorComponent={() => (
             <TagSeparatorContainer>
