@@ -1,4 +1,5 @@
 import styled, { css } from '@emotion/native';
+
 import { GrayColor, OpacityGrayColor, PrimaryColor } from 'src/utils/color';
 
 interface FilterSelectProps {
@@ -27,12 +28,6 @@ export const SearchInput = styled.TouchableOpacity`
   margin-bottom: 24px;
   justify-content: center;
 `;
-
-export const SearchInputPlaceHolder = styled.Text`
-  font-size: 14px;
-  color: ${GrayColor.GRAY_300};
-`;
-
 export const ScrolledListHeader = styled.View`
   position: absolute;
   top: 0;
@@ -44,21 +39,13 @@ export const ScrolledListHeader = styled.View`
   background-color: ${GrayColor.GRAY_0};
 `;
 
-export const ScrolledListHeaderText = styled.Text`
-  font-size: 18px;
-  font-weight: bold;
-`;
-
 export const FilterChangeButton = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
   padding: 16px 0;
 `;
 
-export const FilterChangeButtonText = styled.Text<FilterSelectProps>`
-  font-size: 12px;
-  font-weight: ${({ active }) => (active ? 'bold' : 'normal')};
-  color: ${GrayColor.GRAY_400};
+export const FilterChangeButtonText = styled.View`
   margin-right: 4px;
 `;
 
@@ -74,11 +61,6 @@ export const FilterSelectItem = styled.TouchableOpacity<FilterSelectProps>`
   padding: 12px 16px;
   border-radius: 20px;
   border: solid 1px ${({ active }) => (active ? PrimaryColor.PRIMARY_400 : GrayColor.GRAY_100)};
-`;
-
-export const FilterSelectText = styled.Text<FilterSelectProps>`
-  font-size: 12px;
-  font-weight: ${({ active }) => (active ? 'bold' : 'normal')};
 `;
 
 export const Dimmed = styled.TouchableOpacity`

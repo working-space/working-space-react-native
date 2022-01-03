@@ -1,15 +1,31 @@
 import React from 'react';
-import { ViewProps } from 'react-native';
+import { TextProps, ViewProps } from 'react-native';
 
-import { ErrorViewStyled, Heading, Message, RetryButton, RetryText } from './ErrorView.styles';
+import Typo from 'src/components/Typo/Typo';
+import { SecondColor } from 'src/utils/color';
+import { FontType } from 'src/utils/font';
+import { ErrorViewStyled, HeadingStyled, MessageStyled, RetryButton } from './ErrorView.styles';
 
 type Props = ViewProps;
 
 const ErrorView = (props: Props) => <ErrorViewStyled {...props} />;
 
-ErrorView.Heading = Heading;
-ErrorView.Message = Message;
+ErrorView.Heading = (props: TextProps) => (
+  <HeadingStyled>
+    <Typo type={FontType.BOLD_HEAD} align="center" {...props} />
+  </HeadingStyled>
+);
+
+ErrorView.Message = (props: TextProps) => (
+  <MessageStyled>
+    <Typo type={FontType.REGULAR_TITLE_02} align="center" {...props} />
+  </MessageStyled>
+);
+
 ErrorView.RetryButton = RetryButton;
-ErrorView.RetryText = RetryText;
+
+ErrorView.RetryText = (props: TextProps) => (
+  <Typo type={FontType.REGULAR_TITLE_02} color={SecondColor.SECOND_600} {...props} />
+);
 
 export default ErrorView;

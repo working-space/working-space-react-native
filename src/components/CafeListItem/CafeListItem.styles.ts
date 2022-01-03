@@ -39,12 +39,6 @@ export const Badge = styled.View`
   margin-right: 8px;
 `;
 
-export const BadgeText = styled.Text`
-  color: white;
-  font-size: 11px;
-  font-weight: bold;
-`;
-
 export const ItemHeader = styled.View`
   ${row}
   justify-content: space-between;
@@ -55,20 +49,11 @@ export const ItemHeaderRight = styled.View`
   ${row}
 `;
 
-export const Title = styled.Text`
-  font-size: 18px;
-  font-weight: 700;
-  position: relative;
-`;
-
-export const Distance = styled.Text`
-  font-size: 12px;
+export const Distance = styled.View`
   margin-left: 4px;
 `;
 
-export const Address = styled.Text`
-  font-size: 11px;
-  color: ${GrayColor.GRAY_300};
+export const Address = styled.View`
   margin-bottom: 8px;
 `;
 
@@ -76,11 +61,6 @@ export const TagEmpty = styled.View`
   flex-direction: row;
   align-items: center;
   margin-bottom: 24px;
-`;
-
-export const TagEmptyText = styled.Text`
-  font-size: 11px;
-  color: ${GrayColor.GRAY_300};
 `;
 
 export const Tag = styled.View`
@@ -104,10 +84,6 @@ export const TagIcon = styled.View`
   margin-right: 4px;
 `;
 
-export const TagName = styled.Text`
-  font-size: 11px;
-`;
-
 export const InfoList = styled.View`
   ${row}
 `;
@@ -117,7 +93,6 @@ export const Info = styled.View`
   margin-right: 16px;
 `;
 
-export const InfoCount = styled.Text`
+export const InfoCount = styled.View`
   margin-left: 4px;
-  font-size: 12px;
 `;

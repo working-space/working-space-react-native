@@ -5,13 +5,15 @@ import CommentIcon from 'src/assets/icons/icon_comment.svg';
 import EditIcon from 'src/assets/icons/icon_edit.svg';
 import FavoriteIcon from 'src/assets/icons/icon_favorite.svg';
 import LocationIcon from 'src/assets/icons/icon_small_location_fill.svg';
+import Typo from 'src/components/Typo/Typo';
 import TAG from 'src/constants/tag';
 import Cafe from 'src/models/cafe';
+import { GrayColor } from 'src/utils/color';
+import { FontType } from 'src/utils/font';
 import {
   Address,
   Badge,
   BadgeList,
-  BadgeText,
   Distance,
   Info,
   InfoCount,
@@ -21,13 +23,10 @@ import {
   ItemStyled,
   Tag,
   TagEmpty,
-  TagEmptyText,
   TagIcon,
   tagListStyle,
-  TagName,
   TagSeparator,
   TagSeparatorContainer,
-  Title,
 } from './CafeListItem.styles';
 
 interface Props extends TouchableOpacityProps {
@@ -45,22 +44,30 @@ const CafeListItem = memo(({ data, hasBorder = false, ...props }: Props) => {
           badges.length > 0 &&
           badges.map((badge) => (
             <Badge key={badge}>
-              <BadgeText>{badge}</BadgeText>
+              <Typo type={FontType.BOLD_CAPTION} color={GrayColor.GRAY_0}>
+                {badge}
+              </Typo>
             </Badge>
           ))}
       </BadgeList>
       <ItemHeader>
-        <Title>{title}</Title>
+        <Typo type={FontType.BOLD_TITLE_01}>{title}</Typo>
         <ItemHeaderRight>
           {distance && (
             <>
               <LocationIcon />
-              <Distance>{distance}</Distance>
+              <Distance>
+                <Typo type={FontType.REGULAR_BODY_02}>{distance}</Typo>
+              </Distance>
             </>
           )}
         </ItemHeaderRight>
       </ItemHeader>
-      <Address>{address}</Address>
+      <Address>
+        <Typo type={FontType.REGULAR_CAPTION} color={GrayColor.GRAY_300}>
+          {address}
+        </Typo>
+      </Address>
       {tags && tags.length > 0 ? (
         <FlatList
           horizontal
@@ -76,24 +83,30 @@ const CafeListItem = memo(({ data, hasBorder = false, ...props }: Props) => {
           renderItem={({ item }) => (
             <Tag>
               <TagIcon>{TAG[item].icon}</TagIcon>
-              <TagName>{TAG[item].name}</TagName>
+              <Typo type={FontType.REGULAR_CAPTION}>{TAG[item].name}</Typo>
             </Tag>
           )}
         />
       ) : (
         <TagEmpty>
           <EditIcon />
-          <TagEmptyText>지금 첫번째 태그를 등록해보세요</TagEmptyText>
+          <Typo type={FontType.REGULAR_CAPTION} color={GrayColor.GRAY_300}>
+            지금 첫번째 태그를 등록해보세요
+          </Typo>
         </TagEmpty>
       )}
       <InfoList>
         <Info>
           <FavoriteIcon />
-          <InfoCount>{favoriteCount !== undefined ? favoriteCount : 0}</InfoCount>
+          <InfoCount>
+            <Typo type={FontType.REGULAR_BODY_02}>{favoriteCount !== undefined ? favoriteCount : 0}</Typo>
+          </InfoCount>
         </Info>
         <Info>
           <CommentIcon />
-          <InfoCount>{commentCount !== undefined ? commentCount : 0}</InfoCount>
+          <InfoCount>
+            <Typo type={FontType.REGULAR_BODY_02}>{commentCount !== undefined ? commentCount : 0}</Typo>
+          </InfoCount>
         </Info>
       </InfoList>
     </ItemStyled>

@@ -1,8 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 
+import Typo from 'src/components/Typo/Typo';
 import FILTER from 'src/constants/filter';
-import { HeaderText } from './FilterIllust.styles';
+import { GrayColor } from 'src/utils/color';
+import { FontType } from 'src/utils/font';
+import { headerTextStyle } from './FilterIllust.styles';
 
 interface Props {
   filter: keyof typeof FILTER;
@@ -11,10 +14,10 @@ interface Props {
 const FilterIllust = ({ filter }: Props) => {
   return (
     <View>
-      <HeaderText>
+      <Typo type={FontType.BOLD_HEAD} color={GrayColor.GRAY_400} style={headerTextStyle}>
         현위치에서{'\n'}
         가장 {FILTER[filter].name} 곳
-      </HeaderText>
+      </Typo>
       {FILTER[filter].imageURL}
     </View>
   );

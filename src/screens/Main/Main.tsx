@@ -9,8 +9,11 @@ import CafeListItem from 'src/components/CafeListItem/CafeListItem';
 import ErrorView from 'src/components/ErrorView/ErrorView';
 import FilterIllust from 'src/components/FilterIllust/FilterIllust';
 import Header from 'src/components/Header/Header';
+import Typo from 'src/components/Typo/Typo';
 import FILTER from 'src/constants/filter';
 import { RootStackParamList } from 'src/navigators/types';
+import { GrayColor } from 'src/utils/color';
+import { FontType } from 'src/utils/font';
 import {
   cafeListStyle,
   Dimmed,
@@ -19,14 +22,11 @@ import {
   FilterChangeButtonText,
   FilterSelect,
   FilterSelectItem,
-  FilterSelectText,
   IconWrapper,
   ListSeparator,
   MainStyled,
   ScrolledListHeader,
-  ScrolledListHeaderText,
   SearchInput,
-  SearchInputPlaceHolder,
 } from './Main.styles';
 import sampleCafeList from './sampleCafeList';
 
@@ -64,8 +64,13 @@ const Main = ({ navigation: { navigate } }: Props) => {
         right={
           <>
             <FilterChangeButton onPress={toggleFilterSelect}>
-              <FilterChangeButtonText active={isFilterSelectOpen}>
-                {FILTER[currentFilter].name} 순
+              <FilterChangeButtonText>
+                <Typo
+                  type={isFilterSelectOpen ? FontType.BOLD_BODY_02 : FontType.REGULAR_BODY_02}
+                  color={GrayColor.GRAY_400}
+                >
+                  {FILTER[currentFilter].name} 순
+                </Typo>
               </FilterChangeButtonText>
               <DropDownArrowIcon />
             </FilterChangeButton>
@@ -81,25 +86,29 @@ const Main = ({ navigation: { navigate } }: Props) => {
                 active={currentFilter === FILTER.NEAREST.id}
                 onPress={() => selectFilter(FILTER.NEAREST.id)}
               >
-                <FilterSelectText active={currentFilter === FILTER.NEAREST.id}>
+                <Typo type={currentFilter === FILTER.NEAREST.id ? FontType.BOLD_BODY_02 : FontType.REGULAR_BODY_02}>
                   {FILTER.NEAREST.name} 순
-                </FilterSelectText>
+                </Typo>
               </FilterSelectItem>
               <FilterSelectItem
                 active={currentFilter === FILTER.MANY_COMMENTS.id}
                 onPress={() => selectFilter(FILTER.MANY_COMMENTS.id)}
               >
-                <FilterSelectText active={currentFilter === FILTER.MANY_COMMENTS.id}>
+                <Typo
+                  type={currentFilter === FILTER.MANY_COMMENTS.id ? FontType.BOLD_BODY_02 : FontType.REGULAR_BODY_02}
+                >
                   {FILTER.MANY_COMMENTS.name} 순
-                </FilterSelectText>
+                </Typo>
               </FilterSelectItem>
               <FilterSelectItem
                 active={currentFilter === FILTER.MANY_FAVORITES.id}
                 onPress={() => selectFilter(FILTER.MANY_FAVORITES.id)}
               >
-                <FilterSelectText active={currentFilter === FILTER.MANY_FAVORITES.id}>
+                <Typo
+                  type={currentFilter === FILTER.MANY_FAVORITES.id ? FontType.BOLD_BODY_02 : FontType.REGULAR_BODY_02}
+                >
                   {FILTER.MANY_FAVORITES.name} 순
-                </FilterSelectText>
+                </Typo>
               </FilterSelectItem>
             </FilterSelect>
           )
@@ -113,11 +122,13 @@ const Main = ({ navigation: { navigate } }: Props) => {
       <MainStyled>
         <View>
           <SearchInput onPress={() => navigate('Main')}>
-            <SearchInputPlaceHolder>현위치 : {geocode}</SearchInputPlaceHolder>
+            <Typo type={FontType.REGULAR_BODY_01} color={GrayColor.GRAY_300}>
+              현위치 : {geocode}
+            </Typo>
           </SearchInput>
           <Animated.View style={{ opacity: fadeAnim }}>
             <ScrolledListHeader>
-              <ScrolledListHeaderText>현위치에서 가장 {FILTER[currentFilter].name} 곳</ScrolledListHeaderText>
+              <Typo type={FontType.BOLD_TITLE_01}>현위치에서 가장 {FILTER[currentFilter].name} 곳</Typo>
             </ScrolledListHeader>
           </Animated.View>
         </View>
