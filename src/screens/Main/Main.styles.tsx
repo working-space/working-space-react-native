@@ -1,5 +1,5 @@
 import styled, { css } from '@emotion/native';
-import { GrayColor } from 'src/utils/color';
+import { GrayColor, OpacityGrayColor, PrimaryColor } from 'src/utils/color';
 
 interface FilterSelectProps {
   active: boolean;
@@ -73,7 +73,7 @@ export const FilterSelectItem = styled.TouchableOpacity<FilterSelectProps>`
   margin-right: 8px;
   padding: 12px 16px;
   border-radius: 20px;
-  border: solid 1px ${({ active }) => (active ? '#ff9d33' : GrayColor.GRAY_100)};
+  border: solid 1px ${({ active }) => (active ? PrimaryColor.PRIMARY_400 : GrayColor.GRAY_100)};
 `;
 
 export const FilterSelectText = styled.Text<FilterSelectProps>`
@@ -96,14 +96,14 @@ export const DimmedArea = styled.View`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(34, 34, 34, 0.1);
+  background-color: ${OpacityGrayColor.OPACITY_GRAY_400};
 `;
 
 export const IconWrapper = styled.View`
   padding: 8px;
   border-radius: 100px;
-  border: 1px solid #a7a7a7;
-  background-color: #cccccc;
+  border: 1px solid ${GrayColor.GRAY_300};
+  background-color: ${GrayColor.GRAY_200};
 `;
 
 export const CafeListContainer = styled.View`

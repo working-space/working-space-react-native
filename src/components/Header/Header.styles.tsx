@@ -13,7 +13,7 @@ export const HeaderStyled = styled.View<HeaderStyledProps>`
   width: 100%;
   margin-bottom: 8px;
   z-index: 12;
-  background-color: #ffffff;
+  background-color: ${GrayColor.GRAY_0};
 
   ${({ showBorderBottom }) =>
     showBorderBottom &&

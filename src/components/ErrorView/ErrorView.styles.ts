@@ -1,5 +1,7 @@
 import styled from '@emotion/native';
 
+import { SecondColor } from 'src/utils/color';
+
 export const ErrorViewStyled = styled.View`
   flex: 1;
   align-items: center;
@@ -25,5 +27,5 @@ export const RetryButton = styled.TouchableOpacity`
 
 export const RetryText = styled.Text`
   font-size: 16px;
-  color: #2980b9;
+  color: ${SecondColor.SECOND_600};
 `;
