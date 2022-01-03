@@ -1,6 +1,6 @@
 import styled from '@emotion/native';
 
-export const Image = styled.Image`
+export const AutoFitImageStyled = styled.Image`
   width: 100%;
   height: ${({ height }) => `${height}px`};
 `;
