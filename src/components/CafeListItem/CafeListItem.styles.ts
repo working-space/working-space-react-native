@@ -20,12 +20,17 @@ export const tagListStyle = css`
 export const ItemStyled = styled.TouchableOpacity<ItemStyledProps>`
   position: relative;
   width: 100%;
-  border-width: ${({ hasBorder }) => (hasBorder ? '1px' : '0')};
   border-style: solid;
   border-color: ${GrayColor.GRAY_150};
-  border-radius: ${({ hasBorder }) => (hasBorder ? '4px' : '0')};
   padding: 16px;
   background-color: ${GrayColor.GRAY_0};
+
+  ${({ hasBorder }) =>
+    hasBorder &&
+    css`
+      border-width: 1px;
+      border-radius: 4px;
+    `};
 `;
 
 export const BadgeList = styled.View`
