@@ -13,26 +13,27 @@ import TimerIcon from 'src/assets/icons/icon_timer.svg';
 import ToiletIcon from 'src/assets/icons/icon_toilet.svg';
 import WifiIcon from 'src/assets/icons/icon_wifi.svg';
 
-interface Tag {
-  concent: TagItem;
-  mute: TagItem;
-  parking: TagItem;
-  toilet: TagItem;
-  twentyFour: TagItem;
-  study: TagItem;
-  dessert: TagItem;
-  smoking: TagItem;
-  timer: TagItem;
-  seat: TagItem;
-  wifi: TagItem;
-  chair: TagItem;
-}
+type TagName =
+  | 'concent'
+  | 'mute'
+  | 'parking'
+  | 'toilet'
+  | 'twentyFour'
+  | 'study'
+  | 'dessert'
+  | 'smoking'
+  | 'timer'
+  | 'seat'
+  | 'wifi'
+  | 'chair';
 
 interface TagItem {
   id: keyof Tag;
   name: string;
   icon: React.ReactNode;
 }
+
+type Tag = Record<TagName, TagItem>;
 
 const TAG: Tag = {
   concent: {

@@ -2,17 +2,15 @@ import React from 'react';
 
 import AutoFitImage from 'src/components/AutoFitImage/AutoFitImage';
 
-interface Filter {
-  NEAREST: FilterItem;
-  MANY_COMMENTS: FilterItem;
-  MANY_FAVORITES: FilterItem;
-}
+type FilterName = 'NEAREST' | 'MANY_COMMENTS' | 'MANY_FAVORITES';
 
 interface FilterItem {
   id: keyof Filter;
   name: string;
   imageURL: React.ReactNode;
 }
+
+type Filter = Record<FilterName, FilterItem>;
 
 const FILTER: Filter = {
   NEAREST: {
