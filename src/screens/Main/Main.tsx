@@ -12,6 +12,8 @@ import Header from 'src/components/Header/Header';
 import Typo from 'src/components/Typo/Typo';
 import FILTER from 'src/constants/filter';
 import { Cafe } from 'src/models/cafe';
+import useGeocode from 'src/hooks/useGeocode';
+import useGeolocation from 'src/hooks/useGeolocation';
 import { RootStackParamList } from 'src/navigators/types';
 import sampleCafeList from 'src/screens/sampleCafeList';
 import { GrayColor } from 'src/utils/color';
@@ -37,11 +39,12 @@ const Main = ({ navigation: { navigate } }: Props) => {
   const [currentFilter, setCurrentFilter] = useState(FILTER.NEAREST.id);
   const [isFilterSelectOpen, setFilterSelectOpen] = useState(false);
 
+  const { geolocation, isPermissionError } = useGeolocation();
+  const { geocode } = useGeocode(geolocation);
+
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
-  const geocode = '서울시';
   const isError = false;
-  const permissionStatus = 'denied';
 
   const toggleFilterSelect = () => {
     setFilterSelectOpen((prevState) => !prevState);
@@ -128,7 +131,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
         <View>
           <SearchInput onPress={() => navigate('Main')}>
             <Typo type={FontType.REGULAR_BODY_01} color={GrayColor.GRAY_300}>
-              현위치 : {geocode}
+              현위치 : {geocode ?? ''}
             </Typo>
           </SearchInput>
           <Animated.View style={{ opacity: fadeAnim }}>
@@ -141,7 +144,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
           <ErrorView>
             <ErrorView.Heading>앗!</ErrorView.Heading>
             <ErrorView.Message>카페 목록을 불러오지 못했어요!</ErrorView.Message>
-            {permissionStatus === 'denied' && (
+            {isPermissionError && (
               <ErrorView.Message>카페 목록을 불러오기 위해서{'\n'}위치 권한을 허용해주세요</ErrorView.Message>
             )}
             <ErrorView.RetryButton>

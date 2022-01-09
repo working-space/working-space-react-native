@@ -1,14 +1,18 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
+import { RecoilRoot } from 'recoil';
 import LoginNavigator from 'src/navigators/LoginNavigator';
 import MainNavigator from 'src/navigators/MainNavigator';
 
 const App = () => {
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
-  // TODO : 메인, 상세 화면 확인을 위한 임시 조치임. 로그인 활성화 시 변경 필요.
-  return <NavigationContainer>{!isLoggedIn ? <MainNavigator /> : <LoginNavigator />}</NavigationContainer>;
+  return (
+    <RecoilRoot>
+      <NavigationContainer>{isLoggedIn ? <MainNavigator /> : <LoginNavigator />}</NavigationContainer>
+    </RecoilRoot>
+  );
 };
 
 export default App;
