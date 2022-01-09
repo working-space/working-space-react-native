@@ -12,30 +12,9 @@ import StudyIcon from 'src/assets/icons/icon_study.svg';
 import TimerIcon from 'src/assets/icons/icon_timer.svg';
 import ToiletIcon from 'src/assets/icons/icon_toilet.svg';
 import WifiIcon from 'src/assets/icons/icon_wifi.svg';
+import { TagSet } from 'src/models/tag';
 
-type TagName =
-  | 'concent'
-  | 'mute'
-  | 'parking'
-  | 'toilet'
-  | 'twentyFour'
-  | 'study'
-  | 'dessert'
-  | 'smoking'
-  | 'timer'
-  | 'seat'
-  | 'wifi'
-  | 'chair';
-
-interface TagItem {
-  id: keyof Tag;
-  name: string;
-  icon: React.ReactNode;
-}
-
-type Tag = Record<TagName, TagItem>;
-
-const TAG: Tag = {
+const TAG: TagSet = {
   concent: {
     id: 'concent',
     name: '콘센트가 있는',

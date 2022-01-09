@@ -4,10 +4,10 @@ import { FlatList, TouchableOpacityProps } from 'react-native';
 import CommentIcon from 'src/assets/icons/icon_comment.svg';
 import EditIcon from 'src/assets/icons/icon_edit.svg';
 import FavoriteIcon from 'src/assets/icons/icon_favorite.svg';
-import LocationIcon from 'src/assets/icons/icon_small_location_fill.svg';
+import LocationGrayIcon from 'src/assets/icons/icon_small_location_gray.svg';
 import Typo from 'src/components/Typo/Typo';
 import TAG from 'src/constants/tag';
-import Cafe from 'src/models/cafe';
+import { Cafe } from 'src/models/cafe';
 import { GrayColor } from 'src/utils/color';
 import { FontType } from 'src/utils/font';
 import {
@@ -55,7 +55,7 @@ const CafeListItem = memo(({ data, hasBorder = false, ...props }: Props) => {
         <ItemHeaderRight>
           {distance && (
             <>
-              <LocationIcon />
+              <LocationGrayIcon />
               <Distance>
                 <Typo type={FontType.REGULAR_BODY_02}>{distance}</Typo>
               </Distance>

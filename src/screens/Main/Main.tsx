@@ -11,7 +11,9 @@ import FilterIllust from 'src/components/FilterIllust/FilterIllust';
 import Header from 'src/components/Header/Header';
 import Typo from 'src/components/Typo/Typo';
 import FILTER from 'src/constants/filter';
+import { Cafe } from 'src/models/cafe';
 import { RootStackParamList } from 'src/navigators/types';
+import sampleCafeList from 'src/screens/sampleCafeList';
 import { GrayColor } from 'src/utils/color';
 import { FontType } from 'src/utils/font';
 import {
@@ -28,7 +30,6 @@ import {
   ScrolledListHeader,
   SearchInput,
 } from './Main.styles';
-import sampleCafeList from './sampleCafeList';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Main'>;
 
@@ -49,6 +50,10 @@ const Main = ({ navigation: { navigate } }: Props) => {
   const selectFilter = (filter: typeof currentFilter) => {
     setCurrentFilter(filter);
     setFilterSelectOpen(false);
+  };
+
+  const handleCardLinkClick = (cafe: Cafe) => {
+    navigate('Detail', { cafeId: cafe.id });
   };
 
   return (
@@ -150,19 +155,19 @@ const Main = ({ navigation: { navigate } }: Props) => {
             keyExtractor={(item) => item.id}
             ItemSeparatorComponent={() => <ListSeparator />}
             renderItem={({ item }) => {
-              const { id, name, road_addr } = item;
+              const { id, name, address } = item;
               const distance = '1m';
 
               const cafe = {
                 id: id,
                 title: name,
                 distance,
-                address: road_addr,
+                address: address,
                 tags: [],
                 badges: [],
               };
 
-              return <CafeListItem data={cafe} hasBorder />;
+              return <CafeListItem data={cafe} hasBorder onPress={() => handleCardLinkClick(cafe)} />;
             }}
             ListHeaderComponent={<FilterIllust filter={currentFilter} />}
             onEndReachedThreshold={0.5}

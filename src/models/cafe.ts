@@ -1,14 +1,21 @@
-import TAG from 'src/constants/tag';
+import { Comment } from './comment';
+import { Tag } from './tag';
 
-interface Cafe {
+export interface Cafe {
   id: string;
-  title: string;
-  distance?: string;
-  address: string;
-  tags: (keyof typeof TAG)[];
-  badges: string[];
-  favoriteCount?: number;
-  commentCount?: number;
+  name: string;
+  distance?: string | null;
+  address: string | null;
+  tags: Tag[];
+  likeCount: number;
+  comments: { totalCount: number; data: Comment[] };
 }
 
-export default Cafe;
+export interface CafeDetail extends Cafe {
+  location: { latitude: number; longitude: number };
+  hours: string[];
+  closed: string | null;
+  phone: string | null;
+  homepage: string | null;
+  imageURLs: string[];
+}

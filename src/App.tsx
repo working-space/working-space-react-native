@@ -7,7 +7,8 @@ import MainNavigator from 'src/navigators/MainNavigator';
 const App = () => {
   const isLoggedIn = false;
 
-  return <NavigationContainer>{isLoggedIn ? <MainNavigator /> : <LoginNavigator />}</NavigationContainer>;
+  // TODO : 메인, 상세 화면 확인을 위한 임시 조치임. 로그인 활성화 시 변경 필요.
+  return <NavigationContainer>{!isLoggedIn ? <MainNavigator /> : <LoginNavigator />}</NavigationContainer>;
 };
 
 export default App;
