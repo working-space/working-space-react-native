@@ -7,9 +7,10 @@ export const AllTags = styled.View`
   align-items: center;
 `;
 
-export const EditTags = styled.View`
+export const EditTags = styled.View<{ index: number; allLength: number }>`
   width: 96.6%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: ${({ index, allLength }) => (index === allLength - 1 ? '0' : '32px')};
 `;

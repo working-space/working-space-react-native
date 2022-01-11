@@ -86,10 +86,6 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
     });
   }, [cafeId]);
 
-  useEffect(() => {
-    console.log(preferredTags);
-  }, [preferredTags]);
-
   const handleLikeButtonClick = () => {
     setLikeState((prev) => !prev);
   };
@@ -101,7 +97,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
   const handleShareButtonClick = async () => {
     try {
       const result = await Share.share({
-        title: cafeData?.name,
+        title: cafeData?.name ?? '',
         message: '작업하기 좋은 카페를 추천합니다!',
       });
       if (result.action === Share.sharedAction) {
@@ -118,9 +114,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
     }
   };
 
-  const handleCopyToClipboard = (address: string | null) => {
-    console.log('copy: ', address);
-  };
+  const handleCopyToClipboard = (address: string | null) => {};
 
   const handleSetTagsModal = () => {
     setVisibleInput('Tags');
@@ -128,12 +122,10 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
 
   const handleSetCommentText = (text: string) => {
     handleCloseButton();
-    console.log(text);
   };
 
   const handleDeleteComment = () => {
     handleCloseButton();
-    console.log(currentCommentId);
   };
 
   const handleSetCommentTextModal = () => {
@@ -156,13 +148,13 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
     setSelectedTags([...preferredTags]);
   }, [preferredTags, setSelectedTags]);
 
-  if (cafeData === undefined) {
+  if (!cafeData) {
     return (
       <>
         <Header
           showBorderBottom={true}
           left={
-            <Header.Button onPress={() => goBack()}>
+            <Header.Button onPress={goBack}>
               <BackIcon />
             </Header.Button>
           }
@@ -177,7 +169,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
       <Header
         showBorderBottom={true}
         left={
-          <Header.Button onPress={() => goBack()}>
+          <Header.Button onPress={goBack}>
             <BackIcon />
           </Header.Button>
         }
@@ -300,7 +292,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
       <CustomModal
         isVisible={visibleInput === 'Tags'}
         backdropOpacity={1}
-        onBackdropPress={() => handleCloseButton()}
+        onBackdropPress={handleCloseButton}
         animationIn="slideInUp"
         animationOut="slideOutDown"
         hideModalContentWhileAnimating={true}
@@ -339,7 +331,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
       <CustomModal
         isVisible={visibleInput === 'Comments'}
         backdropOpacity={0.3}
-        onBackdropPress={() => handleCloseButton()}
+        onBackdropPress={handleCloseButton}
         onShow={() => inputRef.current?.focus()}
         animationIn="slideInUp"
         animationOut="slideOutDown"
@@ -351,7 +343,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
       <CustomModal
         isVisible={visibleInput === 'CommentOption'}
         backdropOpacity={0.3}
-        onBackdropPress={() => handleCloseButton()}
+        onBackdropPress={handleCloseButton}
         animationIn="fadeIn"
         animationOut="fadeOut"
         hideModalContentWhileAnimating={true}
