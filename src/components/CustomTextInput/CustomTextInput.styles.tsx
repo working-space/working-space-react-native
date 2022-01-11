@@ -3,12 +3,7 @@ import styled from '@emotion/native';
 import { GrayColor } from 'src/utils/color';
 
 export const CustomTextInputStyled = styled.KeyboardAvoidingView`
-  flex: 1;
-  justify-content: flex-end;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   bottom: 0;
 `;
 

@@ -1,5 +1,5 @@
 import React, { useState, Ref } from 'react';
-import { TextInput } from 'react-native';
+import { TextInput, Platform } from 'react-native';
 
 import SmallCameraLineIcon from 'src/assets/icons/icon_small_camera_line.svg';
 import SmallCloseIcon from 'src/assets/icons/icon_small_close.svg';
@@ -31,7 +31,7 @@ const CustomTextInput = ({ type, defaultText = '', onSetInputText, inputRef }: P
   };
 
   return (
-    <CustomTextInputStyled>
+    <CustomTextInputStyled behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <CustomTextInputView>
         <CustomTextInputInfo>
           <CustomTextInputBox

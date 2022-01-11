@@ -74,7 +74,11 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
   const noneText = '정보없음';
   const comments = {
     totalCount: 1,
-    data: [{ id: '1', userId: 'jiwon', content: 'ㅎㅎㅎ', updatedAt: '2021.10.21 13:13' }],
+    data: [
+      { id: '1', userId: 'jiwon', content: 'ㅎㅎㅎ', updatedAt: '2021.10.21 13:13' },
+      { id: '2', userId: 'jiwon2', content: '잼따ㅎㅎㅎ', updatedAt: '2021.10.21 13:13' },
+      { id: '3', userId: 'jiwon3', content: '굿ㅎㅎㅎ', updatedAt: '2021.10.21 13:13' },
+    ],
   };
 
   useEffect(() => {
@@ -209,7 +213,6 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
             </TitleInfoItem>
           </TitleInfo>
         </DetailTitleStyled>
-        {/* TODO: 이미지 슬라이드 애니메이션 구현 */}
         <ImageGrid name={cafeData.name} distance={'1km'} tags={cafeData.tags} images={cafeData.imageURLs} />
         <DetailInfoStyled>
           <DetailInfoBox>
@@ -297,7 +300,6 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
         hideModalContentWhileAnimating={true}
         useNativeDriver={true}
       >
-        {/* TODO: 태그 등록 점검 */}
         <SelectTagModal>
           <SelectTagModalHeader>
             <SelectTagModalTop>
@@ -322,7 +324,6 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
           </SelectTagModalSubmitButton>
         </SelectTagModal>
       </CustomModal>
-      {/* TODO: 백그라운드 클릭 이벤트, 키보드 올라오지 않는 이슈 점검 */}
       <CustomModal
         isVisible={visibleInput === 'Comments'}
         backdropOpacity={0.3}
