@@ -11,9 +11,9 @@ import FilterIllust from 'src/components/FilterIllust/FilterIllust';
 import Header from 'src/components/Header/Header';
 import Typo from 'src/components/Typo/Typo';
 import FILTER from 'src/constants/filter';
-import { Cafe } from 'src/models/cafe';
 import useGeocode from 'src/hooks/useGeocode';
 import useGeolocation from 'src/hooks/useGeolocation';
+import { Cafe } from 'src/models/cafe';
 import { RootStackParamList } from 'src/navigators/types';
 import sampleCafeList from 'src/screens/sampleCafeList';
 import { GrayColor } from 'src/utils/color';
@@ -162,12 +162,13 @@ const Main = ({ navigation: { navigate } }: Props) => {
               const distance = '1m';
 
               const cafe = {
-                id: id,
-                title: name,
+                id,
+                name,
                 distance,
-                address: address,
+                address,
                 tags: [],
-                badges: [],
+                likeCount: 0,
+                comments: { totalCount: 0, data: [] },
               };
 
               return <CafeListItem data={cafe} hasBorder onPress={() => handleCardLinkClick(cafe)} />;
