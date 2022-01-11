@@ -1,6 +1,7 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { Dimensions } from 'react-native';
 import { FBCollage } from 'react-native-fb-collage';
+import Swiper from 'react-native-swiper';
 
 import CloseIcon from 'src/assets/icons/icon_close.svg';
 import LocationWhiteIcon from 'src/assets/icons/icon_small_location_white.svg';
@@ -16,10 +17,8 @@ import {
   ImageWrapper,
   ImageGridModal,
   CardImage,
-  ImageGridModalHeader,
   TotalView,
   CloseButton,
-  CardImageStyled,
   InfoBox,
   InfoBoxSubTitleView,
   InfoBoxSubInfo,
@@ -35,9 +34,19 @@ interface Props {
 const ImageGrid = ({ name, distance, tags, images }: Props) => {
   const [visibleInput, setVisibleInput] = useState<number>(-1);
 
-  const handleCloseButton = useCallback(() => {
+  const handleCloseButton = () => {
     setVisibleInput(-1);
-  }, []);
+  };
+
+  const renderPagination = (index: number, total: number) => {
+    return (
+      <TotalView>
+        <Typo type={FontType.BOLD_BODY_01} color={GrayColor.GRAY_0}>
+          {index + 1} / {total}
+        </Typo>
+      </TotalView>
+    );
+  };
 
   if (!images.length) {
     return (
@@ -64,30 +73,23 @@ const ImageGrid = ({ name, distance, tags, images }: Props) => {
       <CustomModal
         isVisible={visibleInput !== -1}
         backdropOpacity={1}
-        onBackdropPress={() => handleCloseButton()}
+        onBackdropPress={handleCloseButton}
         animationIn="slideInUp"
         animationOut="slideOutDown"
         hideModalContentWhileAnimating={true}
         useNativeDriver={true}
       >
         <ImageGridModal>
-          <ImageGridModalHeader>
-            <TotalView>
-              <Typo type={FontType.BOLD_BODY_01} color={GrayColor.GRAY_0}>
-                {visibleInput + 1} / {images.length}
-              </Typo>
-            </TotalView>
-            <CloseButton onPress={handleCloseButton}>
-              <CloseIcon fill={GrayColor.GRAY_0} />
-            </CloseButton>
-          </ImageGridModalHeader>
-          <CardImageStyled>
+          <CloseButton onPress={handleCloseButton}>
+            <CloseIcon fill={GrayColor.GRAY_0} />
+          </CloseButton>
+          <Swiper index={visibleInput} renderPagination={renderPagination}>
             {images.map((image: string, index: number) => (
               <CardImage key={index}>
                 <AutoFitImage source={{ uri: image }} />
               </CardImage>
             ))}
-          </CardImageStyled>
+          </Swiper>
           <InfoBox>
             <Typo type={FontType.BOLD_TITLE_01} color={GrayColor.GRAY_0}>
               {name}

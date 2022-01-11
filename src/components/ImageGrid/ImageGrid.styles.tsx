@@ -11,30 +11,20 @@ export const ImageGridModal = styled.SafeAreaView`
   flex: 1;
 `;
 
-export const ImageGridModalHeader = styled.View`
-  width: 100%;
-  justify-content: flex-start;
-`;
-
 export const CloseButton = styled.TouchableOpacity`
   align-items: flex-end;
   padding-top: 16px;
   padding-right: 16px;
+  z-index: 99;
 `;
 
 export const TotalView = styled.View`
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 20px;
+  top: -20px;
   left: 0;
   right: 0;
-`;
-
-export const CardImageStyled = styled.View`
-  width: 100%;
-  height: 600px;
-  flex-direction: row;
 `;
 
 export const CardImage = styled.View`
@@ -47,7 +37,7 @@ export const InfoBox = styled.View`
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 16px;
   width: 100%;
   padding: 16px;
   background-color: ${OpacityGrayColor.OPACITY_BLACK_70};
