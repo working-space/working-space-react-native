@@ -5,12 +5,12 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import BackIcon from 'src/assets/icons/icon_back.svg';
 import BookmarkIcon from 'src/assets/icons/icon_bookmark.svg';
 import BookmarkFillIcon from 'src/assets/icons/icon_bookmark_fill.svg';
-import CloseIcon from 'src/assets/icons/icon_close.svg';
+import CloseGrayIcon from 'src/assets/icons/icon_close_gray.svg';
 import FavoriteIcon from 'src/assets/icons/icon_favorite.svg';
 import FavoriteFillIcon from 'src/assets/icons/icon_favorite_fill.svg';
 import ShareIcon from 'src/assets/icons/icon_share.svg';
 import LocationGrayIcon from 'src/assets/icons/icon_small_location_gray.svg';
-import SmallTagIcon from 'src/assets/icons/icon_small_tag_fill.svg';
+import SmallTagGrayIcon from 'src/assets/icons/icon_small_tag_gray.svg';
 import CommentList from 'src/components/CommentList/CommentList';
 import CustomModal from 'src/components/CustomModal/CustomModal';
 import CustomTextInput from 'src/components/CustomTextInput/CustomTextInput';
@@ -206,7 +206,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
               </Typo>
             </TitleInfoItem>
             <TitleInfoItem>
-              <SmallTagIcon fill={GrayColor.GRAY_400} />
+              <SmallTagGrayIcon />
               <Typo type={FontType.REGULAR_BODY_02} style={TitleInfoItemText}>
                 태그 {cafeData.tags?.length ?? 0}개
               </Typo>
@@ -304,7 +304,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
           <SelectTagModalHeader>
             <SelectTagModalTop>
               <CloseButton onPress={handleCloseButton}>
-                <CloseIcon fill={GrayColor.GRAY_400} />
+                <CloseGrayIcon />
               </CloseButton>
             </SelectTagModalTop>
             <SelectTagModalBottom>

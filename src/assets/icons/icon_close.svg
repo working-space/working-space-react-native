@@ -1,8 +1,0 @@
-<!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-    <path fill="#222" d="M19.703 4.146c.195.196.195.512 0 .708l-7.071 7.07 7.07 7.072c.196.195.196.512 0 .707-.195.195-.511.195-.706 0l-7.071-7.071-7.071 7.07c-.196.196-.512.196-.708 0-.195-.195-.195-.511 0-.706l7.071-7.071-7.07-7.071c-.196-.196-.196-.512 0-.708.195-.195.511-.195.707 0l7.07 7.071 7.072-7.07c.195-.196.512-.196.707 0z"/>
-</svg> -->
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-    <path d="M19.703 4.146c.195.196.195.512 0 .708l-7.071 7.07 7.07 7.072c.196.195.196.512 0 .707-.195.195-.511.195-.706 0l-7.071-7.071-7.071 7.07c-.196.196-.512.196-.708 0-.195-.195-.195-.511 0-.706l7.071-7.071-7.07-7.071c-.196-.196-.196-.512 0-.708.195-.195.511-.195.707 0l7.07 7.071 7.072-7.07c.195-.196.512-.196.707 0z" style="fill-rule:nonzero;"/>
-</svg>

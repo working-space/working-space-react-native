@@ -3,9 +3,9 @@ import { Dimensions } from 'react-native';
 import { FBCollage } from 'react-native-fb-collage';
 import Swiper from 'react-native-swiper';
 
-import CloseIcon from 'src/assets/icons/icon_close.svg';
+import CloseWhiteIcon from 'src/assets/icons/icon_close_white.svg';
 import LocationWhiteIcon from 'src/assets/icons/icon_small_location_white.svg';
-import SmallTagFillIcon from 'src/assets/icons/icon_small_tag_fill.svg';
+import SmallTagWhiteIcon from 'src/assets/icons/icon_small_tag_white.svg';
 import AutoFitImage from 'src/components/AutoFitImage/AutoFitImage';
 import CustomModal from 'src/components/CustomModal/CustomModal';
 import NoneImage from 'src/components/NoneImage/NoneImage';
@@ -81,7 +81,7 @@ const ImageGrid = ({ name, distance, tags, images }: Props) => {
       >
         <ImageGridModal>
           <CloseButton onPress={handleCloseButton}>
-            <CloseIcon fill={GrayColor.GRAY_0} />
+            <CloseWhiteIcon />
           </CloseButton>
           <Swiper index={visibleInput} renderPagination={renderPagination}>
             {images.map((image: string, index: number) => (
@@ -96,13 +96,13 @@ const ImageGrid = ({ name, distance, tags, images }: Props) => {
             </Typo>
             <InfoBoxSubTitleView>
               <InfoBoxSubInfo start={true}>
-                <LocationWhiteIcon fill={GrayColor.GRAY_0} />
+                <LocationWhiteIcon />
                 <Typo type={FontType.REGULAR_BODY_02} color={GrayColor.GRAY_0}>
                   {distance}
                 </Typo>
               </InfoBoxSubInfo>
               <InfoBoxSubInfo>
-                <SmallTagFillIcon fill={GrayColor.GRAY_0} />
+                <SmallTagWhiteIcon />
                 <Typo type={FontType.REGULAR_BODY_02} color={GrayColor.GRAY_0}>
                   태그 {tags.length}개
                 </Typo>
