@@ -1,6 +1,6 @@
 import styled, { css } from '@emotion/native';
 
-import { GrayColor } from 'src/utils/color';
+import { GrayColor, PrimaryColor } from 'src/utils/color';
 
 export const LinkIconStyled = styled.View`
   flex-direction: row;
@@ -121,11 +121,12 @@ export const SelectTagModalBottom = styled.View`
   padding-left: 16px;
 `;
 
-export const SelectTagModalSubmitButton = styled.TouchableOpacity`
+export const SelectTagModalSubmitButton = styled.TouchableOpacity<{ selected: boolean }>`
   width: 100%;
   height: 54px;
   justify-content: center;
   align-items: center;
+  background-color: ${({ selected }) => (selected ? PrimaryColor.PRIMARY_500 : GrayColor.GRAY_200)};
 `;
 
 export const CloseButton = styled.TouchableOpacity`

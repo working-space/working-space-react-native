@@ -1,8 +1,8 @@
 import { useCallback, useState } from 'react';
 
-import { Tag } from 'src/models/tag';
+import { TagName } from 'src/models/tag';
 
-export default function useSelectedTags(initialTags: Tag[]) {
+export default function useSelectedTags(initialTags: TagName[]) {
   const [selectedTags, setSelectedTags] = useState(initialTags);
 
   const toggleTag = useCallback((tag) => {

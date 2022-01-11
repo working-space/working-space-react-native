@@ -1,6 +1,6 @@
 import React from 'react';
 
-type TagName =
+export type TagName =
   | 'concent'
   | 'mute'
   | 'parking'

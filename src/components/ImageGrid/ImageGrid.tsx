@@ -39,7 +39,7 @@ const ImageGrid = ({ name, distance, tags, images }: Props) => {
     setVisibleInput(-1);
   }, []);
 
-  if (images === null) {
+  if (!images.length) {
     return (
       <ImageWrapper>
         <NoneImage />

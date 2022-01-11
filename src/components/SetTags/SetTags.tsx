@@ -1,11 +1,11 @@
 import React from 'react';
 
 import TagItem from 'src/components/TagItem/TagItem';
-import { Tag } from 'src/models/tag';
+import { Tag, TagName } from 'src/models/tag';
 import { AllTags, EditTags } from './SetTags.styles';
 
 interface Props {
-  preferTags: Tag[];
+  preferTags: TagName[];
   onToggleTag: (tag: Tag) => void;
 }
 
@@ -42,7 +42,7 @@ const SetTags = ({ preferTags, onToggleTag }: Props) => {
                   key={tag.id}
                   showCount={false}
                   tag={tag}
-                  selected={preferTags.includes(tag)}
+                  selected={preferTags.includes(tag.id)}
                   onClick={onToggleTag}
                 />
               );

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { TextInput, Share } from 'react-native';
-import { css } from '@emotion/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import BackIcon from 'src/assets/icons/icon_back.svg';
@@ -23,10 +22,10 @@ import TagList from 'src/components/TagList/TagList';
 import Typo from 'src/components/Typo/Typo';
 import useSelectedTags from 'src/hooks/useSelectedTags';
 import { CafeDetail } from 'src/models/cafe';
-import { Tag } from 'src/models/tag';
+import { TagName } from 'src/models/tag';
 import { RootStackParamList } from 'src/navigators/types';
 import sampleCafeList from 'src/screens/sampleCafeList';
-import { GrayColor, PrimaryColor } from 'src/utils/color';
+import { GrayColor } from 'src/utils/color';
 import { FontType } from 'src/utils/font';
 import {
   LinkIconStyled,
@@ -67,9 +66,9 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
   const [bookmarkState, setBookmarkState] = useState(false);
 
   const [visibleInput, setVisibleInput] = useState<'Tags' | 'Comments' | 'CommentOption' | null>(null);
-  const [preferredTags, setPreferredTags] = useState<Tag[]>([]);
-  const [currentCommentId, setCurrentCommentId] = useState<string | null>();
+  const [preferredTags, setPreferredTags] = useState<TagName[]>([]);
   const { selectedTags, setSelectedTags, toggleTag } = useSelectedTags([]);
+  const [currentCommentId, setCurrentCommentId] = useState<string | null>();
   const inputRef = useRef<TextInput>(null);
 
   const noneText = '정보없음';
@@ -116,6 +115,11 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
 
   const handleCopyToClipboard = (address: string | null) => {};
 
+  const handleSubmitButton = () => {
+    setVisibleInput(null);
+    setPreferredTags([...selectedTags]);
+  };
+
   const handleSetTagsModal = () => {
     setVisibleInput('Tags');
   };
@@ -135,11 +139,6 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
   const handleCommentOptionModal = (commentId: string) => {
     setVisibleInput('CommentOption');
     setCurrentCommentId(commentId);
-  };
-
-  const handleSubmitButton = () => {
-    setVisibleInput(null);
-    setPreferredTags([...selectedTags]);
   };
 
   const handleCloseButton = useCallback(() => {
@@ -220,7 +219,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
                   주소
                 </Typo>
               </DetailInfoBoxTitle>
-              {cafeData.address === '' ? (
+              {cafeData.address === null ? (
                 <Typo type={FontType.REGULAR_BODY_02}>{noneText}</Typo>
               ) : (
                 <DetailInfoBoxCopy onPress={() => handleCopyToClipboard(cafeData.address)}>
@@ -313,14 +312,10 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
           <SetTags preferTags={selectedTags} onToggleTag={toggleTag} />
           <SelectTagModalSubmitButton
             onPress={handleSubmitButton}
-            style={css`
-              background-color: ${preferredTags.length > 0 && selectedTags.length > 0
-                ? PrimaryColor.PRIMARY_500
-                : GrayColor.GRAY_200};
-            `}
+            selected={preferredTags.length > 0 || selectedTags.length > 0}
           >
             <Typo type={FontType.BOLD_BODY_01} color={GrayColor.GRAY_0}>
-              {preferredTags.length > 0 && selectedTags.length > 0
+              {preferredTags.length > 0 || selectedTags.length > 0
                 ? `태그 ${selectedTags ? selectedTags.length : preferredTags.length}개 선택! 평가 등록하기`
                 : '태그가 선택되지 않았어요.'}
             </Typo>

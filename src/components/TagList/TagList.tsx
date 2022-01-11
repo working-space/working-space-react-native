@@ -4,7 +4,7 @@ import SmallPersonFillIcon from 'src/assets/icons/icon_small_person_fill.svg';
 import NoneImage from 'src/assets/images/none-image.svg';
 import TagItem from 'src/components/TagItem/TagItem';
 import Typo from 'src/components/Typo/Typo';
-import { Tag } from 'src/models/tag';
+import { Tag, TagName } from 'src/models/tag';
 import { GrayColor, SecondColor } from 'src/utils/color';
 import { Align, FontType } from 'src/utils/font';
 import {
@@ -20,11 +20,11 @@ import {
 
 interface Props {
   tags: Tag[];
-  preferTags: Tag[];
+  preferTags: TagName[];
   onSetTagsModal?: () => void;
 }
 
-const TagList = ({ tags, preferTags = [], onSetTagsModal }: Props) => {
+const TagList = ({ tags, preferTags, onSetTagsModal }: Props) => {
   const handleSetTagsModal = useCallback(() => {
     onSetTagsModal?.();
   }, [onSetTagsModal]);
@@ -51,7 +51,7 @@ const TagList = ({ tags, preferTags = [], onSetTagsModal }: Props) => {
         {tags.length > 0 ? (
           <TagListBoxAllTags horizontal={true} showsHorizontalScrollIndicator={true}>
             {tags.map((tag, index) => {
-              return <TagItem key={index} showCount={true} tag={tag} selected={preferTags.includes(tag)} />;
+              return <TagItem key={index} showCount={true} tag={tag} selected={preferTags.includes(tag.id)} />;
             })}
           </TagListBoxAllTags>
         ) : (

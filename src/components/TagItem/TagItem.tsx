@@ -24,7 +24,7 @@ const TagItem = ({ tag, showCount, selected, onClick }: Props) => {
     <Item onPress={handleClick}>
       <ItemTagIcon selected={selected}>
         {showCount ? (
-          <ItemcheckIcon selected={selected}>
+          <ItemcheckIcon selected={selected} showCount={showCount}>
             <Typo type={FontType.REGULAR_CAPTION} color={GrayColor.GRAY_0} align={Align.CENTER}>
               {tag.count}
             </Typo>
@@ -39,8 +39,8 @@ const TagItem = ({ tag, showCount, selected, onClick }: Props) => {
         {TAG[tag.id].icon}
       </ItemTagIcon>
       <Typo
-        type={selected ? FontType.BOLD_BODY_02 : FontType.REGULAR_BODY_02}
-        color={selected ? GrayColor.GRAY_400 : showCount ? GrayColor.GRAY_400 : GrayColor.GRAY_300}
+        type={!showCount && selected ? FontType.BOLD_BODY_02 : FontType.REGULAR_BODY_02}
+        color={showCount || selected ? GrayColor.GRAY_400 : GrayColor.GRAY_300}
         align={Align.CENTER}
         style={ItemTagName}
       >

@@ -18,7 +18,7 @@ export const ItemTagIcon = styled.View<{ selected: boolean }>`
   border-color: ${({ selected }) => (selected ? PrimaryColor.PRIMARY_500 : GrayColor.GRAY_200)};
 `;
 
-export const ItemcheckIcon = styled.View<{ selected: boolean; showCount?: boolean }>`
+export const ItemcheckIcon = styled.View<{ selected: boolean; showCount: boolean }>`
   width: 20px;
   height: 20px;
   position: absolute;
@@ -30,7 +30,7 @@ export const ItemcheckIcon = styled.View<{ selected: boolean; showCount?: boolea
   border-style: solid;
   border-width: 2px;
   border-color: ${({ showCount, selected }) =>
-    showCount ? GrayColor.GRAY_0 : selected ? PrimaryColor.PRIMARY_500 : GrayColor.GRAY_200};
+    !showCount ? GrayColor.GRAY_0 : selected ? PrimaryColor.PRIMARY_500 : GrayColor.GRAY_200};
   background-color: ${({ selected }) => (selected ? PrimaryColor.PRIMARY_500 : GrayColor.GRAY_200)};
 `;
 

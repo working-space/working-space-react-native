@@ -8,9 +8,10 @@ export const AllTags = styled.View`
 `;
 
 export const EditTags = styled.View<{ index: number; allLength: number }>`
-  width: 96.6%;
+  width: 100%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1.7%;
   padding-bottom: ${({ index, allLength }) => (index === allLength - 1 ? '0' : '32px')};
 `;
