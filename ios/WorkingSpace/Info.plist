@@ -56,5 +56,21 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+
+	<key>NSCameraUsageDescription</key>
+	<string>Let me use the camera</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Let me use your location, even in background</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Let me use your location, even in background</string>
+	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+	<dict>
+		<key>full-accuracy</key>
+		<string>Let me use your precise location temporarily</string>
+	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Let me use your location when the app is opened</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Let me use your photo library</string>
 </dict>
 </plist>

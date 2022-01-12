@@ -6,6 +6,7 @@ const GrayColor = {
   GRAY_200: '#CCCCCC',
   GRAY_300: '#A7A7A7',
   GRAY_400: '#222222',
+  GRAY_500: '#0C0404',
 } as const;
 
 const PrimaryColor = {
@@ -25,6 +26,7 @@ const SubColor = {
 
 const OpacityGrayColor = {
   OPACITY_GRAY_400: 'rgba(34, 34, 34, 0.1)',
+  OPACITY_BLACK_70: 'rgba(0, 0, 0, 0.7)',
 } as const;
 
 // TODO: 시스템 확정 전까지는 팔레트 그대로 사용. 추후 수정 필요함.

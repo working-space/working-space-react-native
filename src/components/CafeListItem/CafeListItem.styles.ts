@@ -1,6 +1,6 @@
 import styled, { css } from '@emotion/native';
 
-import { GrayColor, PrimaryColor } from 'src/utils/color';
+import { GrayColor } from 'src/utils/color';
 
 interface ItemStyledProps {
   hasBorder: boolean;
@@ -31,17 +31,6 @@ export const ItemStyled = styled.TouchableOpacity<ItemStyledProps>`
       border-width: 1px;
       border-radius: 4px;
     `};
-`;
-
-export const BadgeList = styled.View`
-  ${row};
-  margin-bottom: 8px;
-`;
-
-export const Badge = styled.View`
-  background-color: ${PrimaryColor.PRIMARY_500};
-  padding: 0 2px;
-  margin-right: 8px;
 `;
 
 export const ItemHeader = styled.View`

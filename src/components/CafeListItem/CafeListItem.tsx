@@ -4,16 +4,14 @@ import { FlatList, TouchableOpacityProps } from 'react-native';
 import CommentIcon from 'src/assets/icons/icon_comment.svg';
 import EditIcon from 'src/assets/icons/icon_edit.svg';
 import FavoriteIcon from 'src/assets/icons/icon_favorite.svg';
-import LocationIcon from 'src/assets/icons/icon_small_location_fill.svg';
+import LocationGrayIcon from 'src/assets/icons/icon_small_location_gray.svg';
 import Typo from 'src/components/Typo/Typo';
 import TAG from 'src/constants/tag';
-import Cafe from 'src/models/cafe';
+import { Cafe } from 'src/models/cafe';
 import { GrayColor } from 'src/utils/color';
 import { FontType } from 'src/utils/font';
 import {
   Address,
-  Badge,
-  BadgeList,
   Distance,
   Info,
   InfoCount,
@@ -35,27 +33,16 @@ interface Props extends TouchableOpacityProps {
 }
 
 const CafeListItem = memo(({ data, hasBorder = false, ...props }: Props) => {
-  const { title, distance, address, tags, badges, favoriteCount, commentCount } = data;
+  const { name, distance, address, tags, likeCount, comments } = data;
 
   return (
     <ItemStyled hasBorder={hasBorder} {...props}>
-      <BadgeList>
-        {badges &&
-          badges.length > 0 &&
-          badges.map((badge) => (
-            <Badge key={badge}>
-              <Typo type={FontType.BOLD_CAPTION} color={GrayColor.GRAY_0}>
-                {badge}
-              </Typo>
-            </Badge>
-          ))}
-      </BadgeList>
       <ItemHeader>
-        <Typo type={FontType.BOLD_TITLE_01}>{title}</Typo>
+        <Typo type={FontType.BOLD_TITLE_01}>{name}</Typo>
         <ItemHeaderRight>
           {distance && (
             <>
-              <LocationIcon />
+              <LocationGrayIcon />
               <Distance>
                 <Typo type={FontType.REGULAR_BODY_02}>{distance}</Typo>
               </Distance>
@@ -79,11 +66,11 @@ const CafeListItem = memo(({ data, hasBorder = false, ...props }: Props) => {
             </TagSeparatorContainer>
           )}
           data={tags}
-          keyExtractor={(tag) => TAG[tag].name}
+          keyExtractor={(tag) => TAG[tag.id].name}
           renderItem={({ item }) => (
             <Tag>
-              <TagIcon>{TAG[item].icon}</TagIcon>
-              <Typo type={FontType.REGULAR_CAPTION}>{TAG[item].name}</Typo>
+              <TagIcon>{TAG[item.id].icon}</TagIcon>
+              <Typo type={FontType.REGULAR_CAPTION}>{TAG[item.id].name}</Typo>
             </Tag>
           )}
         />
@@ -99,13 +86,13 @@ const CafeListItem = memo(({ data, hasBorder = false, ...props }: Props) => {
         <Info>
           <FavoriteIcon />
           <InfoCount>
-            <Typo type={FontType.REGULAR_BODY_02}>{favoriteCount !== undefined ? favoriteCount : 0}</Typo>
+            <Typo type={FontType.REGULAR_BODY_02}>{likeCount !== undefined ? likeCount : 0}</Typo>
           </InfoCount>
         </Info>
         <Info>
           <CommentIcon />
           <InfoCount>
-            <Typo type={FontType.REGULAR_BODY_02}>{commentCount !== undefined ? commentCount : 0}</Typo>
+            <Typo type={FontType.REGULAR_BODY_02}>{comments.totalCount !== undefined ? comments.totalCount : 0}</Typo>
           </InfoCount>
         </Info>
       </InfoList>

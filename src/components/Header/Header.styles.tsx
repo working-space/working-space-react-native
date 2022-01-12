@@ -7,12 +7,9 @@ interface HeaderStyledProps {
 }
 
 export const HeaderStyled = styled.View<HeaderStyledProps>`
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  margin-bottom: 8px;
-  z-index: 12;
+  height: 56px;
+  z-index: 98;
   background-color: ${GrayColor.GRAY_0};
 
   ${({ showBorderBottom }) =>
