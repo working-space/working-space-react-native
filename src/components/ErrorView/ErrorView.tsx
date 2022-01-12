@@ -12,20 +12,20 @@ const ErrorView = (props: Props) => <ErrorViewStyled {...props} />;
 
 ErrorView.Heading = (props: TextProps) => (
   <HeadingStyled>
-    <Typo type={FontType.BOLD_HEAD} align="center" {...props} />
+    <Typo type={FontType.BOLD_24} align="center" {...props} />
   </HeadingStyled>
 );
 
 ErrorView.Message = (props: TextProps) => (
   <MessageStyled>
-    <Typo type={FontType.REGULAR_TITLE_02} align="center" {...props} />
+    <Typo type={FontType.REGULAR_16} align="center" {...props} />
   </MessageStyled>
 );
 
 ErrorView.RetryButton = RetryButton;
 
 ErrorView.RetryText = (props: TextProps) => (
-  <Typo type={FontType.REGULAR_TITLE_02} color={SecondColor.SECOND_600} {...props} />
+  <Typo type={FontType.REGULAR_16} color={SecondColor.SECOND_600} {...props} />
 );
 
 export default ErrorView;

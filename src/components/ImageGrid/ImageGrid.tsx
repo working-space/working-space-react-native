@@ -41,7 +41,7 @@ const ImageGrid = ({ name, distance, tags, images }: Props) => {
   const renderPagination = (index: number, total: number) => {
     return (
       <TotalView>
-        <Typo type={FontType.BOLD_BODY_01} color={GrayColor.GRAY_0}>
+        <Typo type={FontType.BOLD_14} color={GrayColor.GRAY_0}>
           {index + 1} / {total}
         </Typo>
       </TotalView>
@@ -91,19 +91,19 @@ const ImageGrid = ({ name, distance, tags, images }: Props) => {
             ))}
           </Swiper>
           <InfoBox>
-            <Typo type={FontType.BOLD_TITLE_01} color={GrayColor.GRAY_0}>
+            <Typo type={FontType.BOLD_18} color={GrayColor.GRAY_0}>
               {name}
             </Typo>
             <InfoBoxSubTitleView>
               <InfoBoxSubInfo start={true}>
                 <LocationWhiteIcon />
-                <Typo type={FontType.REGULAR_BODY_02} color={GrayColor.GRAY_0}>
+                <Typo type={FontType.REGULAR_12} color={GrayColor.GRAY_0}>
                   {distance}
                 </Typo>
               </InfoBoxSubInfo>
               <InfoBoxSubInfo>
                 <SmallTagWhiteIcon />
-                <Typo type={FontType.REGULAR_BODY_02} color={GrayColor.GRAY_0}>
+                <Typo type={FontType.REGULAR_12} color={GrayColor.GRAY_0}>
                   태그 {tags.length}개
                 </Typo>
               </InfoBoxSubInfo>

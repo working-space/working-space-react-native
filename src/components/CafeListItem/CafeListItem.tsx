@@ -38,20 +38,20 @@ const CafeListItem = memo(({ data, hasBorder = false, ...props }: Props) => {
   return (
     <ItemStyled hasBorder={hasBorder} {...props}>
       <ItemHeader>
-        <Typo type={FontType.BOLD_TITLE_01}>{name}</Typo>
+        <Typo type={FontType.BOLD_18}>{name}</Typo>
         <ItemHeaderRight>
           {distance && (
             <>
               <LocationGrayIcon />
               <Distance>
-                <Typo type={FontType.REGULAR_BODY_02}>{distance}</Typo>
+                <Typo type={FontType.REGULAR_12}>{distance}</Typo>
               </Distance>
             </>
           )}
         </ItemHeaderRight>
       </ItemHeader>
       <Address>
-        <Typo type={FontType.REGULAR_CAPTION} color={GrayColor.GRAY_300}>
+        <Typo type={FontType.REGULAR_11} color={GrayColor.GRAY_300}>
           {address}
         </Typo>
       </Address>
@@ -70,14 +70,14 @@ const CafeListItem = memo(({ data, hasBorder = false, ...props }: Props) => {
           renderItem={({ item }) => (
             <Tag>
               <TagIcon>{TAG[item.id].icon}</TagIcon>
-              <Typo type={FontType.REGULAR_CAPTION}>{TAG[item.id].name}</Typo>
+              <Typo type={FontType.REGULAR_11}>{TAG[item.id].name}</Typo>
             </Tag>
           )}
         />
       ) : (
         <TagEmpty>
           <EditIcon />
-          <Typo type={FontType.REGULAR_CAPTION} color={GrayColor.GRAY_300}>
+          <Typo type={FontType.REGULAR_11} color={GrayColor.GRAY_300}>
             지금 첫번째 태그를 등록해보세요
           </Typo>
         </TagEmpty>
@@ -86,13 +86,13 @@ const CafeListItem = memo(({ data, hasBorder = false, ...props }: Props) => {
         <Info>
           <FavoriteIcon />
           <InfoCount>
-            <Typo type={FontType.REGULAR_BODY_02}>{likeCount !== undefined ? likeCount : 0}</Typo>
+            <Typo type={FontType.REGULAR_12}>{likeCount !== undefined ? likeCount : 0}</Typo>
           </InfoCount>
         </Info>
         <Info>
           <CommentIcon />
           <InfoCount>
-            <Typo type={FontType.REGULAR_BODY_02}>{comments.totalCount !== undefined ? comments.totalCount : 0}</Typo>
+            <Typo type={FontType.REGULAR_12}>{comments.totalCount !== undefined ? comments.totalCount : 0}</Typo>
           </InfoCount>
         </Info>
       </InfoList>
