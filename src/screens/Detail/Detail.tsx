@@ -180,7 +180,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
           <LinkIconStyled>
             <LinkIconItem onPress={handleLikeButtonClick}>
               {likeState ? <FavoriteFillIcon width="24" height="24" /> : <FavoriteIcon width="24" height="24" />}
-              <Typo type={FontType.BOLD_BODY_01} style={LinkIconText}>
+              <Typo type={FontType.BOLD_14} style={LinkIconText}>
                 {cafeData.likeCount}
               </Typo>
             </LinkIconItem>
@@ -195,19 +195,19 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
       />
       <DetailView>
         <DetailTitleStyled>
-          <Typo type={FontType.BOLD_HEAD} style={HeadTitle}>
+          <Typo type={FontType.BOLD_24} style={HeadTitle}>
             {cafeData.name}
           </Typo>
           <TitleInfo>
             <TitleInfoItem start={true}>
               <LocationGrayIcon fill={GrayColor.GRAY_400} />
-              <Typo type={FontType.REGULAR_BODY_02} style={TitleInfoItemText}>
+              <Typo type={FontType.REGULAR_12} style={TitleInfoItemText}>
                 {cafeData.distance}
               </Typo>
             </TitleInfoItem>
             <TitleInfoItem>
               <SmallTagGrayIcon />
-              <Typo type={FontType.REGULAR_BODY_02} style={TitleInfoItemText}>
+              <Typo type={FontType.REGULAR_12} style={TitleInfoItemText}>
                 태그 {cafeData.tags?.length ?? 0}개
               </Typo>
             </TitleInfoItem>
@@ -218,30 +218,30 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
           <DetailInfoBox>
             <DetailInfoBoxItem>
               <DetailInfoBoxTitle>
-                <Typo type={FontType.BOLD_BODY_02} color={GrayColor.GRAY_300}>
+                <Typo type={FontType.BOLD_12} color={GrayColor.GRAY_300}>
                   주소
                 </Typo>
               </DetailInfoBoxTitle>
               {cafeData.address === null ? (
-                <Typo type={FontType.REGULAR_BODY_02}>{noneText}</Typo>
+                <Typo type={FontType.REGULAR_12}>{noneText}</Typo>
               ) : (
                 <DetailInfoBoxCopy onPress={() => handleCopyToClipboard(cafeData.address)}>
-                  <Typo type={FontType.REGULAR_BODY_02}>{cafeData.address}</Typo>
+                  <Typo type={FontType.REGULAR_12}>{cafeData.address}</Typo>
                 </DetailInfoBoxCopy>
               )}
             </DetailInfoBoxItem>
             <DetailInfoBoxItem>
               <DetailInfoBoxTitle>
-                <Typo type={FontType.BOLD_BODY_02} color={GrayColor.GRAY_300}>
+                <Typo type={FontType.BOLD_12} color={GrayColor.GRAY_300}>
                   영업시간
                 </Typo>
               </DetailInfoBoxTitle>
               {cafeData.hours === null ? (
-                <Typo type={FontType.REGULAR_BODY_02}>{noneText}</Typo>
+                <Typo type={FontType.REGULAR_12}>{noneText}</Typo>
               ) : (
                 <DetailInfoBoxStyled>
                   {cafeData.hours?.map((hour, index) => (
-                    <Typo type={FontType.REGULAR_BODY_02} key={index}>
+                    <Typo type={FontType.REGULAR_12} key={index}>
                       {hour}
                     </Typo>
                   ))}
@@ -250,33 +250,33 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
             </DetailInfoBoxItem>
             <DetailInfoBoxItem>
               <DetailInfoBoxTitle>
-                <Typo type={FontType.BOLD_BODY_02} color={GrayColor.GRAY_300}>
+                <Typo type={FontType.BOLD_12} color={GrayColor.GRAY_300}>
                   휴무일
                 </Typo>
               </DetailInfoBoxTitle>
               {cafeData.closed === null ? (
-                <Typo type={FontType.REGULAR_BODY_02}>{noneText}</Typo>
+                <Typo type={FontType.REGULAR_12}>{noneText}</Typo>
               ) : (
-                <Typo type={FontType.REGULAR_BODY_02}>{cafeData.closed}</Typo>
+                <Typo type={FontType.REGULAR_12}>{cafeData.closed}</Typo>
               )}
             </DetailInfoBoxItem>
             <DetailInfoBoxItem>
               <DetailInfoBoxTitle>
-                <Typo type={FontType.BOLD_BODY_02} color={GrayColor.GRAY_300}>
+                <Typo type={FontType.BOLD_12} color={GrayColor.GRAY_300}>
                   전화번호
                 </Typo>
               </DetailInfoBoxTitle>
               {cafeData.phone === null ? (
-                <Typo type={FontType.REGULAR_BODY_02}>{noneText}</Typo>
+                <Typo type={FontType.REGULAR_12}>{noneText}</Typo>
               ) : (
-                <Typo type={FontType.REGULAR_BODY_02}>{cafeData.phone}</Typo>
+                <Typo type={FontType.REGULAR_12}>{cafeData.phone}</Typo>
               )}
             </DetailInfoBoxItem>
           </DetailInfoBox>
         </DetailInfoStyled>
         <DetailLocationStyled>
           <DetailLocationBox>
-            <Typo type={FontType.BOLD_TITLE_02}>위치</Typo>
+            <Typo type={FontType.BOLD_16}>위치</Typo>
             {/* TODO : 지도 뷰 적용 */}
             <LocationMap />
           </DetailLocationBox>
@@ -308,7 +308,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
               </CloseButton>
             </SelectTagModalTop>
             <SelectTagModalBottom>
-              <Typo type={FontType.BOLD_TITLE_01}>작업공간으로{'\n'}적절한 태그를 선택해주세요!</Typo>
+              <Typo type={FontType.BOLD_18}>작업공간으로{'\n'}적절한 태그를 선택해주세요!</Typo>
             </SelectTagModalBottom>
           </SelectTagModalHeader>
           <SetTags preferTags={selectedTags} onToggleTag={toggleTag} />
@@ -316,7 +316,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
             onPress={handleSubmitButton}
             selected={preferredTags.length > 0 || selectedTags.length > 0}
           >
-            <Typo type={FontType.BOLD_BODY_01} color={GrayColor.GRAY_0}>
+            <Typo type={FontType.BOLD_14} color={GrayColor.GRAY_0}>
               {preferredTags.length > 0 || selectedTags.length > 0
                 ? `태그 ${selectedTags ? selectedTags.length : preferredTags.length}개 선택! 평가 등록하기`
                 : '태그가 선택되지 않았어요.'}
@@ -347,7 +347,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
       >
         <CommentOptionStyled>
           <CommentOptionItem onPress={handleDeleteComment}>
-            <Typo type={FontType.REGULAR_BODY_01}>삭제하기</Typo>
+            <Typo type={FontType.REGULAR_14}>삭제하기</Typo>
           </CommentOptionItem>
         </CommentOptionStyled>
       </CustomModal>

@@ -10,7 +10,7 @@ const NoneImage = () => {
   return (
     <NoneImageWrapper>
       <PhotoLineIcon />
-      <Typo type={FontType.REGULAR_BODY_02} color={GrayColor.GRAY_0}>
+      <Typo type={FontType.REGULAR_12} color={GrayColor.GRAY_0}>
         불러올 수 있는 이미지가 없습니다.
       </Typo>
     </NoneImageWrapper>

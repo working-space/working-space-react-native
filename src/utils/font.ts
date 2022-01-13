@@ -4,12 +4,12 @@ const Weight = {
 } as const;
 
 const FontSize = {
-  SIZE_HEAD: 24,
-  SIZE_TITLE_01: 18,
-  SIZE_TITLE_02: 16,
-  SIZE_BODY_01: 14,
-  SIZE_BODY_02: 12,
-  SIZE_CAPTION: 11,
+  SIZE_24: 24,
+  SIZE_18: 18,
+  SIZE_16: 16,
+  SIZE_14: 14,
+  SIZE_12: 12,
+  SIZE_11: 11,
 } as const;
 
 const Align = {
@@ -19,19 +19,19 @@ const Align = {
 } as const;
 
 const FontType = {
-  BOLD_HEAD: 'BOLD_HEAD',
-  BOLD_TITLE_01: 'BOLD_TITLE_01',
-  BOLD_TITLE_02: 'BOLD_TITLE_02',
-  BOLD_BODY_01: 'BOLD_BODY_01',
-  BOLD_BODY_02: 'BOLD_BODY_02',
-  BOLD_CAPTION: 'BOLD_CAPTION',
+  BOLD_24: 'BOLD_24',
+  BOLD_18: 'BOLD_18',
+  BOLD_16: 'BOLD_16',
+  BOLD_14: 'BOLD_14',
+  BOLD_12: 'BOLD_12',
+  BOLD_11: 'BOLD_11',
 
-  REGULAR_HEAD: 'REGULAR_HEAD',
-  REGULAR_TITLE_01: 'REGULAR_TITLE_01',
-  REGULAR_TITLE_02: 'REGULAR_TITLE_02',
-  REGULAR_BODY_01: 'REGULAR_BODY_01',
-  REGULAR_BODY_02: 'REGULAR_BODY_02',
-  REGULAR_CAPTION: 'REGULAR_CAPTION',
+  REGULAR_24: 'REGULAR_24',
+  REGULAR_18: 'REGULAR_18',
+  REGULAR_16: 'REGULAR_16',
+  REGULAR_14: 'REGULAR_14',
+  REGULAR_12: 'REGULAR_12',
+  REGULAR_11: 'REGULAR_11',
 } as const;
 
 type Align = typeof Align[keyof typeof Align];
@@ -48,55 +48,55 @@ namespace Font {
 
   const getSize = (type: FontType) => {
     switch (type) {
-      case FontType.BOLD_HEAD:
-      case FontType.REGULAR_HEAD: {
-        return FontSize.SIZE_HEAD;
+      case FontType.BOLD_24:
+      case FontType.REGULAR_24: {
+        return FontSize.SIZE_24;
       }
 
-      case FontType.BOLD_TITLE_01:
-      case FontType.REGULAR_TITLE_01: {
-        return FontSize.SIZE_TITLE_01;
+      case FontType.BOLD_18:
+      case FontType.REGULAR_18: {
+        return FontSize.SIZE_18;
       }
 
-      case FontType.BOLD_TITLE_02:
-      case FontType.REGULAR_TITLE_02: {
-        return FontSize.SIZE_TITLE_02;
+      case FontType.BOLD_16:
+      case FontType.REGULAR_16: {
+        return FontSize.SIZE_16;
       }
 
-      case FontType.BOLD_BODY_01:
-      case FontType.REGULAR_BODY_01: {
-        return FontSize.SIZE_BODY_01;
+      case FontType.BOLD_14:
+      case FontType.REGULAR_14: {
+        return FontSize.SIZE_14;
       }
 
-      case FontType.BOLD_BODY_02:
-      case FontType.REGULAR_BODY_02: {
-        return FontSize.SIZE_BODY_02;
+      case FontType.BOLD_12:
+      case FontType.REGULAR_12: {
+        return FontSize.SIZE_12;
       }
 
-      case FontType.BOLD_CAPTION:
-      case FontType.REGULAR_CAPTION: {
-        return FontSize.SIZE_CAPTION;
+      case FontType.BOLD_11:
+      case FontType.REGULAR_11: {
+        return FontSize.SIZE_11;
       }
     }
   };
 
   const getWeight = (type: FontType) => {
     switch (type) {
-      case FontType.BOLD_HEAD:
-      case FontType.BOLD_TITLE_01:
-      case FontType.BOLD_TITLE_02:
-      case FontType.BOLD_BODY_01:
-      case FontType.BOLD_BODY_02:
-      case FontType.BOLD_CAPTION: {
+      case FontType.BOLD_24:
+      case FontType.BOLD_18:
+      case FontType.BOLD_16:
+      case FontType.BOLD_14:
+      case FontType.BOLD_12:
+      case FontType.BOLD_11: {
         return Weight.BOLD;
       }
 
-      case FontType.REGULAR_HEAD:
-      case FontType.REGULAR_TITLE_01:
-      case FontType.REGULAR_TITLE_02:
-      case FontType.REGULAR_BODY_01:
-      case FontType.REGULAR_BODY_02:
-      case FontType.REGULAR_CAPTION: {
+      case FontType.REGULAR_24:
+      case FontType.REGULAR_18:
+      case FontType.REGULAR_16:
+      case FontType.REGULAR_14:
+      case FontType.REGULAR_12:
+      case FontType.REGULAR_11: {
         return Weight.REGULAR;
       }
     }

@@ -51,7 +51,7 @@ const CustomTextInput = ({ type, defaultText = '', onSetInputText, inputRef }: P
             </PhotoButton>
           )}
           <SubmitButton onPress={() => handleSetInputText(inputText)}>
-            <Typo type={FontType.REGULAR_BODY_02} color={GrayColor.GRAY_200}>
+            <Typo type={FontType.REGULAR_12} color={GrayColor.GRAY_200}>
               등록
             </Typo>
           </SubmitButton>

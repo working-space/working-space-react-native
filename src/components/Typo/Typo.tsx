@@ -14,7 +14,7 @@ interface Props extends TextProps {
 
 const Typo = ({
   children,
-  type = FontType.REGULAR_BODY_02,
+  type = FontType.REGULAR_12,
   color = GrayColor.GRAY_400,
   align = Align.LEFT,
   ...props

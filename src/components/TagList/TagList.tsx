@@ -34,16 +34,16 @@ const TagList = ({ tags, preferTags, onSetTagsModal }: Props) => {
       <TagListBox>
         <TagListBoxHeader>
           <TagListBoxLeft>
-            <Typo type={FontType.BOLD_TITLE_02}>태그</Typo>
+            <Typo type={FontType.BOLD_16}>태그</Typo>
             <TagListBoxIcon>
               <SmallPersonFillIcon />
             </TagListBoxIcon>
-            <Typo type={FontType.REGULAR_BODY_01} color={GrayColor.GRAY_200}>
+            <Typo type={FontType.REGULAR_14} color={GrayColor.GRAY_200}>
               {tags.length ?? 0}
             </Typo>
           </TagListBoxLeft>
           <TagListSubmitButton onPress={handleSetTagsModal}>
-            <Typo type={FontType.BOLD_BODY_01} color={SecondColor.SECOND_500}>
+            <Typo type={FontType.BOLD_14} color={SecondColor.SECOND_500}>
               평가하기
             </Typo>
           </TagListSubmitButton>
@@ -57,7 +57,7 @@ const TagList = ({ tags, preferTags, onSetTagsModal }: Props) => {
         ) : (
           <NoneItem>
             <NoneImage />
-            <Typo type={FontType.REGULAR_BODY_01} color={GrayColor.GRAY_200} align={Align.CENTER}>
+            <Typo type={FontType.REGULAR_14} color={GrayColor.GRAY_200} align={Align.CENTER}>
               첫 태그를 남겨보세요!
             </Typo>
           </NoneItem>

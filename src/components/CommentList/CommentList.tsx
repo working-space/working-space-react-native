@@ -62,11 +62,11 @@ const CommentList = ({
     <CommentListWrapper>
       <CommentListBox>
         <CommentListBoxHeader>
-          <Typo type={FontType.BOLD_TITLE_02}>댓글</Typo>
+          <Typo type={FontType.BOLD_16}>댓글</Typo>
           <CommentListBoxIcon>
             <SmallPersonFillIcon />
           </CommentListBoxIcon>
-          <Typo type={FontType.REGULAR_BODY_01} color={GrayColor.GRAY_200}>
+          <Typo type={FontType.REGULAR_14} color={GrayColor.GRAY_200}>
             {commentsCount}
           </Typo>
         </CommentListBoxHeader>
@@ -75,7 +75,7 @@ const CommentList = ({
             <SmallPersonFillIcon />
           </ProfileImage>
           <CommentText>
-            <Typo type={FontType.REGULAR_BODY_01} color={GrayColor.GRAY_300}>
+            <Typo type={FontType.REGULAR_14} color={GrayColor.GRAY_300}>
               댓글 입력하기
             </Typo>
           </CommentText>
@@ -92,10 +92,10 @@ const CommentList = ({
                     <CommentItemInfo>
                       <CommentItemTitle>
                         <CommentItemTitleLeft>
-                          <Typo type={FontType.BOLD_BODY_02} style={CommentItemTitleName}>
+                          <Typo type={FontType.BOLD_12} style={CommentItemTitleName}>
                             {comment.userId}
                           </Typo>
-                          <Typo type={FontType.REGULAR_CAPTION} color={GrayColor.GRAY_300} style={CommentItemTitleDate}>
+                          <Typo type={FontType.REGULAR_11} color={GrayColor.GRAY_300} style={CommentItemTitleDate}>
                             {comment.updatedAt}
                           </Typo>
                         </CommentItemTitleLeft>
@@ -113,7 +113,7 @@ const CommentList = ({
                             );
                           })}
                       </CommentItemTitle>
-                      <Typo type={FontType.REGULAR_BODY_02}>{comment.content}</Typo>
+                      <Typo type={FontType.REGULAR_12}>{comment.content}</Typo>
                     </CommentItemInfo>
                   </CommentItem>
                 );
@@ -122,7 +122,7 @@ const CommentList = ({
             {hasNextComments && (
               <CommentMoreButton onPress={handleMoreCommentsButtonClick}>
                 <DropdownIcon />
-                <Typo type={FontType.REGULAR_CAPTION} color={GrayColor.GRAY_300}>
+                <Typo type={FontType.REGULAR_11} color={GrayColor.GRAY_300}>
                   더보기
                 </Typo>
               </CommentMoreButton>
@@ -131,7 +131,7 @@ const CommentList = ({
         ) : (
           <NoneItem>
             <NoneImage />
-            <Typo type={FontType.REGULAR_BODY_01} color={GrayColor.GRAY_200} align={Align.CENTER}>
+            <Typo type={FontType.REGULAR_14} color={GrayColor.GRAY_200} align={Align.CENTER}>
               첫 댓글을 작성해보세요!
             </Typo>
           </NoneItem>

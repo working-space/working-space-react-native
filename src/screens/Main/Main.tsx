@@ -73,10 +73,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
           <>
             <FilterChangeButton onPress={toggleFilterSelect}>
               <FilterChangeButtonText>
-                <Typo
-                  type={isFilterSelectOpen ? FontType.BOLD_BODY_02 : FontType.REGULAR_BODY_02}
-                  color={GrayColor.GRAY_400}
-                >
+                <Typo type={isFilterSelectOpen ? FontType.BOLD_12 : FontType.REGULAR_12} color={GrayColor.GRAY_400}>
                   {FILTER[currentFilter].name} 순
                 </Typo>
               </FilterChangeButtonText>
@@ -94,7 +91,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
                 active={currentFilter === FILTER.NEAREST.id}
                 onPress={() => selectFilter(FILTER.NEAREST.id)}
               >
-                <Typo type={currentFilter === FILTER.NEAREST.id ? FontType.BOLD_BODY_02 : FontType.REGULAR_BODY_02}>
+                <Typo type={currentFilter === FILTER.NEAREST.id ? FontType.BOLD_12 : FontType.REGULAR_12}>
                   {FILTER.NEAREST.name} 순
                 </Typo>
               </FilterSelectItem>
@@ -102,9 +99,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
                 active={currentFilter === FILTER.MANY_COMMENTS.id}
                 onPress={() => selectFilter(FILTER.MANY_COMMENTS.id)}
               >
-                <Typo
-                  type={currentFilter === FILTER.MANY_COMMENTS.id ? FontType.BOLD_BODY_02 : FontType.REGULAR_BODY_02}
-                >
+                <Typo type={currentFilter === FILTER.MANY_COMMENTS.id ? FontType.BOLD_12 : FontType.REGULAR_12}>
                   {FILTER.MANY_COMMENTS.name} 순
                 </Typo>
               </FilterSelectItem>
@@ -112,9 +107,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
                 active={currentFilter === FILTER.MANY_FAVORITES.id}
                 onPress={() => selectFilter(FILTER.MANY_FAVORITES.id)}
               >
-                <Typo
-                  type={currentFilter === FILTER.MANY_FAVORITES.id ? FontType.BOLD_BODY_02 : FontType.REGULAR_BODY_02}
-                >
+                <Typo type={currentFilter === FILTER.MANY_FAVORITES.id ? FontType.BOLD_12 : FontType.REGULAR_12}>
                   {FILTER.MANY_FAVORITES.name} 순
                 </Typo>
               </FilterSelectItem>
@@ -130,13 +123,13 @@ const Main = ({ navigation: { navigate } }: Props) => {
       <MainStyled>
         <View>
           <SearchInput onPress={() => navigate('Main')}>
-            <Typo type={FontType.REGULAR_BODY_01} color={GrayColor.GRAY_300}>
+            <Typo type={FontType.REGULAR_14} color={GrayColor.GRAY_300}>
               현위치 : {geocode ?? ''}
             </Typo>
           </SearchInput>
           <Animated.View style={{ opacity: fadeAnim }}>
             <ScrolledListHeader>
-              <Typo type={FontType.BOLD_TITLE_01}>현위치에서 가장 {FILTER[currentFilter].name} 곳</Typo>
+              <Typo type={FontType.BOLD_18}>현위치에서 가장 {FILTER[currentFilter].name} 곳</Typo>
             </ScrolledListHeader>
           </Animated.View>
         </View>

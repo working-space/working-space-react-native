@@ -14,7 +14,7 @@ interface Props {
 const FilterIllust = ({ filter }: Props) => {
   return (
     <View>
-      <Typo type={FontType.BOLD_HEAD} color={GrayColor.GRAY_400} style={headerTextStyle}>
+      <Typo type={FontType.BOLD_24} color={GrayColor.GRAY_400} style={headerTextStyle}>
         현위치에서{'\n'}
         가장 {FILTER[filter].name} 곳
       </Typo>
