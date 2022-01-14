@@ -5,6 +5,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import LoginIllustURL from 'src/assets/images/login_illust.jpg';
 import AutoFitImage from 'src/components/AutoFitImage/AutoFitImage';
 import Typo from 'src/components/Typo/Typo';
+import useAuth from 'src/hooks/useAuth';
 import { RootStackParamList } from 'src/navigators/types';
 import { Align, FontType } from 'src/utils/font';
 import {
@@ -21,12 +22,14 @@ interface Props {
 }
 
 const Login = ({ navigation }: Props) => {
+  const { fetchToken } = useAuth();
+
   const onLogin = async (): Promise<void> => {
     try {
       const token: KakaoOAuthToken = await login();
       const profile: KakaoProfile = await getKakaoProfile();
+      fetchToken(token.accessToken);
       navigation.replace('Signup', {
-        token: token.accessToken,
         name: profile.nickname,
         profileImageURL: profile.profileImageUrl,
       });
@@ -38,7 +41,9 @@ const Login = ({ navigation }: Props) => {
   return (
     <LoginStyled>
       <LoginView>
-        <Typo type={FontType.BOLD_24} align={Align.CENTER}>원하는 작업 공간을{'\n'}직접 찾아보세요!</Typo>
+        <Typo type={FontType.BOLD_24} align={Align.CENTER}>
+          원하는 작업 공간을{'\n'}직접 찾아보세요!
+        </Typo>
         <AutoFitImage source={LoginIllustURL} />
         <LoginButtonStyled>
           <LoginButton onPress={onLogin}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import useAuth from 'src/hooks/useAuth';
 import Detail from 'src/screens/Detail/Detail';
 import Login from 'src/screens/Login/Login';
 import Main from 'src/screens/Main/Main';
@@ -9,7 +10,7 @@ import Signup from 'src/screens/Signup/Signup';
 const Stack = createNativeStackNavigator();
 
 const MainNavigator = () => {
-  const isLoggedIn = false;
+  const { isLoggedIn } = useAuth();
 
   return (
     <Stack.Navigator>
