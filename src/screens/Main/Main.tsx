@@ -79,7 +79,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
               </FilterChangeButtonText>
               <DropDownArrowIcon />
             </FilterChangeButton>
-            <Header.Button onPress={() => navigate('Main')}>
+            <Header.Button onPress={() => navigate('Map')}>
               <MapIcon />
             </Header.Button>
           </>

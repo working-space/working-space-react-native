@@ -5,6 +5,7 @@ import useAuth from 'src/hooks/useAuth';
 import Detail from 'src/screens/Detail/Detail';
 import Login from 'src/screens/Login/Login';
 import Main from 'src/screens/Main/Main';
+import Map from 'src/screens/Map/Map';
 import Signup from 'src/screens/Signup/Signup';
 
 const Stack = createNativeStackNavigator();
@@ -26,6 +27,13 @@ const MainNavigator = () => {
           <Stack.Screen
             name="Detail"
             component={Detail}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="Map"
+            component={Map}
             options={{
               headerShown: false,
             }}
