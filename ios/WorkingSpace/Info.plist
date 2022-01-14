@@ -20,8 +20,27 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kakao50388b3ce17237ca9ab514d2fc734d25</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>KAKAO_APP_KEY</key>
+	<string>50388b3ce17237ca9ab514d2fc734d25</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>kakaokompassauth</string>
+		<string>storykompassauth</string>
+		<string>kakaolink</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -35,8 +54,21 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Let me use the camera</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Let me use your location, even in background</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Let me use your location, even in background</string>
+	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+	<dict>
+		<key>full-accuracy</key>
+		<string>Let me use your precise location temporarily</string>
+	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<string>Let me use your location when the app is opened</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Let me use your photo library</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SpoqaHanSansNeo-Regular.ttf</string>
@@ -56,21 +88,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-
-	<key>NSCameraUsageDescription</key>
-	<string>Let me use the camera</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Let me use your location, even in background</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Let me use your location, even in background</string>
-	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
-	<dict>
-		<key>full-accuracy</key>
-		<string>Let me use your precise location temporarily</string>
-	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Let me use your location when the app is opened</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Let me use your photo library</string>
 </dict>
 </plist>
