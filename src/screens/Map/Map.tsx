@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
@@ -14,15 +14,26 @@ import { FontType } from 'src/utils/font';
 
 import { MapStyled, mapViewStyle, SearchInput, IconWrapper, MapContainer } from './Map.styles';
 
+const GANGNAM_STATION_COORDS = {
+  latitude: 37.498095,
+  longitude: 127.02761,
+};
+
 interface Props {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Login'>;
 }
 
 const Map = ({ navigation }: Props) => {
-  const mapRef = useRef(null);
+  const mapRef = useRef<MapView>(null);
 
   const { geolocation } = useGeolocation();
   const { geocode } = useGeocode(geolocation);
+
+  useEffect(() => {
+    if (!mapRef.current || !geolocation) return;
+
+    mapRef.current.setCamera({ center: geolocation });
+  }, [geolocation]);
 
   return (
     <>
@@ -50,15 +61,14 @@ const Map = ({ navigation }: Props) => {
           <MapView
             ref={mapRef}
             style={mapViewStyle}
-            loadingEnabled={true}
             showsCompass={true}
             showsUserLocation={true}
             showsMyLocationButton={false}
             moveOnMarkerPress={false}
             provider={PROVIDER_GOOGLE}
             initialRegion={{
-              latitude: 37.498095,
-              longitude: 127.02761,
+              latitude: geolocation?.latitude ?? GANGNAM_STATION_COORDS.latitude,
+              longitude: geolocation?.longitude ?? GANGNAM_STATION_COORDS.longitude,
               latitudeDelta: 0.009,
               longitudeDelta: 0.009,
             }}
