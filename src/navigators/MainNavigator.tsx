@@ -9,7 +9,7 @@ import Signup from 'src/screens/Signup/Signup';
 const Stack = createNativeStackNavigator();
 
 const MainNavigator = () => {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
 
   return (
     <Stack.Navigator>
