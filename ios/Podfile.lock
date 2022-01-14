@@ -327,9 +327,14 @@ PODS:
   - React-jsinspector (0.66.4)
   - React-logger (0.66.4):
     - glog
+  - react-native-config (1.4.5):
+    - react-native-config/App (= 1.4.5)
+  - react-native-config/App (1.4.5):
+    - React-Core
   - react-native-geolocation-service (5.3.0-beta.4):
     - React
   - react-native-image-picker (4.7.0):
+  - react-native-maps (0.30.1):
     - React-Core
   - react-native-safe-area-context (3.3.2):
     - React-Core
@@ -485,8 +490,10 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
+  - react-native-config (from `../node_modules/react-native-config`)
   - react-native-geolocation-service (from `../node_modules/react-native-geolocation-service`)
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
+  - react-native-maps (from `../node_modules/react-native-maps`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -582,10 +589,14 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
+  react-native-config:
+    :path: "../node_modules/react-native-config"
   react-native-geolocation-service:
     :path: "../node_modules/react-native-geolocation-service"
   react-native-image-picker:
     :path: "../node_modules/react-native-image-picker"
+  react-native-maps:
+    :path: "../node_modules/react-native-maps"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   React-perflogger:
@@ -671,8 +682,10 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 94ce921e1d8ce7023366873ec371f3441383b396
   React-jsinspector: d0374f7509d407d2264168b6d0fad0b54e300b85
   React-logger: 933f80c97c633ee8965d609876848148e3fef438
+  react-native-config: 6502b1879f97ed5ac570a029961fc35ea606cd14
   react-native-geolocation-service: c0efb872258ed9240f1003a70fca9e9757e5c785
   react-native-image-picker: 4b090b73077c3a71b91fddc739a594feebd00184
+  react-native-maps: d752b0dd0e1951d815b1336332835aab6b4a836f
   react-native-safe-area-context: 584dc04881deb49474363f3be89e4ca0e854c057
   React-perflogger: 93075d8931c32cd1fce8a98c15d2d5ccc4d891bd
   React-RCTActionSheet: 7d3041e6761b4f3044a37079ddcb156575fb6d89
