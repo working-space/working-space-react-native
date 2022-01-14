@@ -14,7 +14,6 @@ export const cafeListStyle = css`
 export const MainStyled = styled.View`
   flex: 1;
   background-color: ${GrayColor.GRAY_0};
-  padding-top: 56px;
   z-index: 1;
 `;
 
