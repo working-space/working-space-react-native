@@ -38,7 +38,7 @@ const Login = ({ navigation }: Props) => {
   return (
     <LoginStyled>
       <LoginView>
-        <Typo type={FontType.BOLD_24}>원하는 작업 공간을{'\n'}직접 찾아보세요!</Typo>
+        <Typo type={FontType.BOLD_24} align={Align.CENTER}>원하는 작업 공간을{'\n'}직접 찾아보세요!</Typo>
         <AutoFitImage source={LoginIllustURL} />
         <LoginButtonStyled>
           <LoginButton onPress={onLogin}>
