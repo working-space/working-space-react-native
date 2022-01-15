@@ -27,7 +27,7 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Signup'>;
 const Signup = ({ navigation, route }: Props) => {
   const { name, profileImageURL } = route.params;
 
-  const [visibleForm, setVisibleForm] = useState('setProfile');
+  const [visibleForm, setVisibleForm] = useState<'setProfile' | 'setTags'>('setProfile');
   const [visibleInput, setVisibleInput] = useState(false);
   const [nickname, setNickname] = useState('');
   const [profileImage, setProfileImage] = useState('');
