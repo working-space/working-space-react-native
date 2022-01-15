@@ -55,7 +55,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
     setFilterSelectOpen(false);
   };
 
-  const handleCardLinkClick = (cafe: Cafe) => {
+  const handleCardLinkPress = (cafe: Cafe) => {
     navigate('Detail', { cafeId: cafe.id });
   };
 
@@ -164,7 +164,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
                 comments: { totalCount: 0, data: [] },
               };
 
-              return <CafeListItem data={cafe} hasBorder onPress={() => handleCardLinkClick(cafe)} />;
+              return <CafeListItem data={cafe} hasBorder onPress={() => handleCardLinkPress(cafe)} />;
             }}
             ListHeaderComponent={<FilterIllust filter={currentFilter} />}
             onEndReachedThreshold={0.5}

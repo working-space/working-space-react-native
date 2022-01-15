@@ -39,7 +39,7 @@ const Signup = ({ navigation, route }: Props) => {
     setNickname(name);
   }, [name, profileImageURL]);
 
-  const handlePrevButtonClick = () => {
+  const handlePrevButtonPress = () => {
     switch (visibleForm) {
       case 'setTags':
         setVisibleForm('setProfile');
@@ -47,7 +47,7 @@ const Signup = ({ navigation, route }: Props) => {
     }
   };
 
-  const handleNextButtonClick = () => {
+  const handleNextButtonPress = () => {
     switch (visibleForm) {
       case 'setProfile':
         setVisibleForm('setTags');
@@ -106,7 +106,7 @@ const Signup = ({ navigation, route }: Props) => {
         </ModalView>
         <FooterButtonStyled>
           {visibleForm === 'setTags' ? (
-            <FooterButton onPress={handlePrevButtonClick}>
+            <FooterButton onPress={handlePrevButtonPress}>
               <Typo color={GrayColor.GRAY_300}>이전</Typo>
             </FooterButton>
           ) : (
@@ -117,7 +117,7 @@ const Signup = ({ navigation, route }: Props) => {
           )}
           <FooterButton
             isBackgroundColor={visibleForm === 'setProfile' || selectedTags.length > 0}
-            onPress={handleNextButtonClick}
+            onPress={handleNextButtonPress}
           >
             <Typo
               color={visibleForm === 'setProfile' || selectedTags.length > 0 ? GrayColor.GRAY_0 : GrayColor.GRAY_400}

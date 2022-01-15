@@ -12,16 +12,16 @@ interface Props {
   tag: Tag;
   showCount: boolean;
   selected: boolean;
-  onClick?: (tag: Tag) => void;
+  onPress?: (tag: Tag) => void;
 }
 
-const TagItem = ({ tag, showCount, selected, onClick }: Props) => {
-  const handleClick = useCallback(() => {
-    onClick?.(tag);
-  }, [tag, onClick]);
+const TagItem = ({ tag, showCount, selected, onPress }: Props) => {
+  const handleItemPress = useCallback(() => {
+    onPress?.(tag);
+  }, [tag, onPress]);
 
   return (
-    <Item onPress={handleClick}>
+    <Item onPress={handleItemPress}>
       <ItemTagIcon selected={selected}>
         {showCount ? (
           <ItemcheckIcon selected={selected} showCount={showCount}>

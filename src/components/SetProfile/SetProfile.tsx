@@ -27,7 +27,7 @@ interface Props {
 }
 
 const SetProfile = ({ nickname, profileImageURL, showBadge = false, onSetProfileImage, onSetNicknameModal }: Props) => {
-  const handleClickImage = () => {
+  const handleImagePress = () => {
     onSetProfileImage();
   };
 
@@ -38,7 +38,7 @@ const SetProfile = ({ nickname, profileImageURL, showBadge = false, onSetProfile
   return (
     <SetProfileStyled>
       <EditProfile>
-        <EditImageStyled onPress={handleClickImage}>
+        <EditImageStyled onPress={handleImagePress}>
           <EditImagePhoto>
             {profileImageURL !== '' ? <EditImage source={{ uri: profileImageURL }} /> : <PersonIcon />}
           </EditImagePhoto>

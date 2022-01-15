@@ -89,15 +89,15 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
     });
   }, [cafeId]);
 
-  const handleLikeButtonClick = () => {
+  const handleLikeButtonPress = () => {
     setLikeState((prev) => !prev);
   };
 
-  const handleBookmarkButtonClick = () => {
+  const handleBookmarkButtonPress = () => {
     setBookmarkState((prev) => !prev);
   };
 
-  const handleShareButtonClick = async () => {
+  const handleShareButtonPress = async () => {
     try {
       const result = await Share.share({
         title: cafeData?.name ?? '',
@@ -178,16 +178,16 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
         }
         right={
           <LinkIconStyled>
-            <LinkIconItem onPress={handleLikeButtonClick}>
+            <LinkIconItem onPress={handleLikeButtonPress}>
               {likeState ? <FavoriteFillIcon width="24" height="24" /> : <FavoriteIcon width="24" height="24" />}
               <Typo type={FontType.BOLD_14} style={linkIconTextStyle}>
                 {cafeData.likeCount}
               </Typo>
             </LinkIconItem>
-            <LinkIconItem onPress={handleBookmarkButtonClick}>
+            <LinkIconItem onPress={handleBookmarkButtonPress}>
               {bookmarkState ? <BookmarkFillIcon width="24" height="24" /> : <BookmarkIcon width="24" height="24" />}
             </LinkIconItem>
-            <LinkIconItem onPress={handleShareButtonClick}>
+            <LinkIconItem onPress={handleShareButtonPress}>
               <ShareIcon width="24" height="24" />
             </LinkIconItem>
           </LinkIconStyled>
