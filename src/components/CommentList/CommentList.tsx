@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { TouchableOpacity } from 'react-native';
 
 import DropdownIcon from 'src/assets/icons/icon_dropdown.svg';
@@ -21,8 +21,8 @@ import {
   CommentMoreButton,
   CommentItemTitle,
   CommentItemTitleLeft,
-  CommentItemTitleName,
-  CommentItemTitleDate,
+  commentItemTitleNameStyle,
+  commentItemTitleDateStyle,
   ProfileImage,
   CommentText,
   NoneItem,
@@ -35,7 +35,7 @@ interface Props {
   userComments: Comment[];
   onSetCommentTextModal: () => void;
   onCommentOptionModal: (commentId: string) => void;
-  onMoreCommentsButtonClick?: () => void;
+  onMoreCommentsButtonPress?: () => void;
 }
 
 const CommentList = ({
@@ -45,7 +45,7 @@ const CommentList = ({
   userComments,
   onSetCommentTextModal,
   onCommentOptionModal,
-  onMoreCommentsButtonClick,
+  onMoreCommentsButtonPress,
 }: Props) => {
   const handleCommentTextModal = () => {
     onSetCommentTextModal();
@@ -54,9 +54,9 @@ const CommentList = ({
   const handleCommentOptionModal = (commentId: string) => {
     onCommentOptionModal(commentId);
   };
-  const handleMoreCommentsButtonClick = useCallback(() => {
-    onMoreCommentsButtonClick?.();
-  }, [onMoreCommentsButtonClick]);
+  const handleMoreCommentsButtonPress = () => {
+    onMoreCommentsButtonPress?.();
+  };
 
   return (
     <CommentListWrapper>
@@ -92,10 +92,10 @@ const CommentList = ({
                     <CommentItemInfo>
                       <CommentItemTitle>
                         <CommentItemTitleLeft>
-                          <Typo type={FontType.BOLD_12} style={CommentItemTitleName}>
+                          <Typo type={FontType.BOLD_12} style={commentItemTitleNameStyle}>
                             {comment.userId}
                           </Typo>
-                          <Typo type={FontType.REGULAR_11} color={GrayColor.GRAY_300} style={CommentItemTitleDate}>
+                          <Typo type={FontType.REGULAR_11} color={GrayColor.GRAY_300} style={commentItemTitleDateStyle}>
                             {comment.updatedAt}
                           </Typo>
                         </CommentItemTitleLeft>
@@ -120,7 +120,7 @@ const CommentList = ({
               })}
             </CommentListBoxView>
             {hasNextComments && (
-              <CommentMoreButton onPress={handleMoreCommentsButtonClick}>
+              <CommentMoreButton onPress={handleMoreCommentsButtonPress}>
                 <DropdownIcon />
                 <Typo type={FontType.REGULAR_11} color={GrayColor.GRAY_300}>
                   더보기

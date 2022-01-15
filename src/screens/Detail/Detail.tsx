@@ -30,14 +30,14 @@ import { FontType } from 'src/utils/font';
 import {
   LinkIconStyled,
   LinkIconItem,
-  LinkIconText,
+  linkIconTextStyle,
   DetailStyled,
   DetailView,
   DetailTitleStyled,
-  HeadTitle,
+  headTitleStyle,
   TitleInfo,
   TitleInfoItem,
-  TitleInfoItemText,
+  titleInfoItemTextStyle,
   DetailInfoStyled,
   DetailInfoBox,
   DetailInfoBoxItem,
@@ -89,15 +89,15 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
     });
   }, [cafeId]);
 
-  const handleLikeButtonClick = () => {
+  const handleLikeButtonPress = () => {
     setLikeState((prev) => !prev);
   };
 
-  const handleBookmarkButtonClick = () => {
+  const handleBookmarkButtonPress = () => {
     setBookmarkState((prev) => !prev);
   };
 
-  const handleShareButtonClick = async () => {
+  const handleShareButtonPress = async () => {
     try {
       const result = await Share.share({
         title: cafeData?.name ?? '',
@@ -178,16 +178,16 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
         }
         right={
           <LinkIconStyled>
-            <LinkIconItem onPress={handleLikeButtonClick}>
+            <LinkIconItem onPress={handleLikeButtonPress}>
               {likeState ? <FavoriteFillIcon width="24" height="24" /> : <FavoriteIcon width="24" height="24" />}
-              <Typo type={FontType.BOLD_14} style={LinkIconText}>
+              <Typo type={FontType.BOLD_14} style={linkIconTextStyle}>
                 {cafeData.likeCount}
               </Typo>
             </LinkIconItem>
-            <LinkIconItem onPress={handleBookmarkButtonClick}>
+            <LinkIconItem onPress={handleBookmarkButtonPress}>
               {bookmarkState ? <BookmarkFillIcon width="24" height="24" /> : <BookmarkIcon width="24" height="24" />}
             </LinkIconItem>
-            <LinkIconItem onPress={handleShareButtonClick}>
+            <LinkIconItem onPress={handleShareButtonPress}>
               <ShareIcon width="24" height="24" />
             </LinkIconItem>
           </LinkIconStyled>
@@ -195,19 +195,19 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
       />
       <DetailView>
         <DetailTitleStyled>
-          <Typo type={FontType.BOLD_24} style={HeadTitle}>
+          <Typo type={FontType.BOLD_24} style={headTitleStyle}>
             {cafeData.name}
           </Typo>
           <TitleInfo>
             <TitleInfoItem start={true}>
               <LocationGrayIcon fill={GrayColor.GRAY_400} />
-              <Typo type={FontType.REGULAR_12} style={TitleInfoItemText}>
+              <Typo type={FontType.REGULAR_12} style={titleInfoItemTextStyle}>
                 {cafeData.distance}
               </Typo>
             </TitleInfoItem>
             <TitleInfoItem>
               <SmallTagGrayIcon />
-              <Typo type={FontType.REGULAR_12} style={TitleInfoItemText}>
+              <Typo type={FontType.REGULAR_12} style={titleInfoItemTextStyle}>
                 태그 {cafeData.tags?.length ?? 0}개
               </Typo>
             </TitleInfoItem>

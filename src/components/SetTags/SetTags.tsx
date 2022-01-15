@@ -43,7 +43,7 @@ const SetTags = ({ preferTags, onToggleTag }: Props) => {
                   showCount={false}
                   tag={tag}
                   selected={preferTags.includes(tag.id)}
-                  onClick={onToggleTag}
+                  onPress={onToggleTag}
                 />
               );
             })}

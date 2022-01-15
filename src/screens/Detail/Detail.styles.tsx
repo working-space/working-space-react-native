@@ -14,7 +14,7 @@ export const LinkIconItem = styled.TouchableOpacity`
   margin-right: 19px;
 `;
 
-export const LinkIconText = css`
+export const linkIconTextStyle = css`
   margin-left: 7px;
 `;
 
@@ -31,7 +31,7 @@ export const DetailTitleStyled = styled.View`
   margin-top: 25px;
 `;
 
-export const HeadTitle = css`
+export const headTitleStyle = css`
   margin-top: 25px;
 `;
 
@@ -50,7 +50,7 @@ export const TitleInfoItem = styled.View<{ start?: boolean }>`
   border-color: ${GrayColor.GRAY_100};
 `;
 
-export const TitleInfoItemText = css`
+export const titleInfoItemTextStyle = css`
   margin-left: 6px;
 `;
 
