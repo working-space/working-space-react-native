@@ -28,7 +28,9 @@ export const HeaderTop = styled.View`
   height: 56px;
 `;
 
-export const HeaderBottom = styled.View``;
+export const HeaderBottom = styled.View`
+  background-color: ${GrayColor.GRAY_0};
+`;
 
 export const HeaderLeft = styled.View``;
 

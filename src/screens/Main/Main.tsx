@@ -30,6 +30,7 @@ import {
   ListSeparator,
   MainStyled,
   MainContent,
+  MainSafeArea,
   ScrolledListHeader,
   SearchInput,
 } from './Main.styles';
@@ -62,66 +63,68 @@ const Main = ({ navigation: { navigate } }: Props) => {
 
   return (
     <MainStyled>
-      <Header
-        left={
-          <Header.Button onPress={() => navigate('Main')}>
-            <IconWrapper>
-              <SmallPersonIcon />
-            </IconWrapper>
-          </Header.Button>
-        }
-        right={
-          <>
-            <FilterChangeButton onPress={toggleFilterSelect}>
-              <FilterChangeButtonText>
-                <Typo type={isFilterSelectOpen ? FontType.BOLD_12 : FontType.REGULAR_12} color={GrayColor.GRAY_400}>
-                  {FILTER[currentFilter].name} 순
-                </Typo>
-              </FilterChangeButtonText>
-              <DropDownArrowIcon />
-            </FilterChangeButton>
-            <Header.Button onPress={() => navigate('Map')}>
-              <MapIcon />
+      <MainSafeArea>
+        <Header
+          left={
+            <Header.Button onPress={() => navigate('Main')}>
+              <IconWrapper>
+                <SmallPersonIcon />
+              </IconWrapper>
             </Header.Button>
-          </>
-        }
-        bottom={
-          isFilterSelectOpen && (
-            <FilterSelect>
-              <FilterSelectItem
-                active={currentFilter === FILTER.NEAREST.id}
-                onPress={() => selectFilter(FILTER.NEAREST.id)}
-              >
-                <Typo type={currentFilter === FILTER.NEAREST.id ? FontType.BOLD_12 : FontType.REGULAR_12}>
-                  {FILTER.NEAREST.name} 순
-                </Typo>
-              </FilterSelectItem>
-              <FilterSelectItem
-                active={currentFilter === FILTER.MANY_COMMENTS.id}
-                onPress={() => selectFilter(FILTER.MANY_COMMENTS.id)}
-              >
-                <Typo type={currentFilter === FILTER.MANY_COMMENTS.id ? FontType.BOLD_12 : FontType.REGULAR_12}>
-                  {FILTER.MANY_COMMENTS.name} 순
-                </Typo>
-              </FilterSelectItem>
-              <FilterSelectItem
-                active={currentFilter === FILTER.MANY_FAVORITES.id}
-                onPress={() => selectFilter(FILTER.MANY_FAVORITES.id)}
-              >
-                <Typo type={currentFilter === FILTER.MANY_FAVORITES.id ? FontType.BOLD_12 : FontType.REGULAR_12}>
-                  {FILTER.MANY_FAVORITES.name} 순
-                </Typo>
-              </FilterSelectItem>
-            </FilterSelect>
-          )
-        }
-      />
-      {isFilterSelectOpen && (
-        <Dimmed activeOpacity={1} onPress={toggleFilterSelect}>
-          <DimmedArea />
-        </Dimmed>
-      )}
+          }
+          right={
+            <>
+              <FilterChangeButton onPress={toggleFilterSelect}>
+                <FilterChangeButtonText>
+                  <Typo type={isFilterSelectOpen ? FontType.BOLD_12 : FontType.REGULAR_12} color={GrayColor.GRAY_400}>
+                    {FILTER[currentFilter].name} 순
+                  </Typo>
+                </FilterChangeButtonText>
+                <DropDownArrowIcon />
+              </FilterChangeButton>
+              <Header.Button onPress={() => navigate('Map')}>
+                <MapIcon />
+              </Header.Button>
+            </>
+          }
+          bottom={
+            isFilterSelectOpen && (
+              <FilterSelect>
+                <FilterSelectItem
+                  active={currentFilter === FILTER.NEAREST.id}
+                  onPress={() => selectFilter(FILTER.NEAREST.id)}
+                >
+                  <Typo type={currentFilter === FILTER.NEAREST.id ? FontType.BOLD_12 : FontType.REGULAR_12}>
+                    {FILTER.NEAREST.name} 순
+                  </Typo>
+                </FilterSelectItem>
+                <FilterSelectItem
+                  active={currentFilter === FILTER.MANY_COMMENTS.id}
+                  onPress={() => selectFilter(FILTER.MANY_COMMENTS.id)}
+                >
+                  <Typo type={currentFilter === FILTER.MANY_COMMENTS.id ? FontType.BOLD_12 : FontType.REGULAR_12}>
+                    {FILTER.MANY_COMMENTS.name} 순
+                  </Typo>
+                </FilterSelectItem>
+                <FilterSelectItem
+                  active={currentFilter === FILTER.MANY_FAVORITES.id}
+                  onPress={() => selectFilter(FILTER.MANY_FAVORITES.id)}
+                >
+                  <Typo type={currentFilter === FILTER.MANY_FAVORITES.id ? FontType.BOLD_12 : FontType.REGULAR_12}>
+                    {FILTER.MANY_FAVORITES.name} 순
+                  </Typo>
+                </FilterSelectItem>
+              </FilterSelect>
+            )
+          }
+        />
+      </MainSafeArea>
       <MainContent>
+        {isFilterSelectOpen && (
+          <Dimmed activeOpacity={1} onPress={toggleFilterSelect}>
+            <DimmedArea />
+          </Dimmed>
+        )}
         <View>
           <SearchInput onPress={() => navigate('Main')}>
             <Typo type={FontType.REGULAR_14} color={GrayColor.GRAY_300}>

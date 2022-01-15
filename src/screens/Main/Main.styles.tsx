@@ -11,9 +11,14 @@ export const cafeListStyle = css`
   padding-bottom: 24px;
 `;
 
-export const MainStyled = styled.SafeAreaView`
+export const MainStyled = styled.View`
   flex: 1;
   background-color: ${GrayColor.GRAY_0};
+`;
+
+export const MainSafeArea = styled.SafeAreaView`
+  background-color: ${GrayColor.GRAY_0};
+  z-index: 2;
 `;
 
 export const MainContent = styled.View`
@@ -62,7 +67,9 @@ export const FilterSelect = styled.View`
 
 export const FilterSelectItem = styled.TouchableOpacity<FilterSelectProps>`
   margin-right: 8px;
-  padding: 12px 16px;
+  padding: 0 16px;
+  height: 40px;
+  justify-content: center;
   border-radius: 20px;
   border: solid 1px ${({ active }) => (active ? PrimaryColor.PRIMARY_400 : GrayColor.GRAY_100)};
 `;
@@ -70,7 +77,7 @@ export const FilterSelectItem = styled.TouchableOpacity<FilterSelectProps>`
 export const Dimmed = styled.TouchableOpacity`
   width: 100%;
   height: 100%;
-  z-index: 11;
+  z-index: 1;
   position: absolute;
   top: 0;
   left: 0;
