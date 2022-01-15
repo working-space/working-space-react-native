@@ -11,7 +11,12 @@ export const cafeListStyle = css`
   padding-bottom: 24px;
 `;
 
-export const MainStyled = styled.View`
+export const MainStyled = styled.SafeAreaView`
+  flex: 1;
+  background-color: ${GrayColor.GRAY_0};
+`;
+
+export const MainContent = styled.View`
   flex: 1;
   background-color: ${GrayColor.GRAY_0};
   z-index: 1;

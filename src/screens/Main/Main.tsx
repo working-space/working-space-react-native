@@ -29,6 +29,7 @@ import {
   IconWrapper,
   ListSeparator,
   MainStyled,
+  MainContent,
   ScrolledListHeader,
   SearchInput,
 } from './Main.styles';
@@ -60,7 +61,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
   };
 
   return (
-    <>
+    <MainStyled>
       <Header
         left={
           <Header.Button onPress={() => navigate('Main')}>
@@ -120,7 +121,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
           <DimmedArea />
         </Dimmed>
       )}
-      <MainStyled>
+      <MainContent>
         <View>
           <SearchInput onPress={() => navigate('Main')}>
             <Typo type={FontType.REGULAR_14} color={GrayColor.GRAY_300}>
@@ -170,8 +171,8 @@ const Main = ({ navigation: { navigate } }: Props) => {
             onEndReachedThreshold={0.5}
           />
         )}
-      </MainStyled>
-    </>
+      </MainContent>
+    </MainStyled>
   );
 };
 
