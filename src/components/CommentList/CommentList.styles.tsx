@@ -80,14 +80,14 @@ export const CommentItemTitleLeft = styled.View`
   align-items: center;
 `;
 
-export const CommentItemTitleName = css`
+export const commentItemTitleNameStyle = css`
   padding-right: 8px;
   border-right-width: 1px;
   border-style: solid;
   border-color: ${GrayColor.GRAY_100};
 `;
 
-export const CommentItemTitleDate = css`
+export const commentItemTitleDateStyle = css`
   padding-left: 8px;
 `;
 

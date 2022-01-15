@@ -34,7 +34,7 @@ export const ItemcheckIcon = styled.View<{ selected: boolean; showCount: boolean
   background-color: ${({ selected }) => (selected ? PrimaryColor.PRIMARY_500 : GrayColor.GRAY_200)};
 `;
 
-export const ItemTagName = css`
+export const itemTagNameStyle = css`
   width: 58px;
   padding-top: 12px;
 `;

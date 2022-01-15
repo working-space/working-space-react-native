@@ -30,14 +30,14 @@ import { FontType } from 'src/utils/font';
 import {
   LinkIconStyled,
   LinkIconItem,
-  LinkIconText,
+  linkIconTextStyle,
   DetailStyled,
   DetailView,
   DetailTitleStyled,
-  HeadTitle,
+  headTitleStyle,
   TitleInfo,
   TitleInfoItem,
-  TitleInfoItemText,
+  titleInfoItemTextStyle,
   DetailInfoStyled,
   DetailInfoBox,
   DetailInfoBoxItem,
@@ -180,7 +180,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
           <LinkIconStyled>
             <LinkIconItem onPress={handleLikeButtonClick}>
               {likeState ? <FavoriteFillIcon width="24" height="24" /> : <FavoriteIcon width="24" height="24" />}
-              <Typo type={FontType.BOLD_14} style={LinkIconText}>
+              <Typo type={FontType.BOLD_14} style={linkIconTextStyle}>
                 {cafeData.likeCount}
               </Typo>
             </LinkIconItem>
@@ -195,19 +195,19 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
       />
       <DetailView>
         <DetailTitleStyled>
-          <Typo type={FontType.BOLD_24} style={HeadTitle}>
+          <Typo type={FontType.BOLD_24} style={headTitleStyle}>
             {cafeData.name}
           </Typo>
           <TitleInfo>
             <TitleInfoItem start={true}>
               <LocationGrayIcon fill={GrayColor.GRAY_400} />
-              <Typo type={FontType.REGULAR_12} style={TitleInfoItemText}>
+              <Typo type={FontType.REGULAR_12} style={titleInfoItemTextStyle}>
                 {cafeData.distance}
               </Typo>
             </TitleInfoItem>
             <TitleInfoItem>
               <SmallTagGrayIcon />
-              <Typo type={FontType.REGULAR_12} style={TitleInfoItemText}>
+              <Typo type={FontType.REGULAR_12} style={titleInfoItemTextStyle}>
                 태그 {cafeData.tags?.length ?? 0}개
               </Typo>
             </TitleInfoItem>

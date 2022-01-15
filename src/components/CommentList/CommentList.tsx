@@ -21,8 +21,8 @@ import {
   CommentMoreButton,
   CommentItemTitle,
   CommentItemTitleLeft,
-  CommentItemTitleName,
-  CommentItemTitleDate,
+  commentItemTitleNameStyle,
+  commentItemTitleDateStyle,
   ProfileImage,
   CommentText,
   NoneItem,
@@ -92,10 +92,10 @@ const CommentList = ({
                     <CommentItemInfo>
                       <CommentItemTitle>
                         <CommentItemTitleLeft>
-                          <Typo type={FontType.BOLD_12} style={CommentItemTitleName}>
+                          <Typo type={FontType.BOLD_12} style={commentItemTitleNameStyle}>
                             {comment.userId}
                           </Typo>
-                          <Typo type={FontType.REGULAR_11} color={GrayColor.GRAY_300} style={CommentItemTitleDate}>
+                          <Typo type={FontType.REGULAR_11} color={GrayColor.GRAY_300} style={commentItemTitleDateStyle}>
                             {comment.updatedAt}
                           </Typo>
                         </CommentItemTitleLeft>

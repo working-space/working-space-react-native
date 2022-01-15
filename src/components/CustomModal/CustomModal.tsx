@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal, { ModalProps } from 'react-native-modal';
 
-import { ModalStyled } from './CustomModal.styles';
+import { modalStyle } from './CustomModal.styles';
 
 type CustomModalProps = Pick<
   ModalProps,
@@ -19,7 +19,7 @@ type CustomModalProps = Pick<
 
 const CustomModal = ({ children, ...props }: CustomModalProps) => {
   return (
-    <Modal style={ModalStyled} {...props}>
+    <Modal style={modalStyle} {...props}>
       {children}
     </Modal>
   );

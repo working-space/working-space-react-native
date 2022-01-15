@@ -6,7 +6,7 @@ import TAG from 'src/constants/tag';
 import { Tag } from 'src/models/tag';
 import { GrayColor } from 'src/utils/color';
 import { Align, FontType } from 'src/utils/font';
-import { Item, ItemTagIcon, ItemcheckIcon, ItemTagName } from './TagItem.styles';
+import { Item, ItemTagIcon, ItemcheckIcon, itemTagNameStyle } from './TagItem.styles';
 
 interface Props {
   tag: Tag;
@@ -42,7 +42,7 @@ const TagItem = ({ tag, showCount, selected, onClick }: Props) => {
         type={!showCount && selected ? FontType.BOLD_12 : FontType.REGULAR_12}
         color={showCount || selected ? GrayColor.GRAY_400 : GrayColor.GRAY_300}
         align={Align.CENTER}
-        style={ItemTagName}
+        style={itemTagNameStyle}
       >
         {TAG[tag.id].name}
       </Typo>
