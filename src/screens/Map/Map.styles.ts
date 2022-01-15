@@ -7,19 +7,19 @@ interface BottomViewRowItemProps {
 }
 
 export const mapViewStyle = css`
-  position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 1;
 `;
 
 export const MapStyled = styled.View`
   flex: 1;
-  background-color: ${GrayColor.GRAY_0};
-  z-index: 1;
 `;
 
-export const MapContainer = styled.View`
+export const MapSafeArea = styled.SafeAreaView`
+  background-color: ${GrayColor.GRAY_0};
+`;
+
+export const MapViewContainer = styled.View`
   flex: 1;
 `;
 
