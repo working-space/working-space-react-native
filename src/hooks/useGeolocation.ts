@@ -7,6 +7,7 @@ import Coordinate from 'src/types/coordinate';
 import Status from 'src/types/status';
 
 const androidPermissions = [PERMISSIONS.ANDROID.ACCESS_COARSE_LOCATION, PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION];
+const iosPermissions = [PERMISSIONS.IOS.LOCATION_WHEN_IN_USE];
 
 const geolocationState = atom<Coordinate | null>({
   key: 'geolocation',
@@ -42,10 +43,19 @@ const useGeolocation = () => {
     []
   );
 
+  const requestIOSPermission = useCallback(
+    async () =>
+      requestMultiple(iosPermissions)
+        .then(() => setPermissionStatus(Status.SUCCESS))
+        .catch(() => setPermissionStatus(Status.FAILURE)),
+    []
+  );
+
   const fetchGeolocation = useCallback(async () => {
     await requestAndroidPermission();
+    await requestIOSPermission();
     await getGeolocation();
-  }, [getGeolocation, requestAndroidPermission]);
+  }, [getGeolocation, requestAndroidPermission, requestIOSPermission]);
 
   useEffect(() => {
     if (!geolocation || !geolocation.latitude || !geolocation.longitude) {
