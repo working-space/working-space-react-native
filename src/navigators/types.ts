@@ -7,4 +7,10 @@ export type RootStackParamList = {
   };
   Detail: { cafeId: string };
   Map: undefined;
+  Profile: undefined;
+  Favorites: undefined;
+  Comments: undefined;
+  Bookmarks: undefined;
+  Settings: undefined;
+  Terms: { content: string };
 };
