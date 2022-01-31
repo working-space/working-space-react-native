@@ -41,4 +41,12 @@ module.exports = {
       },
     },
   },
+  overrides: [
+    {
+      files: ['*.d.ts'],
+      rules: {
+        'import/no-duplicates': 'off',
+      },
+    },
+  ],
 };
