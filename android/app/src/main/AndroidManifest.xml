@@ -14,9 +14,8 @@
       android:theme="@style/AppTheme">
 
       <meta-data
-        android:name="com.google.android.geo.API_KEY"
-        android:value="@string/GOOGLE_API_KEY"
-      />
+          android:name="com.naver.maps.map.CLIENT_ID"
+          android:value="@string/NAVER_MAP_API_CLIENT_ID" />
 
       <uses-library android:name="org.apache.http.legacy" android:required="false"/>
 

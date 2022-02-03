@@ -14,7 +14,6 @@
 #import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
 
 #import <RNKakaoLogins.h>
-#import <GoogleMaps/GoogleMaps.h>
 
 static void InitializeFlipper(UIApplication *application) {
   FlipperClient *client = [FlipperClient sharedClient];
@@ -31,9 +30,6 @@ static void InitializeFlipper(UIApplication *application) {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
-  NSString *googleAPIKey = [ReactNativeConfig envFor:@"GOOGLE_API_KEY"];
-  [GMSServices provideAPIKey:googleAPIKey];
 
 #ifdef FB_SONARKIT_ENABLED
   InitializeFlipper(application);

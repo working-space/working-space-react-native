@@ -31,6 +31,8 @@
 			</array>
 		</dict>
 	</array>
+  <key>NMFClientId</key>
+  <string>$(NAVER_MAP_API_CLIENT_ID)</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>KAKAO_APP_KEY</key>
