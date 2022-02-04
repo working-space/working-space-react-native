@@ -11,12 +11,12 @@ import { CommentsStyled, CommentsView } from './Comments.styles';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Comments'>;
 
-const Comments = ({ navigation }: Props) => {
+const Comments = ({ navigation: { goBack } }: Props) => {
   return (
     <CommentsStyled>
       <Header
         left={
-          <Header.Button onPress={() => navigation.navigate('Main')}>
+          <Header.Button onPress={() => goBack()}>
             <BackIcon />
           </Header.Button>
         }

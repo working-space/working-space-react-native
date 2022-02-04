@@ -11,6 +11,7 @@ export const SelectedTagsViewStyled = styled.SafeAreaView`
 export const SelectedTagsViewHeader = styled.View`
   flex-direction: column;
   justify-content: flex-start;
+  padding-left: 16px;
 `;
 
 export const SelectedTagsViewTop = styled.View`
@@ -25,9 +26,10 @@ export const SelectedTagsViewCloseButton = styled.TouchableOpacity`
 `;
 
 export const SelectedTagsViewSubmitButton = styled.TouchableOpacity<{ selected: boolean }>`
-  width: 100%;
   height: 54px;
   justify-content: center;
   align-items: center;
   background-color: ${({ selected }) => (selected ? PrimaryColor.PRIMARY_500 : GrayColor.GRAY_200)};
+  border-radius: 4px;
+  margin: 16px;
 `;

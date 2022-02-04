@@ -11,12 +11,12 @@ import { BookmarksStyled, BookmarksView } from './Bookmarks.styles';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Bookmarks'>;
 
-const Bookmarks = ({ navigation }: Props) => {
+const Bookmarks = ({ navigation: { goBack } }: Props) => {
   return (
     <BookmarksStyled>
       <Header
         left={
-          <Header.Button onPress={() => navigation.navigate('Main')}>
+          <Header.Button onPress={() => goBack()}>
             <BackIcon />
           </Header.Button>
         }

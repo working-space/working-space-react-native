@@ -66,7 +66,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
       <MainSafeArea>
         <Header
           left={
-            <Header.Button onPress={() => navigate('Main')}>
+            <Header.Button onPress={() => navigate('Profile')}>
               <IconWrapper>
                 <SmallPersonIcon />
               </IconWrapper>

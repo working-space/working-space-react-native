@@ -20,21 +20,21 @@ import {
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Settings'>;
 
-const Settings = ({ navigation }: Props) => {
+const Settings = ({ navigation: { navigate, goBack } }: Props) => {
   return (
     <SettingsStyled>
       <Header
         left={
-          <Header.Button onPress={() => navigation.navigate('Main')}>
+          <Header.Button onPress={() => goBack()}>
             <BackIcon />
           </Header.Button>
         }
       />
       <SettingsView>
-        <TextButton onPress={() => navigation.navigate('Terms', { content: termsText })}>
+        <TextButton onPress={() => navigate('Terms', { content: termsText })}>
           <Typo type={FontType.REGULAR_14}>이용 약관</Typo>
         </TextButton>
-        <TextButton onPress={() => navigation.navigate('Terms', { content: privacyPolicyText })}>
+        <TextButton onPress={() => navigate('Terms', { content: privacyPolicyText })}>
           <Typo type={FontType.REGULAR_14}>개인 정보 처리 방침</Typo>
         </TextButton>
         <TextButtonLine />
