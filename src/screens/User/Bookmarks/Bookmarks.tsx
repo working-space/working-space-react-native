@@ -16,7 +16,7 @@ const Bookmarks = ({ navigation: { goBack } }: Props) => {
     <BookmarksStyled>
       <Header
         left={
-          <Header.Button onPress={() => goBack()}>
+          <Header.Button onPress={goBack}>
             <BackIcon />
           </Header.Button>
         }

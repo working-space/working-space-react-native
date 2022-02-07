@@ -16,7 +16,7 @@ const Favorites = ({ navigation: { goBack } }: Props) => {
     <FavoritesStyled>
       <Header
         left={
-          <Header.Button onPress={() => goBack()}>
+          <Header.Button onPress={goBack}>
             <BackIcon />
           </Header.Button>
         }

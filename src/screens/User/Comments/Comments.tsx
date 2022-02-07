@@ -16,7 +16,7 @@ const Comments = ({ navigation: { goBack } }: Props) => {
     <CommentsStyled>
       <Header
         left={
-          <Header.Button onPress={() => goBack()}>
+          <Header.Button onPress={goBack}>
             <BackIcon />
           </Header.Button>
         }

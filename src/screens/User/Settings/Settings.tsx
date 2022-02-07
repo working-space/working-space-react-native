@@ -25,7 +25,7 @@ const Settings = ({ navigation: { navigate, goBack } }: Props) => {
     <SettingsStyled>
       <Header
         left={
-          <Header.Button onPress={() => goBack()}>
+          <Header.Button onPress={goBack}>
             <BackIcon />
           </Header.Button>
         }

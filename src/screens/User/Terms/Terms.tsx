@@ -17,7 +17,7 @@ const Terms = ({ navigation: { goBack }, route }: Props) => {
     <TermsStyled>
       <Header
         left={
-          <Header.Button onPress={() => goBack()}>
+          <Header.Button onPress={goBack}>
             <BackIcon />
           </Header.Button>
         }

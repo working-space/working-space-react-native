@@ -74,7 +74,7 @@ const Profile = ({ navigation: { navigate, goBack } }: Props) => {
     <ProfileStyled>
       <Header
         left={
-          <Header.Button onPress={() => goBack()}>
+          <Header.Button onPress={goBack}>
             <BackIcon />
           </Header.Button>
         }
