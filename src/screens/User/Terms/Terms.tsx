@@ -10,14 +10,14 @@ import { TermsStyled, TermsView } from './Terms.styles';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Terms'>;
 
-const Terms = ({ navigation, route }: Props) => {
+const Terms = ({ navigation: { goBack }, route }: Props) => {
   const { content } = route.params;
 
   return (
     <TermsStyled>
       <Header
         left={
-          <Header.Button onPress={() => navigation.goBack()}>
+          <Header.Button onPress={goBack}>
             <BackIcon />
           </Header.Button>
         }

@@ -11,12 +11,12 @@ import { FavoritesStyled, FavoritesView } from './Favorites.styles';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Favorites'>;
 
-const Favorites = ({ navigation }: Props) => {
+const Favorites = ({ navigation: { goBack } }: Props) => {
   return (
     <FavoritesStyled>
       <Header
         left={
-          <Header.Button onPress={() => navigation.navigate('Main')}>
+          <Header.Button onPress={goBack}>
             <BackIcon />
           </Header.Button>
         }
