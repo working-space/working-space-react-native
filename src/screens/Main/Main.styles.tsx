@@ -31,12 +31,19 @@ export const SearchInput = styled.TouchableOpacity`
   height: 40px;
   border: 1px solid ${GrayColor.GRAY_200};
   border-radius: 20px;
-  padding: 0 12px;
+  padding: 0 16px;
   margin: 0 16px;
   margin-top: 8px;
   margin-bottom: 24px;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
 `;
+
+export const SearchInputRightIcon = styled.View`
+  position: absolute;
+  right: 16px;
+`;
+
 export const ScrolledListHeader = styled.View`
   position: absolute;
   top: 0;
@@ -92,8 +99,11 @@ export const DimmedArea = styled.View`
   background-color: ${OpacityGrayColor.OPACITY_GRAY_400};
 `;
 
-export const IconWrapper = styled.View`
-  padding: 8px;
+export const IconCircle = styled.View`
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
   border-radius: 100px;
   border: 1px solid ${GrayColor.GRAY_300};
   background-color: ${GrayColor.GRAY_200};

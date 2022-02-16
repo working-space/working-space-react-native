@@ -34,6 +34,8 @@ export const HeaderBottom = styled.View`
 
 export const HeaderLeft = styled.View``;
 
+export const HeaderCenter = styled.View``;
+
 export const HeaderRight = styled.View`
   flex-direction: row;
   align-items: center;
@@ -45,4 +47,5 @@ export const HeaderButton = styled.TouchableOpacity`
   height: 100%;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
 `;

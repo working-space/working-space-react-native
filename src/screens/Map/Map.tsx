@@ -3,6 +3,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import NaverMapView, { Marker } from 'react-native-nmap';
 
 import ListIcon from 'src/assets/icons/icon_list.svg';
+import MoreIcon from 'src/assets/icons/icon_small_more.svg';
 import SmallPersonIcon from 'src/assets/icons/icon_small_person.svg';
 import mapPickerImage from 'src/assets/images/icon_mappicker.png';
 import mapPickerSelectImage from 'src/assets/images/icon_mappicker_select.png';
@@ -40,6 +41,14 @@ const Map = ({ navigation }: Props) => {
               <IconWrapper>
                 <SmallPersonIcon />
               </IconWrapper>
+            </Header.Button>
+          }
+          center={
+            <Header.Button onPress={() => navigation.navigate('Profile')}>
+              <Typo type={FontType.BOLD_12}>관악구 신림동 10-234</Typo>
+              <Typo.RightIcon>
+                <MoreIcon />
+              </Typo.RightIcon>
             </Header.Button>
           }
           right={

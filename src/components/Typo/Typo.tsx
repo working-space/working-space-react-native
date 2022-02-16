@@ -4,7 +4,7 @@ import { TextProps } from 'react-native';
 import { GrayColor, PrimaryColor, SecondColor, SubColor } from 'src/utils/color';
 import { Align, Font, FontType } from 'src/utils/font';
 
-import { TypoStyled } from './Typo.styles';
+import { TypoRightIcon, TypoStyled } from './Typo.styles';
 
 interface Props extends TextProps {
   type?: FontType;
@@ -34,5 +34,7 @@ const Typo = ({
     </TypoStyled>
   );
 };
+
+Typo.RightIcon = TypoRightIcon;
 
 export default Typo;

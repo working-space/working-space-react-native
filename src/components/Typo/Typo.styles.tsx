@@ -16,3 +16,8 @@ export const TypoStyled = styled.Text<{
   color: ${({ color }) => color};
   text-align: ${({ align }) => align};
 `;
+
+export const TypoRightIcon = styled.View`
+  position: absolute;
+  right: -4px;
+`;

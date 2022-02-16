@@ -2,8 +2,9 @@ import React, { useRef, useState } from 'react';
 import { View, Animated, FlatList } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import DropDownArrowIcon from 'src/assets/icons/icon_dropdown_arrow.svg';
 import MapIcon from 'src/assets/icons/icon_map.svg';
+import SearchIcon from 'src/assets/icons/icon_search.svg';
+import MoreIcon from 'src/assets/icons/icon_small_more.svg';
 import SmallPersonIcon from 'src/assets/icons/icon_small_person.svg';
 import CafeListItem from 'src/components/CafeListItem/CafeListItem';
 import ErrorView from 'src/components/ErrorView/ErrorView';
@@ -11,7 +12,6 @@ import FilterIllust from 'src/components/FilterIllust/FilterIllust';
 import Header from 'src/components/Header/Header';
 import Typo from 'src/components/Typo/Typo';
 import FILTER from 'src/constants/filter';
-import useGeocode from 'src/hooks/useGeocode';
 import useGeolocation from 'src/hooks/useGeolocation';
 import { Cafe } from 'src/models/cafe';
 import { RootStackParamList } from 'src/navigators/types';
@@ -22,17 +22,16 @@ import {
   cafeListStyle,
   Dimmed,
   DimmedArea,
-  FilterChangeButton,
-  FilterChangeButtonText,
   FilterSelect,
   FilterSelectItem,
-  IconWrapper,
+  IconCircle,
   ListSeparator,
   MainStyled,
   MainContent,
   MainSafeArea,
   ScrolledListHeader,
   SearchInput,
+  SearchInputRightIcon,
 } from './Main.styles';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Main'>;
@@ -41,8 +40,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
   const [currentFilter, setCurrentFilter] = useState(FILTER.NEAREST.id);
   const [isFilterSelectOpen, setFilterSelectOpen] = useState(false);
 
-  const { geolocation, isPermissionError } = useGeolocation();
-  const { geocode } = useGeocode(geolocation);
+  const { isPermissionError } = useGeolocation();
 
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
@@ -67,25 +65,23 @@ const Main = ({ navigation: { navigate } }: Props) => {
         <Header
           left={
             <Header.Button onPress={() => navigate('Profile')}>
-              <IconWrapper>
+              <IconCircle>
                 <SmallPersonIcon />
-              </IconWrapper>
+              </IconCircle>
+            </Header.Button>
+          }
+          center={
+            <Header.Button onPress={() => navigate('Profile')}>
+              <Typo type={FontType.BOLD_12}>관악구 신림동 10-234</Typo>
+              <Typo.RightIcon>
+                <MoreIcon />
+              </Typo.RightIcon>
             </Header.Button>
           }
           right={
-            <>
-              <FilterChangeButton onPress={toggleFilterSelect}>
-                <FilterChangeButtonText>
-                  <Typo type={isFilterSelectOpen ? FontType.BOLD_12 : FontType.REGULAR_12} color={GrayColor.GRAY_400}>
-                    {FILTER[currentFilter].name} 순
-                  </Typo>
-                </FilterChangeButtonText>
-                <DropDownArrowIcon />
-              </FilterChangeButton>
-              <Header.Button onPress={() => navigate('Map')}>
-                <MapIcon />
-              </Header.Button>
-            </>
+            <Header.Button onPress={() => navigate('Map')}>
+              <MapIcon />
+            </Header.Button>
           }
           bottom={
             isFilterSelectOpen && (
@@ -128,8 +124,11 @@ const Main = ({ navigation: { navigate } }: Props) => {
         <View>
           <SearchInput onPress={() => navigate('Main')}>
             <Typo type={FontType.REGULAR_14} color={GrayColor.GRAY_300}>
-              현위치 : {geocode ?? ''}
+              찾고 있는 카페를 검색해보세요!
             </Typo>
+            <SearchInputRightIcon>
+              <SearchIcon />
+            </SearchInputRightIcon>
           </SearchInput>
           <Animated.View style={{ opacity: fadeAnim }}>
             <ScrolledListHeader>
