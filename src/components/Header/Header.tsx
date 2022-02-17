@@ -15,15 +15,16 @@ interface Props {
   center?: React.ReactNode;
   right?: React.ReactNode;
   bottom?: React.ReactNode;
+  fillWidth?: 'left' | 'center' | 'right';
   showBorderBottom?: boolean;
 }
 
-const Header = ({ left, center, right, bottom, showBorderBottom = false }: Props) => (
+const Header = ({ left, center, right, bottom, fillWidth, showBorderBottom = false }: Props) => (
   <HeaderStyled showBorderBottom={showBorderBottom}>
     <HeaderTop>
-      <HeaderLeft>{left}</HeaderLeft>
-      <HeaderCenter>{center}</HeaderCenter>
-      <HeaderRight>{right}</HeaderRight>
+      <HeaderLeft fillWidth={fillWidth === 'left'}>{left}</HeaderLeft>
+      <HeaderCenter fillWidth={fillWidth === 'center'}>{center}</HeaderCenter>
+      <HeaderRight fillWidth={fillWidth === 'right'}>{right}</HeaderRight>
     </HeaderTop>
     {bottom && <HeaderBottom>{bottom}</HeaderBottom>}
   </HeaderStyled>

@@ -6,6 +6,10 @@ interface HeaderStyledProps {
   showBorderBottom: boolean;
 }
 
+interface HeaderTopAreaProps {
+  fillWidth: boolean;
+}
+
 export const HeaderStyled = styled.View<HeaderStyledProps>`
   width: 100%;
   height: 56px;
@@ -32,14 +36,19 @@ export const HeaderBottom = styled.View`
   background-color: ${GrayColor.GRAY_0};
 `;
 
-export const HeaderLeft = styled.View``;
+export const HeaderLeft = styled.View<HeaderTopAreaProps>`
+  ${({ fillWidth }) => fillWidth && 'flex: 1;'}
+`;
 
-export const HeaderCenter = styled.View``;
+export const HeaderCenter = styled.View<HeaderTopAreaProps>`
+  ${({ fillWidth }) => fillWidth && 'flex: 1;'}
+`;
 
-export const HeaderRight = styled.View`
+export const HeaderRight = styled.View<HeaderTopAreaProps>`
   flex-direction: row;
   align-items: center;
   height: 100%;
+  ${({ fillWidth }) => fillWidth && 'flex: 1;'}
 `;
 
 export const HeaderButton = styled.TouchableOpacity`
