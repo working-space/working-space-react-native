@@ -23,7 +23,7 @@ const GANGNAM_STATION_COORDS = {
 };
 
 interface Props {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'Login'>;
+  navigation: NativeStackNavigationProp<RootStackParamList, 'Map'>;
 }
 
 const Map = ({ navigation }: Props) => {
