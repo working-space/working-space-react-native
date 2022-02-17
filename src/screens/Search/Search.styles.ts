@@ -1,5 +1,14 @@
-import styled from '@emotion/native';
+import styled, { css } from '@emotion/native';
 import { GrayColor } from 'src/utils/color';
+
+interface SearchInputStyledProps {
+  isFocus?: boolean;
+}
+
+export const resultListStyle = css`
+  margin: 0 16px;
+  padding-bottom: 24px;
+`;
 
 export const SearchStyled = styled.View`
   flex: 1;
@@ -11,12 +20,12 @@ export const SearchSafeArea = styled.SafeAreaView`
   z-index: 2;
 `;
 
-export const SearchInput = styled.TextInput`
+export const SearchInput = styled.TextInput<SearchInputStyledProps>`
   height: 40px;
-  border: 1px solid ${GrayColor.GRAY_200};
+  border: 1px solid ${({ isFocus }) => (isFocus ? GrayColor.GRAY_400 : GrayColor.GRAY_200)};
   border-radius: 20px;
   padding: 0 16px;
-  padding-right: 48px;
+  padding-right: 76px;
   flex-direction: row;
   align-items: center;
   width: 100%;
@@ -29,13 +38,18 @@ export const SearchInputWrapper = styled.View`
   padding-right: 16px;
 `;
 
-export const SearchInputButton = styled.TouchableOpacity`
+export const SearchInputButtonWrapper = styled.View`
   position: absolute;
   top: 0;
   bottom: 0;
   padding: 0 16px;
   right: 16px;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const SearchInputButton = styled.TouchableOpacity`
+  margin-left: 12px;
 `;
 
 export const SearchContent = styled.View`
@@ -51,4 +65,12 @@ export const SearchGuide = styled.View`
 
 export const SearchGuideText = styled.View`
   margin-top: 4px;
+`;
+
+export const SearchResult = styled.View`
+  margin-top: 16px;
+`;
+
+export const ListSeparator = styled.View`
+  margin-bottom: 8px;
 `;
