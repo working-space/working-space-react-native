@@ -9,7 +9,6 @@ import mapPickerImage from 'src/assets/images/icon_mappicker.png';
 import mapPickerSelectImage from 'src/assets/images/icon_mappicker_select.png';
 import Header from 'src/components/Header/Header';
 import Typo from 'src/components/Typo/Typo';
-import useGeocode from 'src/hooks/useGeocode';
 import useGeolocation from 'src/hooks/useGeolocation';
 import { RootStackParamList } from 'src/navigators/types';
 import { GrayColor } from 'src/utils/color';
@@ -29,8 +28,7 @@ interface Props {
 const Map = ({ navigation }: Props) => {
   const mapRef = useRef<NaverMapView>(null);
 
-  const { geolocation } = useGeolocation();
-  const { geocode } = useGeocode(geolocation);
+  useGeolocation();
 
   return (
     <MapStyled>
@@ -57,9 +55,9 @@ const Map = ({ navigation }: Props) => {
             </Header.Button>
           }
         />
-        <SearchInput onPress={() => navigation.navigate('Main')}>
+        <SearchInput onPress={() => navigation.navigate('Search')}>
           <Typo type={FontType.REGULAR_14} color={GrayColor.GRAY_300}>
-            현위치 : {geocode}
+            찾고 있는 카페를 검색해보세요!
           </Typo>
         </SearchInput>
       </MapSafeArea>

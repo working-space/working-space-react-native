@@ -122,7 +122,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
           </Dimmed>
         )}
         <View>
-          <SearchInput onPress={() => navigate('Main')}>
+          <SearchInput onPress={() => navigate('Search')}>
             <Typo type={FontType.REGULAR_14} color={GrayColor.GRAY_300}>
               찾고 있는 카페를 검색해보세요!
             </Typo>
