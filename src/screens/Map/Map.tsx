@@ -3,12 +3,12 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import NaverMapView, { Marker } from 'react-native-nmap';
 
 import ListIcon from 'src/assets/icons/icon_list.svg';
+import MoreIcon from 'src/assets/icons/icon_small_more.svg';
 import SmallPersonIcon from 'src/assets/icons/icon_small_person.svg';
 import mapPickerImage from 'src/assets/images/icon_mappicker.png';
 import mapPickerSelectImage from 'src/assets/images/icon_mappicker_select.png';
 import Header from 'src/components/Header/Header';
 import Typo from 'src/components/Typo/Typo';
-import useGeocode from 'src/hooks/useGeocode';
 import useGeolocation from 'src/hooks/useGeolocation';
 import { RootStackParamList } from 'src/navigators/types';
 import { GrayColor } from 'src/utils/color';
@@ -22,14 +22,13 @@ const GANGNAM_STATION_COORDS = {
 };
 
 interface Props {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'Login'>;
+  navigation: NativeStackNavigationProp<RootStackParamList, 'Map'>;
 }
 
 const Map = ({ navigation }: Props) => {
   const mapRef = useRef<NaverMapView>(null);
 
-  const { geolocation } = useGeolocation();
-  const { geocode } = useGeocode(geolocation);
+  useGeolocation();
 
   return (
     <MapStyled>
@@ -42,15 +41,23 @@ const Map = ({ navigation }: Props) => {
               </IconWrapper>
             </Header.Button>
           }
+          center={
+            <Header.Button onPress={() => navigation.navigate('Profile')}>
+              <Typo type={FontType.BOLD_12}>관악구 신림동 10-234</Typo>
+              <Typo.RightIcon>
+                <MoreIcon />
+              </Typo.RightIcon>
+            </Header.Button>
+          }
           right={
             <Header.Button onPress={() => navigation.navigate('Main')}>
               <ListIcon />
             </Header.Button>
           }
         />
-        <SearchInput onPress={() => navigation.navigate('Main')}>
+        <SearchInput onPress={() => navigation.navigate('Search')}>
           <Typo type={FontType.REGULAR_14} color={GrayColor.GRAY_300}>
-            현위치 : {geocode}
+            찾고 있는 카페를 검색해보세요!
           </Typo>
         </SearchInput>
       </MapSafeArea>

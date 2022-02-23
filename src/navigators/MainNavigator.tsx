@@ -7,6 +7,7 @@ import Login from 'src/screens/Login/Login';
 import Main from 'src/screens/Main/Main';
 import Map from 'src/screens/Map/Map';
 import Profile from 'src/screens/Profile/Profile';
+import Search from 'src/screens/Search/Search';
 import Signup from 'src/screens/Signup/Signup';
 import Bookmarks from 'src/screens/User/Bookmarks/Bookmarks';
 import Comments from 'src/screens/User/Comments/Comments';
@@ -40,6 +41,13 @@ const MainNavigator = () => {
           <Stack.Screen
             name="Map"
             component={Map}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="Search"
+            component={Search}
             options={{
               headerShown: false,
             }}

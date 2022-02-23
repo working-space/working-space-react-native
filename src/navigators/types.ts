@@ -5,6 +5,7 @@ export type RootStackParamList = {
     name: string;
     profileImageURL: string;
   };
+  Search: undefined;
   Detail: { cafeId: string };
   Map: undefined;
   Profile: undefined;
