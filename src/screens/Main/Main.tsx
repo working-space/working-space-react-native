@@ -3,9 +3,9 @@ import { View, Animated, FlatList } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import MapIcon from 'src/assets/icons/icon_map.svg';
+import MoreIcon from 'src/assets/icons/icon_more.svg';
+import PersonWhiteIcon from 'src/assets/icons/icon_person_white.svg';
 import SearchIcon from 'src/assets/icons/icon_search.svg';
-import MoreIcon from 'src/assets/icons/icon_small_more.svg';
-import SmallPersonIcon from 'src/assets/icons/icon_small_person.svg';
 import CafeListItem from 'src/components/CafeListItem/CafeListItem';
 import ErrorView from 'src/components/ErrorView/ErrorView';
 import FilterIllust from 'src/components/FilterIllust/FilterIllust';
@@ -66,7 +66,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
           left={
             <Header.Button onPress={() => navigate('Profile')}>
               <IconCircle>
-                <SmallPersonIcon />
+                <PersonWhiteIcon width="16" height="16" />
               </IconCircle>
             </Header.Button>
           }

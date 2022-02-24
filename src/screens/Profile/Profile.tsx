@@ -5,7 +5,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import BackIcon from 'src/assets/icons/icon_back.svg';
 import BookmarkIcon from 'src/assets/icons/icon_bookmark.svg';
 import CommentMenuIcon from 'src/assets/icons/icon_comment_menu.svg';
-import FavoriteFillIcon from 'src/assets/icons/icon_favorite_fill.svg';
+import FavoriteRedIcon from 'src/assets/icons/icon_favorite_red.svg';
 import SettingIcon from 'src/assets/icons/icon_setting.svg';
 import CustomModal from 'src/components/CustomModal/CustomModal';
 import CustomTextInput from 'src/components/CustomTextInput/CustomTextInput';
@@ -117,7 +117,7 @@ const Profile = ({ navigation: { navigate, goBack } }: Props) => {
         <ProfileMenu>
           <ProfileMenuItem onPress={() => navigate('Favorites')}>
             <ProfileMenuItemIcon>
-              <FavoriteFillIcon />
+              <FavoriteRedIcon />
             </ProfileMenuItemIcon>
             <Typo type={FontType.REGULAR_14}>좋아요 누른 작업공간</Typo>
           </ProfileMenuItem>

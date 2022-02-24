@@ -2,9 +2,9 @@ import React, { memo } from 'react';
 import { FlatList, TouchableOpacityProps } from 'react-native';
 
 import CommentIcon from 'src/assets/icons/icon_comment.svg';
-import EditIcon from 'src/assets/icons/icon_edit.svg';
+import EditGrayIcon from 'src/assets/icons/icon_edit_gray.svg';
 import FavoriteIcon from 'src/assets/icons/icon_favorite.svg';
-import LocationGrayIcon from 'src/assets/icons/icon_small_location_gray.svg';
+import LocationIcon from 'src/assets/icons/icon_location.svg';
 import Typo from 'src/components/Typo/Typo';
 import TAG from 'src/constants/tag';
 import { Cafe } from 'src/models/cafe';
@@ -42,7 +42,7 @@ const CafeListItem = memo(({ data, hasBorder = false, ...props }: Props) => {
         <ItemHeaderRight>
           {distance && (
             <>
-              <LocationGrayIcon />
+              <LocationIcon />
               <Distance>
                 <Typo type={FontType.REGULAR_12}>{distance}</Typo>
               </Distance>
@@ -76,7 +76,7 @@ const CafeListItem = memo(({ data, hasBorder = false, ...props }: Props) => {
         />
       ) : (
         <TagEmpty>
-          <EditIcon />
+          <EditGrayIcon />
           <Typo type={FontType.REGULAR_11} color={GrayColor.GRAY_300}>
             지금 첫번째 태그를 등록해보세요
           </Typo>

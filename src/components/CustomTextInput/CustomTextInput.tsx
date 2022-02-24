@@ -1,8 +1,8 @@
 import React, { useState, Ref } from 'react';
-import { TextInput, Platform } from 'react-native';
+import { TextInput, Platform, NativeSyntheticEvent, TextInputSubmitEditingEventData } from 'react-native';
 
-import SmallCameraLineIcon from 'src/assets/icons/icon_small_camera_line.svg';
-import SmallCloseIcon from 'src/assets/icons/icon_small_close.svg';
+import CameraGrayIcon from 'src/assets/icons/icon_camera_gray.svg';
+import CloseWhiteIcon from 'src/assets/icons/icon_close_white.svg';
 import Typo from 'src/components/Typo/Typo';
 import { GrayColor } from 'src/utils/color';
 import { FontType } from 'src/utils/font';
@@ -37,17 +37,19 @@ const CustomTextInput = ({ type, defaultText = '', onSetInputText, inputRef }: P
           <CustomTextInputBox
             placeholder={type === 'nickname' ? '이름을 입력해주세요' : '댓글을 입력하세요'}
             value={inputText}
-            onChangeText={(text) => setInputText(text)}
-            onSubmitEditing={(event) => handleSetInputText(event.nativeEvent.text)}
+            onChangeText={(text: string) => setInputText(text)}
+            onSubmitEditing={({ nativeEvent }: NativeSyntheticEvent<TextInputSubmitEditingEventData>) =>
+              handleSetInputText(nativeEvent.text)
+            }
             ref={inputRef}
           />
           {type === 'nickname' ? (
             <CancelButton onPress={() => handleSetInputText(defaultText)}>
-              <SmallCloseIcon />
+              <CloseWhiteIcon width="16" height="16" />
             </CancelButton>
           ) : (
             <PhotoButton>
-              <SmallCameraLineIcon width="18" height="18" />
+              <CameraGrayIcon width="18" height="18" />
             </PhotoButton>
           )}
           <SubmitButton onPress={() => handleSetInputText(inputText)}>

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import PersonIcon from 'src/assets/icons/icon_person.svg';
-import SmallCameraIcon from 'src/assets/icons/icon_small_camera.svg';
-import SmallEditIcon from 'src/assets/icons/icon_small_edit.svg';
+import CameraWhiteIcon from 'src/assets/icons/icon_camera_white.svg';
+import EditIcon from 'src/assets/icons/icon_edit.svg';
+import PersonWhiteIcon from 'src/assets/icons/icon_person_white.svg';
 import Typo from 'src/components/Typo/Typo';
 import { Align, FontType } from 'src/utils/font';
 import {
@@ -40,10 +40,10 @@ const SetProfile = ({ nickname, profileImageURL, showBadge = false, onSetProfile
       <EditProfile>
         <EditImageStyled onPress={handleImagePress}>
           <EditImagePhoto>
-            {profileImageURL !== '' ? <EditImage source={{ uri: profileImageURL }} /> : <PersonIcon />}
+            {profileImageURL !== '' ? <EditImage source={{ uri: profileImageURL }} /> : <PersonWhiteIcon />}
           </EditImagePhoto>
           <EditImageIcon>
-            <SmallCameraIcon />
+            <CameraWhiteIcon />
           </EditImageIcon>
         </EditImageStyled>
         {showBadge && (
@@ -56,7 +56,7 @@ const SetProfile = ({ nickname, profileImageURL, showBadge = false, onSetProfile
             {nickname}
           </Typo>
           <EditNameIcon>
-            <SmallEditIcon />
+            <EditIcon width="16" height="16" />
           </EditNameIcon>
         </EditNameStyled>
       </EditProfile>

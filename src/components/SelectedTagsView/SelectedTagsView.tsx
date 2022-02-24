@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CloseGrayIcon from 'src/assets/icons/icon_close_gray.svg';
+import CloseIcon from 'src/assets/icons/icon_close.svg';
 import SetTags from 'src/components/SetTags/SetTags';
 import Typo from 'src/components/Typo/Typo';
 import { Tag, TagName } from 'src/models/tag';
@@ -28,7 +28,7 @@ const SelectedTagsView = ({ selectedTags, preferredTags, onToggleTag, onCloseBut
       <SelectedTagsViewHeader>
         <SelectedTagsViewTop>
           <SelectedTagsViewCloseButton onPress={onCloseButton}>
-            <CloseGrayIcon />
+            <CloseIcon />
           </SelectedTagsViewCloseButton>
         </SelectedTagsViewTop>
         <Typo type={FontType.BOLD_18}>작업공간으로{'\n'}적절한 태그를 선택해주세요!</Typo>

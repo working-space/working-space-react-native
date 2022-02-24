@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 
-import SmallCheckIcon from 'src/assets/icons/icon_small_check.svg';
+import CheckWhiteIcon from 'src/assets/icons/icon_check_white.svg';
 import Typo from 'src/components/Typo/Typo';
 import TAG from 'src/constants/tag';
 import { Tag } from 'src/models/tag';
@@ -32,7 +32,7 @@ const TagItem = ({ tag, showCount, selected, onPress }: Props) => {
         ) : (
           selected && (
             <ItemcheckIcon selected={selected} showCount={showCount}>
-              <SmallCheckIcon />
+              <CheckWhiteIcon />
             </ItemcheckIcon>
           )
         )}

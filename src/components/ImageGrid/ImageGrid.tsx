@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Dimensions } from 'react-native';
 import { FBCollage } from 'react-native-fb-collage';
-import Swiper from 'react-native-swiper';
+import Swiper from 'react-native-swiper/src';
 
 import CloseWhiteIcon from 'src/assets/icons/icon_close_white.svg';
-import LocationWhiteIcon from 'src/assets/icons/icon_small_location_white.svg';
-import SmallTagWhiteIcon from 'src/assets/icons/icon_small_tag_white.svg';
+import LocationWhiteIcon from 'src/assets/icons/icon_location_white.svg';
+import TagWhiteIcon from 'src/assets/icons/icon_tag_white.svg';
 import AutoFitImage from 'src/components/AutoFitImage/AutoFitImage';
 import CustomModal from 'src/components/CustomModal/CustomModal';
 import NoneImage from 'src/components/NoneImage/NoneImage';
@@ -95,14 +95,14 @@ const ImageGrid = ({ name, distance, tags, images }: Props) => {
               {name}
             </Typo>
             <InfoBoxSubTitleView>
-              <InfoBoxSubInfo start={true}>
+              <InfoBoxSubInfo isRightBorder>
                 <LocationWhiteIcon />
                 <Typo type={FontType.REGULAR_12} color={GrayColor.GRAY_0}>
                   {distance}
                 </Typo>
               </InfoBoxSubInfo>
               <InfoBoxSubInfo>
-                <SmallTagWhiteIcon />
+                <TagWhiteIcon />
                 <Typo type={FontType.REGULAR_12} color={GrayColor.GRAY_0}>
                   태그 {tags.length}개
                 </Typo>
