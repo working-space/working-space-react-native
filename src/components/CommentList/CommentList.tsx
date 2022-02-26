@@ -4,7 +4,7 @@ import { TouchableOpacity } from 'react-native';
 import DropdownGrayIcon from 'src/assets/icons/icon_dropdown_gray.svg';
 import OptionIcon from 'src/assets/icons/icon_option.svg';
 import PersonGrayIcon from 'src/assets/icons/icon_person_gray.svg';
-import NoneImage from 'src/assets/images/none-image.svg';
+import NoneImage from 'src/assets/images/image_none.svg';
 import Typo from 'src/components/Typo/Typo';
 import { Comments, Comment } from 'src/models/comment';
 import { GrayColor } from 'src/utils/color';

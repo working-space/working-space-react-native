@@ -1,6 +1,6 @@
 import React from 'react';
 
-import EmptyIllustURL from 'src/assets/images/empty_illust.jpg';
+import EmptyIllustURL from 'src/assets/images/image_illust_empty.jpg';
 import AutoFitImage from 'src/components/AutoFitImage/AutoFitImage';
 import Typo from 'src/components/Typo/Typo';
 import { FontType } from 'src/utils/font';

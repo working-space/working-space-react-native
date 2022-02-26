@@ -16,17 +16,17 @@ const FILTER: Filter = {
   NEAREST: {
     id: 'NEAREST',
     name: '가까운',
-    imageURL: <AutoFitImage source={require('src/assets/images/m_nearest_illust.jpg')} />,
+    imageURL: <AutoFitImage source={require('src/assets/images/image_illust_nearest.jpg')} />,
   },
   MANY_COMMENTS: {
     id: 'MANY_COMMENTS',
     name: '댓글 많은',
-    imageURL: <AutoFitImage source={require('src/assets/images/m_comment_illust.jpg')} />,
+    imageURL: <AutoFitImage source={require('src/assets/images/image_illust_comment.jpg')} />,
   },
   MANY_FAVORITES: {
     id: 'MANY_FAVORITES',
     name: '좋아요 많은',
-    imageURL: <AutoFitImage source={require('src/assets/images/m_favorite_illust.jpg')} />,
+    imageURL: <AutoFitImage source={require('src/assets/images/image_illust_favorite.jpg')} />,
   },
 };
 

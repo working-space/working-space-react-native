@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 
 import PersonGrayIcon from 'src/assets/icons/icon_person_gray.svg';
-import NoneImage from 'src/assets/images/none-image.svg';
+import NoneImage from 'src/assets/images/image_none.svg';
 import TagItem from 'src/components/TagItem/TagItem';
 import Typo from 'src/components/Typo/Typo';
 import { Tag, TagName } from 'src/models/tag';
