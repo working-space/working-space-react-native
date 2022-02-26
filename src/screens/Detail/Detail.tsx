@@ -4,13 +4,13 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import BackIcon from 'src/assets/icons/icon_back.svg';
 import BookmarkIcon from 'src/assets/icons/icon_bookmark.svg';
-import BookmarkFillIcon from 'src/assets/icons/icon_bookmark_fill.svg';
-import CloseGrayIcon from 'src/assets/icons/icon_close_gray.svg';
+import BookmarkYellowIcon from 'src/assets/icons/icon_bookmark_yellow.svg';
+import CloseIcon from 'src/assets/icons/icon_close.svg';
 import FavoriteIcon from 'src/assets/icons/icon_favorite.svg';
-import FavoriteFillIcon from 'src/assets/icons/icon_favorite_fill.svg';
+import FavoriteRedIcon from 'src/assets/icons/icon_favorite_red.svg';
+import LocationIcon from 'src/assets/icons/icon_location.svg';
 import ShareIcon from 'src/assets/icons/icon_share.svg';
-import LocationGrayIcon from 'src/assets/icons/icon_small_location_gray.svg';
-import SmallTagGrayIcon from 'src/assets/icons/icon_small_tag_gray.svg';
+import TagIcon from 'src/assets/icons/icon_tag.svg';
 import CommentList from 'src/components/CommentList/CommentList';
 import CustomModal from 'src/components/CustomModal/CustomModal';
 import CustomTextInput from 'src/components/CustomTextInput/CustomTextInput';
@@ -61,14 +61,14 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Detail'>;
 
 const Detail = ({ navigation: { goBack }, route }: Props) => {
   const { cafeId } = route.params;
-  const [cafeData, setCafeData] = useState<CafeDetail>();
+  const [cafeData, setCafeData] = useState<CafeDetail | null>(null);
   const [likeState, setLikeState] = useState(false);
   const [bookmarkState, setBookmarkState] = useState(false);
 
   const [visibleInput, setVisibleInput] = useState<'Tags' | 'Comments' | 'CommentOption' | null>(null);
   const [preferredTags, setPreferredTags] = useState<TagName[]>([]);
   const { selectedTags, setSelectedTags, toggleTag } = useSelectedTags([]);
-  const [currentCommentId, setCurrentCommentId] = useState<string | null>();
+  const [, setCurrentCommentId] = useState<string | null>();
   const inputRef = useRef<TextInput>(null);
 
   const noneText = '정보없음';
@@ -117,7 +117,10 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
     }
   };
 
-  const handleCopyToClipboard = (address: string | null) => {};
+  const handleCopyToClipboard = (address: string | null) => {
+    // TODO: address 클립보드 복사 기능 구현
+    console.log(address);
+  };
 
   const handleSubmitButton = () => {
     setVisibleInput(null);
@@ -129,6 +132,8 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
   };
 
   const handleSetCommentText = (text: string) => {
+    // TODO: 댓글 등록 기능 구현
+    console.log(text);
     handleCloseButton();
   };
 
@@ -158,7 +163,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
           showBorderBottom={true}
           left={
             <Header.Button onPress={goBack}>
-              <BackIcon />
+              <BackIcon width="24" height="24" />
             </Header.Button>
           }
         />
@@ -173,19 +178,19 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
         showBorderBottom={true}
         left={
           <Header.Button onPress={goBack}>
-            <BackIcon />
+            <BackIcon width="24" height="24" />
           </Header.Button>
         }
         right={
           <LinkIconStyled>
             <LinkIconItem onPress={handleLikeButtonPress}>
-              {likeState ? <FavoriteFillIcon width="24" height="24" /> : <FavoriteIcon width="24" height="24" />}
+              {likeState ? <FavoriteRedIcon width="24" height="24" /> : <FavoriteIcon width="24" height="24" />}
               <Typo type={FontType.BOLD_14} style={linkIconTextStyle}>
                 {cafeData.likeCount}
               </Typo>
             </LinkIconItem>
             <LinkIconItem onPress={handleBookmarkButtonPress}>
-              {bookmarkState ? <BookmarkFillIcon width="24" height="24" /> : <BookmarkIcon width="24" height="24" />}
+              {bookmarkState ? <BookmarkYellowIcon width="24" height="24" /> : <BookmarkIcon width="24" height="24" />}
             </LinkIconItem>
             <LinkIconItem onPress={handleShareButtonPress}>
               <ShareIcon width="24" height="24" />
@@ -199,14 +204,14 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
             {cafeData.name}
           </Typo>
           <TitleInfo>
-            <TitleInfoItem start={true}>
-              <LocationGrayIcon fill={GrayColor.GRAY_400} />
+            <TitleInfoItem isRightBorder>
+              <LocationIcon />
               <Typo type={FontType.REGULAR_12} style={titleInfoItemTextStyle}>
                 {cafeData.distance}
               </Typo>
             </TitleInfoItem>
             <TitleInfoItem>
-              <SmallTagGrayIcon />
+              <TagIcon />
               <Typo type={FontType.REGULAR_12} style={titleInfoItemTextStyle}>
                 태그 {cafeData.tags?.length ?? 0}개
               </Typo>
@@ -304,7 +309,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
           <SelectTagModalHeader>
             <SelectTagModalTop>
               <CloseButton onPress={handleCloseButton}>
-                <CloseGrayIcon />
+                <CloseIcon width="24" height="24" />
               </CloseButton>
             </SelectTagModalTop>
             <SelectTagModalBottom>

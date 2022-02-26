@@ -3,10 +3,10 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import NaverMapView, { Marker } from 'react-native-nmap';
 
 import ListIcon from 'src/assets/icons/icon_list.svg';
-import MoreIcon from 'src/assets/icons/icon_small_more.svg';
-import SmallPersonIcon from 'src/assets/icons/icon_small_person.svg';
-import mapPickerImage from 'src/assets/images/icon_mappicker.png';
-import mapPickerSelectImage from 'src/assets/images/icon_mappicker_select.png';
+import MoreIcon from 'src/assets/icons/icon_more.svg';
+import PersonWhiteIcon from 'src/assets/icons/icon_person_white.svg';
+import mapPickerImage from 'src/assets/images/image_mappicker.png';
+import mapPickerSelectImage from 'src/assets/images/image_mappicker_select.png';
 import Header from 'src/components/Header/Header';
 import Typo from 'src/components/Typo/Typo';
 import useGeolocation from 'src/hooks/useGeolocation';
@@ -37,7 +37,7 @@ const Map = ({ navigation }: Props) => {
           left={
             <Header.Button onPress={() => navigation.navigate('Main')}>
               <IconWrapper>
-                <SmallPersonIcon />
+                <PersonWhiteIcon />
               </IconWrapper>
             </Header.Button>
           }
@@ -51,7 +51,7 @@ const Map = ({ navigation }: Props) => {
           }
           right={
             <Header.Button onPress={() => navigation.navigate('Main')}>
-              <ListIcon />
+              <ListIcon width="24" height="24" />
             </Header.Button>
           }
         />

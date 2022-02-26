@@ -40,12 +40,12 @@ export const TitleInfo = styled.View`
   flex-direction: row;
 `;
 
-export const TitleInfoItem = styled.View<{ start?: boolean }>`
+export const TitleInfoItem = styled.View<{ isRightBorder?: boolean }>`
   flex-direction: row;
   justify-content: center;
   padding-right: 8px;
-  padding-left: ${({ start }) => !start && '8px'};
-  border-left-width: ${({ start }) => !start && '1px'};
+  padding-left: ${({ isRightBorder }) => !isRightBorder && '8px'};
+  border-left-width: ${({ isRightBorder }) => !isRightBorder && '1px'};
   border-style: solid;
   border-color: ${GrayColor.GRAY_100};
 `;

@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 
-import SmallPersonFillIcon from 'src/assets/icons/icon_small_person_fill.svg';
-import NoneImage from 'src/assets/images/none-image.svg';
+import PersonGrayIcon from 'src/assets/icons/icon_person_gray.svg';
+import NoneImage from 'src/assets/images/image_none.svg';
 import TagItem from 'src/components/TagItem/TagItem';
 import Typo from 'src/components/Typo/Typo';
 import { Tag, TagName } from 'src/models/tag';
@@ -36,7 +36,7 @@ const TagList = ({ tags, preferTags, onSetTagsModal }: Props) => {
           <TagListBoxLeft>
             <Typo type={FontType.BOLD_16}>태그</Typo>
             <TagListBoxIcon>
-              <SmallPersonFillIcon />
+              <PersonGrayIcon />
             </TagListBoxIcon>
             <Typo type={FontType.REGULAR_14} color={GrayColor.GRAY_200}>
               {tags.length ?? 0}

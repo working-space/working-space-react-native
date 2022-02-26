@@ -1590,7 +1590,7 @@
 
 "@types/react-native-swiper@^1.5.12":
   version "1.5.12"
-  resolved "https://registry.npmjs.org/@types/react-native-swiper/-/react-native-swiper-1.5.12.tgz"
+  resolved "https://registry.yarnpkg.com/@types/react-native-swiper/-/react-native-swiper-1.5.12.tgz#686e790d4c48e24067c97b68db893e162cec5e37"
   integrity sha512-xFNvc/tAnrBTC1lTDh/upedd9GtEsmIR/RNAAprQGk5AU0CngifI1nlEqnMdKagbBoCmXErcySG7bVXwPXEFnA==
   dependencies:
     react-native-swiper "*"

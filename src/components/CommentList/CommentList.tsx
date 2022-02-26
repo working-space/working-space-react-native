@@ -1,10 +1,10 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 
-import DropdownIcon from 'src/assets/icons/icon_dropdown.svg';
+import DropdownGrayIcon from 'src/assets/icons/icon_dropdown_gray.svg';
 import OptionIcon from 'src/assets/icons/icon_option.svg';
-import SmallPersonFillIcon from 'src/assets/icons/icon_small_person_fill.svg';
-import NoneImage from 'src/assets/images/none-image.svg';
+import PersonGrayIcon from 'src/assets/icons/icon_person_gray.svg';
+import NoneImage from 'src/assets/images/image_none.svg';
 import Typo from 'src/components/Typo/Typo';
 import { Comments, Comment } from 'src/models/comment';
 import { GrayColor } from 'src/utils/color';
@@ -64,7 +64,7 @@ const CommentList = ({
         <CommentListBoxHeader>
           <Typo type={FontType.BOLD_16}>댓글</Typo>
           <CommentListBoxIcon>
-            <SmallPersonFillIcon />
+            <PersonGrayIcon />
           </CommentListBoxIcon>
           <Typo type={FontType.REGULAR_14} color={GrayColor.GRAY_200}>
             {commentsCount}
@@ -72,7 +72,7 @@ const CommentList = ({
         </CommentListBoxHeader>
         <CommentListBoxInput onPress={handleCommentTextModal}>
           <ProfileImage>
-            <SmallPersonFillIcon />
+            <PersonGrayIcon />
           </ProfileImage>
           <CommentText>
             <Typo type={FontType.REGULAR_14} color={GrayColor.GRAY_300}>
@@ -87,7 +87,7 @@ const CommentList = ({
                 return (
                   <CommentItem key={i}>
                     <ProfileImage>
-                      <SmallPersonFillIcon />
+                      <PersonGrayIcon />
                     </ProfileImage>
                     <CommentItemInfo>
                       <CommentItemTitle>
@@ -107,7 +107,7 @@ const CommentList = ({
                                   key={userComment.id}
                                   onPress={() => handleCommentOptionModal(userComment.id)}
                                 >
-                                  <OptionIcon />
+                                  <OptionIcon width="24" height="24" />
                                 </TouchableOpacity>
                               )
                             );
@@ -121,7 +121,7 @@ const CommentList = ({
             </CommentListBoxView>
             {hasNextComments && (
               <CommentMoreButton onPress={handleMoreCommentsButtonPress}>
-                <DropdownIcon />
+                <DropdownGrayIcon />
                 <Typo type={FontType.REGULAR_11} color={GrayColor.GRAY_300}>
                   더보기
                 </Typo>

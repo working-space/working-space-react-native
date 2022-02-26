@@ -2,10 +2,10 @@ import React, { useRef, useState } from 'react';
 import { FlatList, TextInput } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-import CloseIcon from 'src/assets/icons/icon_close_gray.svg';
-import DeleteIcon from 'src/assets/icons/icon_delete.svg';
+import CloseIcon from 'src/assets/icons/icon_close.svg';
+import DeleteGrayIcon from 'src/assets/icons/icon_delete_gray.svg';
 import SearchIcon from 'src/assets/icons/icon_search.svg';
-import SearchFocusIcon from 'src/assets/icons/icon_search_black.svg';
+import SearchGrayIcon from 'src/assets/icons/icon_search_gray.svg';
 import CafeListItem from 'src/components/CafeListItem/CafeListItem';
 import Header from 'src/components/Header/Header';
 import Typo from 'src/components/Typo/Typo';
@@ -68,7 +68,7 @@ const Search = ({ navigation: { navigate, goBack } }: Props) => {
         <Header
           left={
             <Header.Button onPress={goBack}>
-              <CloseIcon />
+              <CloseIcon width="24" height="24" />
             </Header.Button>
           }
           right={
@@ -87,11 +87,15 @@ const Search = ({ navigation: { navigate, goBack } }: Props) => {
               <SearchInputButtonWrapper>
                 {!!searchKeyword && (
                   <SearchInputButton onPress={handleClear}>
-                    <DeleteIcon />
+                    <DeleteGrayIcon />
                   </SearchInputButton>
                 )}
                 <SearchInputButton onPress={handlePressSearch}>
-                  {isFocusSearchKeyword ? <SearchFocusIcon /> : <SearchIcon />}
+                  {isFocusSearchKeyword ? (
+                    <SearchIcon width="24" height="24" />
+                  ) : (
+                    <SearchGrayIcon width="24" height="24" />
+                  )}
                 </SearchInputButton>
               </SearchInputButtonWrapper>
             </SearchInputWrapper>

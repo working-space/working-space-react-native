@@ -2,7 +2,7 @@ import React from 'react';
 import { login, KakaoOAuthToken, getProfile as getKakaoProfile, KakaoProfile } from '@react-native-seoul/kakao-login';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-import LoginIllustURL from 'src/assets/images/login_illust.jpg';
+import LoginIllustURL from 'src/assets/images/image_illust_login.jpg';
 import AutoFitImage from 'src/components/AutoFitImage/AutoFitImage';
 import Typo from 'src/components/Typo/Typo';
 import useAuth from 'src/hooks/useAuth';
@@ -48,7 +48,7 @@ const Login = ({ navigation }: Props) => {
         <LoginButtonStyled>
           <LoginButton onPress={onLogin}>
             <LoginButtonIcon>
-              <LoginButtonImage source={require('src/assets/images/kakao_button.png')} />
+              <LoginButtonImage source={require('src/assets/images/image_kakao_button.png')} />
             </LoginButtonIcon>
             <Typo type={FontType.BOLD_14} align={Align.CENTER}>
               카카오 로그인
