@@ -28,7 +28,7 @@ const SelectedTagsView = ({ selectedTags, preferredTags, onToggleTag, onCloseBut
       <SelectedTagsViewHeader>
         <SelectedTagsViewTop>
           <SelectedTagsViewCloseButton onPress={onCloseButton}>
-            <CloseIcon />
+            <CloseIcon width="24" height="24" />
           </SelectedTagsViewCloseButton>
         </SelectedTagsViewTop>
         <Typo type={FontType.BOLD_18}>작업공간으로{'\n'}적절한 태그를 선택해주세요!</Typo>

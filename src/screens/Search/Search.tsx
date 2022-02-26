@@ -68,7 +68,7 @@ const Search = ({ navigation: { navigate, goBack } }: Props) => {
         <Header
           left={
             <Header.Button onPress={goBack}>
-              <CloseIcon />
+              <CloseIcon width="24" height="24" />
             </Header.Button>
           }
           right={
@@ -91,7 +91,11 @@ const Search = ({ navigation: { navigate, goBack } }: Props) => {
                   </SearchInputButton>
                 )}
                 <SearchInputButton onPress={handlePressSearch}>
-                  {isFocusSearchKeyword ? <SearchIcon /> : <SearchGrayIcon />}
+                  {isFocusSearchKeyword ? (
+                    <SearchIcon width="24" height="24" />
+                  ) : (
+                    <SearchGrayIcon width="24" height="24" />
+                  )}
                 </SearchInputButton>
               </SearchInputButtonWrapper>
             </SearchInputWrapper>

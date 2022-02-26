@@ -37,7 +37,7 @@ const Map = ({ navigation }: Props) => {
           left={
             <Header.Button onPress={() => navigation.navigate('Main')}>
               <IconWrapper>
-                <PersonWhiteIcon width="16" height="16" />
+                <PersonWhiteIcon />
               </IconWrapper>
             </Header.Button>
           }
@@ -51,7 +51,7 @@ const Map = ({ navigation }: Props) => {
           }
           right={
             <Header.Button onPress={() => navigation.navigate('Main')}>
-              <ListIcon />
+              <ListIcon width="24" height="24" />
             </Header.Button>
           }
         />

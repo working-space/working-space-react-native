@@ -76,7 +76,7 @@ const CafeListItem = memo(({ data, hasBorder = false, ...props }: Props) => {
         />
       ) : (
         <TagEmpty>
-          <EditGrayIcon />
+          <EditGrayIcon width="24" height="24" />
           <Typo type={FontType.REGULAR_11} color={GrayColor.GRAY_300}>
             지금 첫번째 태그를 등록해보세요
           </Typo>

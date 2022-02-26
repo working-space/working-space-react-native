@@ -36,7 +36,7 @@ const TagList = ({ tags, preferTags, onSetTagsModal }: Props) => {
           <TagListBoxLeft>
             <Typo type={FontType.BOLD_16}>태그</Typo>
             <TagListBoxIcon>
-              <PersonGrayIcon width="16" height="16" />
+              <PersonGrayIcon />
             </TagListBoxIcon>
             <Typo type={FontType.REGULAR_14} color={GrayColor.GRAY_200}>
               {tags.length ?? 0}

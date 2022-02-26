@@ -66,7 +66,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
           left={
             <Header.Button onPress={() => navigate('Profile')}>
               <IconCircle>
-                <PersonWhiteIcon width="16" height="16" />
+                <PersonWhiteIcon />
               </IconCircle>
             </Header.Button>
           }
@@ -80,7 +80,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
           }
           right={
             <Header.Button onPress={() => navigate('Map')}>
-              <MapIcon />
+              <MapIcon width="24" height="24" />
             </Header.Button>
           }
           bottom={
@@ -127,7 +127,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
               찾고 있는 카페를 검색해보세요!
             </Typo>
             <SearchInputRightIcon>
-              <SearchIcon />
+              <SearchIcon width="24" height="24" />
             </SearchInputRightIcon>
           </SearchInput>
           <Animated.View style={{ opacity: fadeAnim }}>

@@ -9,7 +9,7 @@ import { NoneImageWrapper } from './NoneImage.styles';
 const NoneImage = () => {
   return (
     <NoneImageWrapper>
-      <PhotoWhiteIcon />
+      <PhotoWhiteIcon width="32" height="32" />
       <Typo type={FontType.REGULAR_12} color={GrayColor.GRAY_0}>
         불러올 수 있는 이미지가 없습니다.
       </Typo>

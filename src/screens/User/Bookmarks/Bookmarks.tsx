@@ -17,7 +17,7 @@ const Bookmarks = ({ navigation: { goBack } }: Props) => {
       <Header
         left={
           <Header.Button onPress={goBack}>
-            <BackIcon />
+            <BackIcon width="24" height="24" />
           </Header.Button>
         }
       />

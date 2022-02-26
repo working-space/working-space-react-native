@@ -45,7 +45,7 @@ const CustomTextInput = ({ type, defaultText = '', onSetInputText, inputRef }: P
           />
           {type === 'nickname' ? (
             <CancelButton onPress={() => handleSetInputText(defaultText)}>
-              <CloseWhiteIcon width="16" height="16" />
+              <CloseWhiteIcon />
             </CancelButton>
           ) : (
             <PhotoButton>

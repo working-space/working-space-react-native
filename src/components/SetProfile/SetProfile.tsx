@@ -40,7 +40,11 @@ const SetProfile = ({ nickname, profileImageURL, showBadge = false, onSetProfile
       <EditProfile>
         <EditImageStyled onPress={handleImagePress}>
           <EditImagePhoto>
-            {profileImageURL !== '' ? <EditImage source={{ uri: profileImageURL }} /> : <PersonWhiteIcon />}
+            {profileImageURL !== '' ? (
+              <EditImage source={{ uri: profileImageURL }} />
+            ) : (
+              <PersonWhiteIcon width="48" height="48" />
+            )}
           </EditImagePhoto>
           <EditImageIcon>
             <CameraWhiteIcon />
@@ -56,7 +60,7 @@ const SetProfile = ({ nickname, profileImageURL, showBadge = false, onSetProfile
             {nickname}
           </Typo>
           <EditNameIcon>
-            <EditIcon width="16" height="16" />
+            <EditIcon />
           </EditNameIcon>
         </EditNameStyled>
       </EditProfile>

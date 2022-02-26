@@ -81,7 +81,7 @@ const ImageGrid = ({ name, distance, tags, images }: Props) => {
       >
         <ImageGridModal>
           <CloseButton onPress={handleCloseButton}>
-            <CloseWhiteIcon />
+            <CloseWhiteIcon width="24" height="24" />
           </CloseButton>
           <Swiper index={visibleInput} renderPagination={renderPagination}>
             {images.map((image: string, index: number) => (

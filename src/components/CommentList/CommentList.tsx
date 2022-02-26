@@ -64,7 +64,7 @@ const CommentList = ({
         <CommentListBoxHeader>
           <Typo type={FontType.BOLD_16}>댓글</Typo>
           <CommentListBoxIcon>
-            <PersonGrayIcon width="16" height="16" />
+            <PersonGrayIcon />
           </CommentListBoxIcon>
           <Typo type={FontType.REGULAR_14} color={GrayColor.GRAY_200}>
             {commentsCount}
@@ -72,7 +72,7 @@ const CommentList = ({
         </CommentListBoxHeader>
         <CommentListBoxInput onPress={handleCommentTextModal}>
           <ProfileImage>
-            <PersonGrayIcon width="16" height="16" />
+            <PersonGrayIcon />
           </ProfileImage>
           <CommentText>
             <Typo type={FontType.REGULAR_14} color={GrayColor.GRAY_300}>
@@ -87,7 +87,7 @@ const CommentList = ({
                 return (
                   <CommentItem key={i}>
                     <ProfileImage>
-                      <PersonGrayIcon width="16" height="16" />
+                      <PersonGrayIcon />
                     </ProfileImage>
                     <CommentItemInfo>
                       <CommentItemTitle>
@@ -107,7 +107,7 @@ const CommentList = ({
                                   key={userComment.id}
                                   onPress={() => handleCommentOptionModal(userComment.id)}
                                 >
-                                  <OptionIcon />
+                                  <OptionIcon width="24" height="24" />
                                 </TouchableOpacity>
                               )
                             );

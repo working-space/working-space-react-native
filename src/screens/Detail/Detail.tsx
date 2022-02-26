@@ -163,7 +163,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
           showBorderBottom={true}
           left={
             <Header.Button onPress={goBack}>
-              <BackIcon />
+              <BackIcon width="24" height="24" />
             </Header.Button>
           }
         />
@@ -178,7 +178,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
         showBorderBottom={true}
         left={
           <Header.Button onPress={goBack}>
-            <BackIcon />
+            <BackIcon width="24" height="24" />
           </Header.Button>
         }
         right={
@@ -309,7 +309,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
           <SelectTagModalHeader>
             <SelectTagModalTop>
               <CloseButton onPress={handleCloseButton}>
-                <CloseIcon />
+                <CloseIcon width="24" height="24" />
               </CloseButton>
             </SelectTagModalTop>
             <SelectTagModalBottom>
