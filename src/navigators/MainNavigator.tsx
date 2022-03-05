@@ -2,6 +2,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import useAuth from 'src/hooks/useAuth';
+import Address from 'src/screens/Address/Address';
 import Detail from 'src/screens/Detail/Detail';
 import Login from 'src/screens/Login/Login';
 import Main from 'src/screens/Main/Main';
@@ -48,6 +49,13 @@ const MainNavigator = () => {
           <Stack.Screen
             name="Search"
             component={Search}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="Address"
+            component={Address}
             options={{
               headerShown: false,
             }}
