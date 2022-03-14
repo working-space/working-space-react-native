@@ -26,6 +26,7 @@ const SubColor = {
 
 const OpacityGrayColor = {
   OPACITY_GRAY_400: 'rgba(34, 34, 34, 0.1)',
+  OPACITY_BLACK_25: 'rgba(0, 0, 0, 0.25)',
   OPACITY_BLACK_70: 'rgba(0, 0, 0, 0.7)',
 } as const;
 

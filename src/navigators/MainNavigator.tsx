@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import useAuth from 'src/hooks/useAuth';
 import Address from 'src/screens/Address/Address';
+import AddressLocation from 'src/screens/AddressLocation/AddressLocation';
 import AddressSearch from 'src/screens/AddressSearch/AddressSearch';
 import Detail from 'src/screens/Detail/Detail';
 import Login from 'src/screens/Login/Login';
@@ -64,6 +65,13 @@ const MainNavigator = () => {
           <Stack.Screen
             name="AddressSearch"
             component={AddressSearch}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="AddressLocation"
+            component={AddressLocation}
             options={{
               headerShown: false,
             }}

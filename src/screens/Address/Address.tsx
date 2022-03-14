@@ -57,7 +57,7 @@ const Address = ({ navigation: { navigate, goBack } }: Props) => {
         </SearchInputRightIcon>
       </SearchInput>
       <CurrentLocationWrapper>
-        <CurrentLocation>
+        <CurrentLocation onPress={() => navigate('AddressLocation')}>
           <LocateActiveIcon width={24} height={24} />
           <AddressItemText>
             <Typo type={FontType.REGULAR_14}>현재 위치로 설정</Typo>

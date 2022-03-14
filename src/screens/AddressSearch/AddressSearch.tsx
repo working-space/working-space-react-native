@@ -54,7 +54,7 @@ interface Props {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Login'>;
 }
 
-const AddressSearch = ({ navigation: { goBack } }: Props) => {
+const AddressSearch = ({ navigation: { navigate, goBack } }: Props) => {
   const textInputRef = useRef<TextInput>(null);
   const [searched, setSearched] = useState(false);
   const [addressResult, setAddressResult] = useState<SampleAddressItem[]>([]);
@@ -128,7 +128,7 @@ const AddressSearch = ({ navigation: { goBack } }: Props) => {
         </SearchInputButtonWrapper>
       </SearchInputWrapper>
       <CurrentLocationWrapper>
-        <CurrentLocation>
+        <CurrentLocation onPress={() => navigate('AddressLocation')}>
           <LocateActiveIcon width={24} height={24} />
           <AddressItemText>
             <Typo type="REGULAR_14">현재 위치로 설정</Typo>
