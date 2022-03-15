@@ -32,10 +32,11 @@ interface Props {
 }
 
 const ImageGrid = ({ name, distance, tags, images }: Props) => {
-  const [visibleInput, setVisibleInput] = useState<number>(-1);
+  const [visibleInput, setVisibleInput] = useState<boolean>(false);
+  const [imageIndex, setImageIndex] = useState<number>(0);
 
   const handleCloseButton = () => {
-    setVisibleInput(-1);
+    setVisibleInput(false);
   };
 
   const renderPagination = (index: number, total: number) => {
@@ -62,7 +63,8 @@ const ImageGrid = ({ name, distance, tags, images }: Props) => {
         <FBCollage
           images={images}
           imageOnPress={(index) => {
-            setVisibleInput(index);
+            setImageIndex(index);
+            setVisibleInput(true);
           }}
           width={Dimensions.get('window').width}
           height={150}
@@ -71,7 +73,7 @@ const ImageGrid = ({ name, distance, tags, images }: Props) => {
         />
       </ImageWrapper>
       <CustomModal
-        isVisible={visibleInput !== -1}
+        isVisible={visibleInput}
         backdropOpacity={1}
         onBackdropPress={handleCloseButton}
         animationIn="slideInUp"
@@ -83,7 +85,7 @@ const ImageGrid = ({ name, distance, tags, images }: Props) => {
           <CloseButton onPress={handleCloseButton}>
             <CloseWhiteIcon width="24" height="24" />
           </CloseButton>
-          <Swiper index={visibleInput} renderPagination={renderPagination}>
+          <Swiper index={imageIndex} renderPagination={renderPagination}>
             {images.map((image: string, index: number) => (
               <CardImage key={index}>
                 <AutoFitImage source={{ uri: image }} />
