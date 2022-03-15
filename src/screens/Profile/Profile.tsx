@@ -145,7 +145,7 @@ const Profile = ({ navigation: { navigate, goBack } }: Props) => {
       <CustomModal
         backdropOpacity={0.3}
         isVisible={visibleInputModal}
-        onBackdropPress={() => setVisibleInputModal(false)}
+        onModalClose={() => setVisibleInputModal(false)}
         onShow={() => inputRef.current?.focus()}
         animationIn="slideInUp"
         animationOut="slideOutDown"
@@ -162,7 +162,7 @@ const Profile = ({ navigation: { navigate, goBack } }: Props) => {
       <CustomModal
         isVisible={visibleTagsModal}
         backdropOpacity={0}
-        onBackdropPress={handleCloseButton}
+        onModalClose={handleCloseButton}
         animationIn="slideInUp"
         animationOut="slideOutDown"
         hideModalContentWhileAnimating={true}

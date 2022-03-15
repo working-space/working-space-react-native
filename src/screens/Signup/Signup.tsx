@@ -129,7 +129,7 @@ const Signup = ({ navigation, route }: Props) => {
         <CustomModal
           backdropOpacity={0.3}
           isVisible={visibleInput}
-          onBackdropPress={() => setVisibleInput(false)}
+          onModalClose={() => setVisibleInput(false)}
           onShow={() => inputRef.current?.focus()}
           animationIn="slideInUp"
           animationOut="slideOutDown"

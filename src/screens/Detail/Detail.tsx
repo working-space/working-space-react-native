@@ -299,7 +299,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
       <CustomModal
         isVisible={visibleInput === 'Tags'}
         backdropOpacity={1}
-        onBackdropPress={handleCloseButton}
+        onModalClose={handleCloseButton}
         animationIn="slideInUp"
         animationOut="slideOutDown"
         hideModalContentWhileAnimating={true}
@@ -332,7 +332,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
       <CustomModal
         isVisible={visibleInput === 'Comments'}
         backdropOpacity={0.3}
-        onBackdropPress={handleCloseButton}
+        onModalClose={handleCloseButton}
         onShow={() => inputRef.current?.focus()}
         animationIn="slideInUp"
         animationOut="slideOutDown"
@@ -344,7 +344,7 @@ const Detail = ({ navigation: { goBack }, route }: Props) => {
       <CustomModal
         isVisible={visibleInput === 'CommentOption'}
         backdropOpacity={0.3}
-        onBackdropPress={handleCloseButton}
+        onModalClose={handleCloseButton}
         animationIn="fadeIn"
         animationOut="fadeOut"
         hideModalContentWhileAnimating={true}

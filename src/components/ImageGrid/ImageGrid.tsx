@@ -75,7 +75,7 @@ const ImageGrid = ({ name, distance, tags, images }: Props) => {
       <CustomModal
         isVisible={visibleInput}
         backdropOpacity={1}
-        onBackdropPress={handleCloseButton}
+        onModalClose={handleCloseButton}
         animationIn="slideInUp"
         animationOut="slideOutDown"
         hideModalContentWhileAnimating={true}

@@ -7,7 +7,6 @@ type CustomModalProps = Pick<
   ModalProps,
   | 'isVisible'
   | 'backdropOpacity'
-  | 'onBackdropPress'
   | 'onShow'
   | 'animationIn'
   | 'animationOut'
@@ -15,11 +14,12 @@ type CustomModalProps = Pick<
   | 'useNativeDriver'
 > & {
   children: React.ReactNode;
+  onModalClose: () => void;
 };
 
-const CustomModal = ({ children, ...props }: CustomModalProps) => {
+const CustomModal = ({ children, onModalClose, ...props }: CustomModalProps) => {
   return (
-    <Modal style={modalStyle} {...props}>
+    <Modal style={modalStyle} onBackdropPress={onModalClose} onBackButtonPress={onModalClose} {...props}>
       {children}
     </Modal>
   );
