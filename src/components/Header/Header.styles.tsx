@@ -38,19 +38,16 @@ export const HeaderBottom = styled.View`
 
 export const HeaderLeft = styled.View<HeaderTopAreaProps>`
   ${({ fillWidth }) => fillWidth && 'flex: 1;'}
-  text-align: left;
 `;
 
 export const HeaderCenter = styled.View<HeaderTopAreaProps>`
   ${({ fillWidth }) => fillWidth && 'flex: 1;'}
-  text-align: center;
 `;
 
 export const HeaderRight = styled.View<HeaderTopAreaProps>`
   flex-direction: row;
   align-items: center;
   height: 100%;
-  text-align: right;
   ${({ fillWidth }) => fillWidth && 'flex: 1;'}
 `;
 
