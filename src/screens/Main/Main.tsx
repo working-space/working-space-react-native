@@ -71,7 +71,7 @@ const Main = ({ navigation: { navigate } }: Props) => {
             </Header.Button>
           }
           center={
-            <Header.Button onPress={() => navigate('Profile')}>
+            <Header.Button onPress={() => navigate('Address')}>
               <Typo type={FontType.BOLD_12}>관악구 신림동 10-234</Typo>
               <Typo.RightIcon>
                 <MoreIcon />
